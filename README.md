@@ -1,6 +1,8 @@
 # Depois do Sim
 
-"Depois do Sim" é o aplicativo essencial para casais que desejam transformar o planejamento do casamento em uma jornada simples e memorável. Com recursos intuitivos de gerenciamento, o app oferece uma plataforma completa para organizar todos os detalhes, desde buffet e fotografia até a lista de convidados. Além de fornecer acesso a informações detalhadas sobre fornecedores confiáveis e seus preços, o aplicativo também atua como um intermediário eficaz, conectando noivos e fornecedores, além de facilitar a comunicação entre casais e seus convidados. "Depois do Sim" é a ferramenta indispensável que visa tornar o planejamento do casamento uma experiência mais tranquila, economizando tempo e recursos preciosos.
+"Depois do Sim" é o aplicativo essencial para casais que desejam transformar o planejamento do casamento em uma jornada simples e memorável. Com recursos intuitivos de gerenciamento, o app oferece uma plataforma completa para organizar todos os detalhes, desde buffet e fotografia até a lista de convidados.
+
+Além de fornecer acesso a informações detalhadas sobre fornecedores confiáveis e seus preços, o aplicativo também atua como um intermediário eficaz, conectando noivos e fornecedores, além de facilitar a comunicação entre casais e seus convidados. "Depois do Sim" é a ferramenta indispensável que visa tornar o planejamento do casamento uma experiência mais tranquila, economizando tempo e recursos preciosos.
 
 ## Integrantes
 
