@@ -1,25 +1,18 @@
-# TITULO DO PROJETO
+# DEPOIS DO SIM
 
 
-**Nome completo do Aluno 1, email do aluno 1**
-
-**Nome completo do Aluno 2, email do aluno 2**
-
-**Nome completo do Aluno 3, email do aluno 3**
-
-**Nome completo do Aluno 4, email do aluno 4**
-
-**Nome completo do Aluno 5, email do aluno 5**
-
-**Nome completo do Aluno 6, email do aluno 6**
+Ana Flávia de Carvalho Santos
+Davi José Ferreira, daviferreiradev@gmail.com
+Estêvão de Faria Rodrigues
+Júlia Moreira Nascimento
+Lívia Carolina de Souza Lima
 
 ---
 
 Professores:
 
-** Prof. Nome do Prof 1 **
-
-** Prof. Nome do Prof 2 **
+Eveline Alonso Veloso
+Felipe de Castro Belém
 
 ---
 
@@ -37,39 +30,41 @@ mostrar algum resultado relevante do trabalho (até 10 linhas)._
 
 ## 1. Introdução
 
-_Apresente uma frase introdutória definindo o que será apresentado._
+O casamento é um marco importante na vida de muitas pessoas, uma celebração do amor e da união. O planejamento de um casamento pode ser uma tarefa árdua, mas também pode ser muito gratificante. Existem muitos detalhes a serem considerados, como o local, a comida, a decoração, as roupas, a música, a lista de convidados e o orçamento. Refletindo sobre essa questão, nosso grupo considera que pode ser necessário um facilitador para o planejamento desses eventos. 
 
 ### 1.1 Contextualização
 
-_Na **contextualização**, o aluno deve dizer do que se trata o trabalho, em que área ou contexto se insere.
-A **contextualização** deve ser desenvolvida de algo mais genérico para algo mais específico. 
-A citação de pesquisas quantitativas é bem aceita aqui (corretamente referenciadas)._
+O Brasil contabilizou mais de 932 mil casamentos civis em 2021, o que representa um aumento de 23% em relação a 2020. Os dados fazem parte da pesquisa Estatísticas do Registro Civil 2021, divulgada pelo Instituto Brasileiro de Geografia e Estatística (IBGE). Além disso, de acordo com o jornal Estadão, um casamento tradicional no Brasil custa em média 40 mil reais, em dados atualizados em 2023. A partir desses dados, refletimos que o mercado de casamentos tem problemas, e com softwares podemos resolvê-los. 
 
 ### 1.2 Problema
 
-_Em seguida o aluno deve caminhar a contextualização para descrever o **problema** que o trabalho trata. 
-O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o aluno deve rapidamente apresentar 
-o cenário de problema da empresa. A empresa só deve ser citada explicitamente se o aluno tiver autorização 
-para tal._
+Os problemas principais na construção de um casamento estão na complexidade do planejamento e suas instâncias. Muitas vezes os casais recorrem a um profissional para cuidar dessas etapas, o que gera um aumento expressivo no orçamento. Dessa forma, casais com um orçamento menor podem ficar prejudicados ou não conseguir realizar o sonho da maneira como gostariam. Além disso, outra questão seria a dificuldade de ter um panorama mais amplo de todos os tipos de fornecedores, como o buffet e o de decoração, e pode ser necessário que seja feito algo para intermediar esse contato. 
 
 ### 1.3 Objetivo geral
 
-_O aluno deve escrever um pequeno parágrafo ou frase com o **objetivo geral** do trabalho. 
-O objetivo deve ser bem direto, específico e definido com verbos de ação (elaborar, propor, avaliar, comparar, desenvolver, etc.). No caso específico deste projeto, o objetivo deste trabalho é desenvolver um sistema para automação de processos para um problema específico._
+O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento de casamento que ajude as pessoas a organizarem seus casamentos de forma fácil e eficiente. 
 
 #### 1.3.1 Objetivos específicos
 
-_Apresente também alguns (pelo menos 2) **objetivos específicos** dependendo de onde você vai querer 
-concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho._
+• Fornecer aos usuários uma plataforma para gerenciar os detalhes do seu casamento (buffet, fotografia, convidados).
+• Fornecer aos usuários informações sobre fornecedores e preços.
+• Permitir o intermédio entre contratantes (noivos) e os fornecedores do seu casamento.
+• Permitir o intermédio entre os noivos e seus convidados.
+• Economizar tempo e dinheiro aos usuários.
 
 ### 1.4 Justificativas
 
-_Mostre também as **justificativas** para o 
-desenvolvimento do seu trabalho e, caso deseje, destaque alguma contribuição do trabalho._
+As justificativas que reforçam a necessidade do nosso aplicativo são, principalmente, no que tange ao orçamento e tempo gastos no planejamento de um casamento. Dessa forma, procuramos diminuir os custos e tempo gastos pelos noivos. Além disso, a intenção é que o aplicativo também facilite a comunicação entre fornecedor e cliente, favorecendo também os próprios fornecedores. Outrossim, o site será colaborativo, com opiniões e comentários dos casais que já usaram, para assim beneficiar também futuros casais. 
 
 ## 2. Participantes do processo
 
-_Apresente aqui os perfis dos usuários chave do sistema. Diversas são as informações que podem ser relevantes para a definição dos perfis dos usuários, tais como idade, gênero, aspectos culturais, nível de educação, entre outros. A pesquisa de mercado pode ser uma ferramenta poderosa para se identificar e caracterizar os perfis de usuários. Apresente claramente o papel a ser desempenhado por cada usuário._
+Os stakeholders do processo de desenvolvimento do aplicativo de planejamento de casamento são:
+• Casais que noivaram e estão planejando seus casamentos.
+• Fornecedores de buffet de festas e grandes eventos.
+• Donos de espaços a serem alugados para grandes eventos.
+• Fotógrafos que desejam oferecer seus serviços.
+• Convidados, madrinhas, padrinhos e todos os participantes do casamento, no geral.
+• Futuros casais que pretendem se casar e desejam ter uma plataforma que os auxilie. .
 
 ## 3. Modelagem do processo de negócio
 
