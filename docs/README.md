@@ -2,9 +2,13 @@
 
 
 Ana Flávia de Carvalho Santos
+
 Davi José Ferreira, daviferreiradev@gmail.com
+
 Estêvão de Faria Rodrigues
+
 Júlia Moreira Nascimento
+
 Lívia Carolina de Souza Lima
 
 ---
@@ -12,6 +16,7 @@ Lívia Carolina de Souza Lima
 Professores:
 
 Eveline Alonso Veloso
+
 Felipe de Castro Belém
 
 ---
