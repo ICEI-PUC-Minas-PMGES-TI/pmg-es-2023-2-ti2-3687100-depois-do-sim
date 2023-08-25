@@ -1,20 +1,19 @@
-# Nome do projeto
+# Depois do Sim
 
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+"Depois do Sim" é o aplicativo essencial para casais que desejam transformar o planejamento do casamento em uma jornada simples e memorável. Com recursos intuitivos de gerenciamento, o app oferece uma plataforma completa para organizar todos os detalhes, desde buffet e fotografia até a lista de convidados. Além de fornecer acesso a informações detalhadas sobre fornecedores confiáveis e seus preços, o aplicativo também atua como um intermediário eficaz, conectando noivos e fornecedores, além de facilitar a comunicação entre casais e seus convidados. "Depois do Sim" é a ferramenta indispensável que visa tornar o planejamento do casamento uma experiência mais tranquila, economizando tempo e recursos preciosos.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Ana Flávia de Carvalho Santos
+* Davi José Ferreira
+* Estêvão de Faria Rodrigues
+* Júlia Moreira Nascimento
+* Lívia Carolina de Souza Lima
 
 ## Professor
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Eveline Alonso Veloso
+* Felipe de Castro Belém
 
 ## Instruções de utilização
 
