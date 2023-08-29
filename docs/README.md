@@ -87,7 +87,15 @@ O site também permitiria aos convidados confirmar presença, acessar informaç�
 
 ### 3.2. Descrição geral da proposta
 
-_Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias._
+Nossa proposta é desenvolver um site de planejamento de casamento que ofereça aos casais uma plataforma unificada para gerenciar todos os aspectos do processo de planejamento de casamento. O aplicativo visa facilitar a busca por fornecedores, a comparação de preços, a reserva de serviços, a comunicação com fornecedores e convidados, além de automatizar tarefas manuais. A proposta visa economizar tempo e dinheiro dos casais, além de melhorar a experiência geral de planejamento e organização de casamentos.
+
+Apesar do nosso aplicativo ser uma solução abrangente para muitos desafios no planejamento de casamentos, é importante considerar alguns limites, dependência tecnológica, variedade de fornecedores e personalização limitada.
+
+Em relação à dpendência tecnológica, osucesso do aplicativo depende da infraestrutura tecnológica, acesso à internet e adoção de smartphones por parte dos usuários. Caso haja restrições tecnológicas, alguns casais podem não conseguir usufruir plenamente da solução. Em relação aos fornecedores, nem todos podem estar dispostos ou aptos a participar da plataforma. Além disso, a qualidade e confiabilidade dos fornecedores podem variar, impactando a experiência dos usuários. A personalização, algo muito comum em itens relacionados a casamentos, é restrita aos designs e formatação definidas como padrão do site, impossibilitando o casal de aplicar preferências específicas.
+
+Nossa proposta está alinhada com as estratégias e objetivos de negócios relacionados à melhoria da experiência dos clientes no planejamento de casamentos. A automação de tarefas manuais reduz o tempo e esforço necessário para o planejamento de um casamento.  O site visa melhorar a experiência dos casais ao oferecer uma plataforma centralizada e intuitiva para gerenciar todos os detalhes do casamento. A proposta é especialmente interessante quando analisado o aumento do número de casamentos e os custos associados a eles, uma solução que ofereça economia de tempo e dinheiro tem potencial para atrair um grande número de usuários.
+
+Para melhorar de forma constante nossa proposta, incluiremos um sistema robusto de avaliações e feedback dos usuários, tanto em relação ao casal e os fornecedores, como a experiencia dos usuários (experiência do casal, dos fornecedores e dos convidados).
 
 ### 3.3. Modelagem dos processos
 
