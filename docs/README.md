@@ -69,13 +69,21 @@ Os stakeholders do processo de desenvolvimento do aplicativo de planejamento de 
 • Donos de espaços a serem alugados para grandes eventos.
 • Fotógrafos que desejam oferecer seus serviços.
 • Convidados, madrinhas, padrinhos e todos os participantes do casamento, no geral.
-• Futuros casais que pretendem se casar e desejam ter uma plataforma que os auxilie. .
+• Futuros casais que pretendem se casar e desejam ter uma plataforma que os auxilie. 
 
 ## 3. Modelagem do processo de negócio
 
 ### 3.1. Análise da situação atual
 
-_Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propõe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional._
+Atualmente, o processo de planejamento de casamentos é muitas vezes conduzido de forma manual e fragmentada, mesmo se tratando de um processo longo e caro. Casais que estão planejando seus casamentos frequentemente precisam recorrer a uma série de fontes diferentes e incongruentes para lidar com os diversos aspectos da preparação para o grande dia. Eles podem pesquisar locais para a cerimônia e recepção, entrar em contato com fornecedores de buffet, decoração, fotografia e outros serviços, além de coordenar a lista de convidados e gerenciar as finanças do evento.
+
+Os casais também podem buscar referências em sites, redes sociais e recomendações de amigos para encontrar fornecedores confiáveis. As negociações de preços, acordos contratuais e pagamentos muitas vezes envolvem uma comunicação direta entre os noivos e os fornecedores, que é difícil de ser rastreada e controlada. Além disso, a interação com os convidados, incluindo o envio de convites, confirmações de presença e coleta de informações relevantes, também pode ser um processo manual e demorado.
+
+Portanto, o processo comum de organização da cerimônia pode ser considerado trabalhoso, exigindo que os casais dediquem tempo significativo à pesquisa, organização e comunicação. Além disso, a falta de uma plataforma unificada pode tornar difícil para os casais terem uma visão abrangente de todos os aspectos do planejamento, o que pode resultar em possíveis contratempos e estresse durante o grande dia.
+
+Um site responsável por auxiliae o planejamento de casamentos proposto visa resolver essas lacunas, oferecendo uma plataforma centralizada onde os casais possam gerenciar todos os aspectos do planejamento em um só lugar. Ele automatizaria muitas das tarefas manuais, como a busca por fornecedores, a comparação de preços, a reserva de serviços e o envio de convites. Além disso, facilitaria a comunicação direta entre os casais e os fornecedores, agilizando as negociações e os acordos.
+
+O site também permitiria aos convidados confirmar presença, acessar informações relevantes e até mesmo interagir com os noivos por meio da plataforma. O que economizaria tempo e reduziria a carga de trabalho necessária para realização da cerimônia.
 
 ### 3.2. Descrição geral da proposta
 
