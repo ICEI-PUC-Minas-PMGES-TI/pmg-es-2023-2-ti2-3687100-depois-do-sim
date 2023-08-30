@@ -7,7 +7,7 @@ Davi José Ferreira, daviferreiradev@gmail.com
 
 Estêvão de Faria Rodrigues
 
-Júlia Moreira Nascimento
+Júlia Moreira Nascimento, moreira01092002@gmail.com
 
 Lívia Carolina de Souza Lima
 
