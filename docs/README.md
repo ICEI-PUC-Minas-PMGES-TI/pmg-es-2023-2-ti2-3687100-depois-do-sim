@@ -27,14 +27,14 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade Cató
 
 ---
 
-O projeto propõe o desenvolvimento de um site de planejamento de casamentos para enfrentar os desafios associados à complexidade e ao custo dessa importante celebração. O site visa oferecer aos casais uma plataforma abrangente para gerenciar diversos aspectos do planejamento, desde a escolha de fornecedores até a interação com convidados. Isso simplificaria o processo, economizando tempo e dinheiro, além de proporcionar uma experiência mais organizada. A iniciativa visa melhorar significativamente a experiência dos casais ao planejar seu casamento, com potencial para impactar positivamente a indústria de casamentos no Brasil.
+O projeto propõe o desenvolvimento de um site de planejamento de casamentos para enfrentar os desafios associados à complexidade e ao custo dessa importante celebração. Ele visa oferecer aos casais uma plataforma abrangente para gerenciar diversos aspectos do planejamento, desde a escolha de fornecedores até a interação com convidados. Isso simplificaria o processo, economizando tempo e dinheiro, além de proporcionar uma experiência mais organizada. A iniciativa visa melhorar significativamente a experiência dos casais ao planejar seu casamento, com potencial para impactar positivamente a indústria de casamentos no Brasil.
 
 ---
 
 
 ## 1. Introdução
 
-O casamento é um marco importante na vida de muitas pessoas, uma celebração do amor e da união. O planejamento de um casamento pode ser uma tarefa árdua, mas também pode ser muito gratificante. Existem muitos detalhes a serem considerados, como o local, a comida, a decoração, as roupas, a música, a lista de convidados e o orçamento. Refletindo sobre essa questão, nosso grupo considera que pode ser necessário um facilitador para o planejamento desses eventos. 
+O casamento é um marco importante na vida de muitas pessoas, uma celebração do amor e da união. O planejamento de uma cerimômia de casamento pode ser uma tarefa árdua, mas também pode ser muito gratificante. Existem muitos detalhes a serem considerados, como o local, a comida, a decoração, as roupas, a música, a lista de convidados e o orçamento. Refletindo sobre essa questão, nosso grupo considera que pode ser necessário um facilitador para o planejamento desse eventos. 
 
 ### 1.1 Contextualização
 
@@ -42,41 +42,43 @@ O Brasil contabilizou mais de 932 mil casamentos civis em 2021, o que representa
 
 ### 1.2 Problema
 
-Os problemas principais na construção de um casamento estão na complexidade do planejamento e suas instâncias. Muitas vezes os casais recorrem a um profissional para cuidar dessas etapas, o que gera um aumento expressivo no orçamento. Dessa forma, casais com um orçamento menor podem ficar prejudicados ou não conseguir realizar o sonho da maneira como gostariam. Além disso, outra questão seria a dificuldade de ter um panorama mais amplo de todos os tipos de fornecedores, como o buffet e o de decoração, e pode ser necessário que seja feito algo para intermediar esse contato. 
+Os problemas principais na construção de um casamento estão na complexidade do planejamento, suas instâncias e volume de processos manuais. Muitas vezes os casais recorrem a um profissional para cuidar dessas etapas, os "weeding planners", o que gera um aumento expressivo no orçamento já que é um serviço exclusivo. Dessa forma, casais com um orçamento limitado podem encontrar obstáculos para conseguir realizar o sonho da maneira como gostariam. Além disso, outro grande influenciador da qualidade da experiência são os fornecedores, que precisam ser orçados, planejados, coordenados e acompanhados.
 
 ### 1.3 Objetivo geral
 
-O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento de casamento que ajude as pessoas a organizarem seus casamentos de forma fácil e eficiente. 
+O propósito deste projeto é criar um site de planejamento de casamentos para auxiliar indivíduos na organização simplificada e eficaz de seus grandes eventos.
 
 #### 1.3.1 Objetivos específicos
 
-• Fornecer aos usuários uma plataforma para gerenciar os detalhes do seu casamento (buffet, fotografia, convidados).
+• Fornecer aos usuários uma plataforma para gerenciar os detalhes do seu casamento (buffet, fotografia, convidados);
 
-• Fornecer aos usuários informações sobre fornecedores e preços.
+• Fornecer aos usuários informações sobre fornecedores e preços;
 
-• Permitir o intermédio entre contratantes (noivos) e os fornecedores do seu casamento.
+• Permitir o intermédio entre contratantes (noivos) e os fornecedores do seu casamento;
 
-• Permitir o intermédio entre os noivos e seus convidados.
+• Permitir o intermédio entre os noivos e seus convidados;
 
-• Economizar tempo e dinheiro aos usuários.
+• Economizar tempo e dinheiro aos usuários;
+
+• Facilitar um cronograma viável de organização de tarefas.
 
 ### 1.4 Justificativas
 
-As justificativas que reforçam a necessidade do nosso aplicativo são, principalmente, no que tange ao orçamento e tempo gastos no planejamento de um casamento. Dessa forma, procuramos diminuir os custos e tempo gastos pelos noivos. Além disso, a intenção é que o aplicativo também facilite a comunicação entre fornecedor e cliente, favorecendo também os próprios fornecedores. Outrossim, o site será colaborativo, com opiniões e comentários dos casais que já usaram, para assim beneficiar também futuros casais. 
+O site de planejamento de casamentos é justificado pela necessidade de simplificar e otimizar o processo de organização de casamentos. Com o aumento do número de casamentos e seus custos, a plataforma busca economizar tempo e dinheiro dos casais, oferecendo uma abordagem unificada para gerenciar fornecedores, serviços e interações com convidados. Além disso, a comunicação aprimorada entre fornecedores e casais beneficia ambos os lados. A abordagem colaborativa, incorporando avaliações dos vários usuários, visa melhorar continuamente a experiência, beneficiando casais e a indústria de casamentos.
 
 ## 2. Participantes do processo
 
 Os stakeholders do processo de desenvolvimento do aplicativo de planejamento de casamento são:
 
-• Casais que noivaram e estão planejando seus casamentos.
+• Casais que estão planejando seus casamentos;
 
-• Fornecedores de buffet de festas e grandes eventos.
+• Fornecedores de buffet de festas e grandes eventos, que desejam aumentar a confiabilidade de seu trabalho;
 
-• Donos de espaços a serem alugados para grandes eventos.
+• Donos de espaços de eventos;
 
-• Fotógrafos que desejam oferecer seus serviços.
+• Fotógrafos que desejam ter um portifólio validado;
 
-• Convidados, madrinhas, padrinhos e todos os participantes do casamento, no geral.
+• Convidados, madrinhas, padrinhos e todos os participantes do casamento;
 
 • Futuros casais que pretendem se casar e desejam ter uma plataforma que os auxilie. 
 
@@ -84,41 +86,42 @@ Os stakeholders do processo de desenvolvimento do aplicativo de planejamento de 
 
 ### 3.1. Análise da situação atual
 
-Atualmente, o processo de planejamento de casamentos é muitas vezes conduzido de forma manual e fragmentada, mesmo se tratando de um processo longo e caro. Casais que estão planejando seus casamentos frequentemente precisam recorrer a uma série de fontes diferentes e incongruentes para lidar com os diversos aspectos da preparação para o grande dia. Eles podem pesquisar locais para a cerimônia e recepção, entrar em contato com fornecedores de buffet, decoração, fotografia e outros serviços, além de coordenar a lista de convidados e gerenciar as finanças do evento.
+Atualmente, o processo de planejamento de casamentos é muitas vezes conduzido de forma manual e fragmentada, mesmo se tratando de um processo longo e caro. Casais que estão planejando seus casamentos frequentemente precisam recorrer a uma série de fontes diferentes e incongruentes para lidar com os diversos aspectos da preparação para o grande dia. Eles precisam pesquisar locais para a cerimônia e recepção, entrar em contato com fornecedores de buffet, decoração, fotografia e outros serviços, além de coordenar a lista de convidados e gerenciar as finanças do evento.
 
-Os casais também podem buscar referências em sites, redes sociais e recomendações de amigos para encontrar fornecedores confiáveis. As negociações de preços, acordos contratuais e pagamentos muitas vezes envolvem uma comunicação direta entre os noivos e os fornecedores, que é difícil de ser rastreada e controlada. Além disso, a interação com os convidados, incluindo o envio de convites, confirmações de presença e coleta de informações relevantes, também pode ser um processo manual e demorado.
+Os casais também podem buscar referências em sites, redes sociais e recomendações de amigos para encontrar fornecedores, mas as recomendações podem ser inconfiáveis. As negociações de preços, acordos contratuais e pagamentos envolvem uma comunicação direta entre os noivos e os fornecedores, e é difícil de ser rastreada e controlada. Além disso, a interação com os convidados, incluindo o envio de convites, confirmações de presença e coleta de informações relevantes, também pode ser um processo manual, demorado e impreciso.
 
 Portanto, o processo comum de organização da cerimônia pode ser considerado trabalhoso, exigindo que os casais dediquem tempo significativo à pesquisa, organização e comunicação. Além disso, a falta de uma plataforma unificada pode tornar difícil para os casais terem uma visão abrangente de todos os aspectos do planejamento, o que pode resultar em possíveis contratempos e estresse durante o grande dia.
 
-Um site responsável por auxiliar o planejamento de casamentos proposto visa resolver essas lacunas, oferecendo uma plataforma centralizada onde os casais possam gerenciar todos os aspectos do planejamento em um só lugar. Ele automatizaria muitas das tarefas manuais, como a busca por fornecedores, a comparação de preços, a reserva de serviços e o envio de convites. Além disso, facilitaria a comunicação direta entre os casais e os fornecedores, agilizando as negociações e os acordos.
-
-O site também permitiria aos convidados confirmar presença, acessar informações relevantes e até mesmo interagir com os noivos por meio da plataforma. O que economizaria tempo e reduziria a carga de trabalho necessária para realização da cerimônia.
 
 ### 3.2. Descrição geral da proposta
 
-Nossa proposta é desenvolver um site de planejamento de casamento que ofereça aos casais uma plataforma unificada para gerenciar todos os aspectos do processo de planejamento de casamento. O aplicativo visa facilitar a busca por fornecedores, a comparação de preços, a reserva de serviços, a comunicação com fornecedores e convidados, além de automatizar tarefas manuais. A proposta visa economizar tempo e dinheiro dos casais, além de melhorar a experiência geral de planejamento e organização de casamentos.
+É proposto o desenvolvimento de um site de planejamento de casamento que ofereça aos casais uma plataforma unificada para gerenciar todos os aspectos do processo de planejamento. O aplicativo visa facilitar a busca por fornecedores, a comparação de preços, a reserva de serviços, a comunicação com fornecedores e convidados, além de automatizar tarefas manuais. A proposta também geraria uma economia de tempo e dinheiro dos casais, além de melhorar a experiência geral de planejamento e organização de casamentos.
 
-Apesar do nosso aplicativo ser uma solução abrangente para muitos desafios no planejamento de casamentos, é importante considerar alguns limites, dependência tecnológica, variedade de fornecedores e personalização limitada.
+Por meio de uma função de lista de convidados, seria possível a adição de todos os convidados e seus contatos, a inserção de um Save the Date, e depois, do convite de casamento, para ser enviado automaticamente a todos na lista, a atualização em tempo real dos convidados que confirmaram a presença e permitir que os noivos acompanhem a quantidade de convidados, diferenciando, caso seja desejado, a presença ou quantidade de crianças e pessoas de maior idade.
 
-Em relação à dpendência tecnológica, osucesso do aplicativo depende da infraestrutura tecnológica, acesso à internet e adoção de smartphones por parte dos usuários. Caso haja restrições tecnológicas, alguns casais podem não conseguir usufruir plenamente da solução. Em relação aos fornecedores, nem todos podem estar dispostos ou aptos a participar da plataforma. Além disso, a qualidade e confiabilidade dos fornecedores podem variar, impactando a experiência dos usuários. A personalização, algo muito comum em itens relacionados a casamentos, é restrita aos designs e formatação definidas como padrão do site, impossibilitando o casal de aplicar preferências específicas.
+Para que os noivos possam ser presenteados com os melhores presentes e sejam evitados presentes repetidos, por meio da lista de presentes será possível marcar um presente como já escolhido por algum convidado.
 
-Nossa proposta está alinhada com as estratégias e objetivos de negócios relacionados à melhoria da experiência dos clientes no planejamento de casamentos. A automação de tarefas manuais reduz o tempo e esforço necessário para o planejamento de um casamento.  O site visa melhorar a experiência dos casais ao oferecer uma plataforma centralizada e intuitiva para gerenciar todos os detalhes do casamento. A proposta é especialmente interessante quando analisado o aumento do número de casamentos e os custos associados a eles, uma solução que ofereça economia de tempo e dinheiro tem potencial para atrair um grande número de usuários.
+Um calendário compartilhável fará com que seja possível planejamento de eventos pelos noivos e alinhamento de datas de reuniões com os fornecedores.
+
+Para controlar os gastos, um serviço de acompanhamento será fornecido, em que novos contratos e preços podem ser adicionados, e e-mails de confirmação enviadas para as partes envolvidas.
+
+Em relação ao pós-cerimônia, será possível realizar o upload de fotos da cerimônia, para que elas possam ser acessadas por todos.
 
 Para melhorar de forma constante nossa proposta, incluiremos um sistema robusto de avaliações e feedback dos usuários, tanto em relação ao casal e os fornecedores, como a experiencia dos usuários (experiência do casal, dos fornecedores e dos convidados).
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Lista de Convidados](processo-1-nome-do-processo.md "Neste processo, será automatizado a lista de casamento e o envio do Save the Date, confirmação automática da presença, envio do convite e vizualização de todos os convidados, confirmados ou não.")
+[PROCESSO 1 - Lista de Convidados](processo-1-nome-do-processo.md "")
 
-[PROCESSO 2 - Lista de Presentes](processo-2-nome-do-processo.md "A lista de presentes será formada por seleções feitas pelos noivos. Os convidados terão a opção de assinalar um presente como escolha própria para presentear, evitando duplicações e permitindo que optem pelo presente mais adequado.")
+[PROCESSO 2 - Lista de Presentes](processo-2-nome-do-processo.md "")
 
-[PROCESSO 3 - Calendário e Agenda](processo-3-nome-do-processo.md "Um calendário será criado com os eventos agendados dos noivos. Esse calendário será compartilhado e pode ser usado pelos fornecedores a availiar a disponibilidade dos noivos.")
+[PROCESSO 3 - Calendário e Agenda](processo-3-nome-do-processo.md "")
 
-[PROCESSO 4 - Orçamento e Despesas](processo-4-nome-do-processo.md " O orçamento previsto será adicionado, e a cada novo gasto, será calculado o gasto real do orçamento, e o quanto ele está difasado do gasto esperado.")
+[PROCESSO 4 - Orçamento e Despesas](processo-4-nome-do-processo.md "")
 
-[PROCESSO 5 - Álbum de fotos compartilhavél](processo-5-nome-do-processo.md "Após a cerimônia, será possível realizar o upload de fotos, que podem ser compartilhadas com qualquer pessoa interessada.")
+[PROCESSO 5 - Álbum de fotos compartilhavél](processo-5-nome-do-processo.md "")
 
-[PROCESSO 6 - Comentários do Site e Estatísticas](processo-6-nome-do-processo.md "O site será validado por meio de comentários dos noivos (como forma de avaliar o processo), pelos convidados (como forma de avaliar sua experiência) e por meio de avaliação dos fornecedores contratados, que fará com que a qualidade dos serviços contratados seja constantemente validada.")
+[PROCESSO 6 - Comentários do Site e Estatísticas](processo-6-nome-do-processo.md "")
 
 ## 4. Projeto da solução
 
