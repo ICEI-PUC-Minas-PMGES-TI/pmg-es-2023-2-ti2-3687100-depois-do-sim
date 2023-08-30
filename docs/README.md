@@ -108,17 +108,17 @@ Para melhorar de forma constante nossa proposta, incluiremos um sistema robusto 
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Nome do Processo](processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+[PROCESSO 1 - Lista de Convidados](processo-1-nome-do-processo.md "Neste processo, será automatizado a lista de casamento e o envio do Save the Date, confirmação automática da presença, envio do convite e vizualização de todos os convidados, confirmados ou não.")
 
-[PROCESSO 2 - Nome do Processo](processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
+[PROCESSO 2 - Lista de Presentes](processo-2-nome-do-processo.md "A lista de presentes será formada por seleções feitas pelos noivos. Os convidados terão a opção de assinalar um presente como escolha própria para presentear, evitando duplicações e permitindo que optem pelo presente mais adequado.")
 
-[PROCESSO 3 - Nome do Processo](processo-3-nome-do-processo.md "Detalhamento do Processo 3.")
+[PROCESSO 3 - Calendário e Agenda](processo-3-nome-do-processo.md "Um calendário será criado com os eventos agendados dos noivos. Esse calendário será compartilhado e pode ser usado pelos fornecedores a availiar a disponibilidade dos noivos.")
 
-[PROCESSO 4 - Nome do Processo](processo-4-nome-do-processo.md "Detalhamento do Processo 4.")
+[PROCESSO 4 - Orçamento e Despesas](processo-4-nome-do-processo.md " O orçamento previsto será adicionado, e a cada novo gasto, será calculado o gasto real do orçamento, e o quanto ele está difasado do gasto esperado.")
 
-[PROCESSO 5 - Nome do Processo](processo-5-nome-do-processo.md "Detalhamento do Processo 5.")
+[PROCESSO 5 - Álbum de fotos compartilhavél](processo-5-nome-do-processo.md "Após a cerimônia, será possível realizar o upload de fotos, que podem ser compartilhadas com qualquer pessoa interessada.")
 
-[PROCESSO 6 - Nome do Processo](processo-6-nome-do-processo.md "Detalhamento do Processo 6.")
+[PROCESSO 6 - Comentários do Site e Estatísticas](processo-6-nome-do-processo.md "O site será validado por meio de comentários dos noivos (como forma de avaliar o processo), pelos convidados (como forma de avaliar sua experiência) e por meio de avaliação dos fornecedores contratados, que fará com que a qualidade dos serviços contratados seja constantemente validada.")
 
 ## 4. Projeto da solução
 
