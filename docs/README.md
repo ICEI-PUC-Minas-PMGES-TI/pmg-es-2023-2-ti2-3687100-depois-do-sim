@@ -27,8 +27,7 @@ _Instituto de Informática e Ciências Exatas – Pontifícia Universidade Cató
 
 ---
 
-_**Resumo**. Escrever aqui o resumo. O resumo deve contextualizar rapidamente o trabalho, descrever seu objetivo e, ao final, 
-mostrar algum resultado relevante do trabalho (até 10 linhas)._
+O projeto propõe o desenvolvimento de um site de planejamento de casamentos para enfrentar os desafios associados à complexidade e ao custo dessa importante celebração. O site visa oferecer aos casais uma plataforma abrangente para gerenciar diversos aspectos do planejamento, desde a escolha de fornecedores até a interação com convidados. Isso simplificaria o processo, economizando tempo e dinheiro, além de proporcionar uma experiência mais organizada. A iniciativa visa melhorar significativamente a experiência dos casais ao planejar seu casamento, com potencial para impactar positivamente a indústria de casamentos no Brasil.
 
 ---
 
