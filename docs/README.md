@@ -52,9 +52,13 @@ O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento de 
 #### 1.3.1 Objetivos específicos
 
 • Fornecer aos usuários uma plataforma para gerenciar os detalhes do seu casamento (buffet, fotografia, convidados).
+
 • Fornecer aos usuários informações sobre fornecedores e preços.
+
 • Permitir o intermédio entre contratantes (noivos) e os fornecedores do seu casamento.
+
 • Permitir o intermédio entre os noivos e seus convidados.
+
 • Economizar tempo e dinheiro aos usuários.
 
 ### 1.4 Justificativas
@@ -64,11 +68,17 @@ As justificativas que reforçam a necessidade do nosso aplicativo são, principa
 ## 2. Participantes do processo
 
 Os stakeholders do processo de desenvolvimento do aplicativo de planejamento de casamento são:
+
 • Casais que noivaram e estão planejando seus casamentos.
+
 • Fornecedores de buffet de festas e grandes eventos.
+
 • Donos de espaços a serem alugados para grandes eventos.
+
 • Fotógrafos que desejam oferecer seus serviços.
+
 • Convidados, madrinhas, padrinhos e todos os participantes do casamento, no geral.
+
 • Futuros casais que pretendem se casar e desejam ter uma plataforma que os auxilie. 
 
 ## 3. Modelagem do processo de negócio
@@ -81,7 +91,7 @@ Os casais também podem buscar referências em sites, redes sociais e recomenda�
 
 Portanto, o processo comum de organização da cerimônia pode ser considerado trabalhoso, exigindo que os casais dediquem tempo significativo à pesquisa, organização e comunicação. Além disso, a falta de uma plataforma unificada pode tornar difícil para os casais terem uma visão abrangente de todos os aspectos do planejamento, o que pode resultar em possíveis contratempos e estresse durante o grande dia.
 
-Um site responsável por auxiliae o planejamento de casamentos proposto visa resolver essas lacunas, oferecendo uma plataforma centralizada onde os casais possam gerenciar todos os aspectos do planejamento em um só lugar. Ele automatizaria muitas das tarefas manuais, como a busca por fornecedores, a comparação de preços, a reserva de serviços e o envio de convites. Além disso, facilitaria a comunicação direta entre os casais e os fornecedores, agilizando as negociações e os acordos.
+Um site responsável por auxiliar o planejamento de casamentos proposto visa resolver essas lacunas, oferecendo uma plataforma centralizada onde os casais possam gerenciar todos os aspectos do planejamento em um só lugar. Ele automatizaria muitas das tarefas manuais, como a busca por fornecedores, a comparação de preços, a reserva de serviços e o envio de convites. Além disso, facilitaria a comunicação direta entre os casais e os fornecedores, agilizando as negociações e os acordos.
 
 O site também permitiria aos convidados confirmar presença, acessar informações relevantes e até mesmo interagir com os noivos por meio da plataforma. O que economizaria tempo e reduziria a carga de trabalho necessária para realização da cerimônia.
 
