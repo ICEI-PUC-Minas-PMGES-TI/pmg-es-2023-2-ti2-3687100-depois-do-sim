@@ -1,11 +1,11 @@
 # DEPOIS DO SIM
 
 
-Ana Flávia de Carvalho Santos
+Ana Flávia de Carvalho Santos, anafcs.profissional@gmail.com
 
 Davi José Ferreira, daviferreiradev@gmail.com
 
-Estêvão de Faria Rodrigues
+Estêvão de Faria Rodrigues, rodriguesfaria35@gmail.com
 
 Júlia Moreira Nascimento, moreira01092002@gmail.com
 
@@ -152,12 +152,6 @@ A sessão a seguir apresenta a descrição dos testes realizados.
 _Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos no trabalho, onde se verifica as observações pessoais de cada aluno. Poderá também apresentar sugestões de novas linhas de estudo._
 
 # REFERÊNCIAS
-
-_Como um projeto de software não requer revisão bibliográfica, a inclusão das referências não é obrigatória. No entanto, caso você deseje incluir referências relacionadas às tecnologias, padrões, ou metodologias que serão usadas no seu trabalho, relacione-as de acordo com a ABNT._
-
-_Verifique no link abaixo como devem ser as referências no padrão ABNT:_
-
-http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
 
 **[1.1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
 
