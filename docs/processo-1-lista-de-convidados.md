@@ -1,7 +1,8 @@
 ### 3.3.1 Processo 1 – LISTA DE CONVIDADOS
 
-![Modelagem do processo](lista-de-convidados.png)
+Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de convites personalizados, lembretes de confirmação, relatórios e estatísticas em tempo real dos convidados convidados, inclusão de opção para convidados informarem restrições alimentares.
 
+![Modelagem do processo 1](<Modelagem do processo de lista de convidados.png>)
 
 #### Detalhamento das atividades
 

@@ -1,6 +1,8 @@
 ### 3.3.2 Processo 2 – LISTA DE PRESENTES
 
-![Modelagem do processo](lista-de-presentes.png)
+Este processo pode ser melhorado por meio de um sistema de envio de agradecimentos aos presentes, opções de presentes virtuais como contribuições monetárias, informar o link de acesso à lista de presentes no convite do casamento.
+
+![Modelagem do processo 2](<Lista de presentes Diagrama.png>)
 
 #### Detalhamento das atividades
 
