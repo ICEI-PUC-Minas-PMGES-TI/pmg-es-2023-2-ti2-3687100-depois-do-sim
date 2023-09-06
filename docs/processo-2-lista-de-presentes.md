@@ -1,11 +1,10 @@
-### 3.3.1 Processo 1 – LISTA DE CONVIDADOS
+### 3.3.2 Processo 2 – LISTA DE PRESENTES
 
-![Modelo do processo de lista de convidados](lista_de_convidados.png)
-
+![Modelagem do processo](lista-de-presentes.png)
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
+_Descreva aqui cada uma das propriedades das atividades do processo 2. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
 _Os tipos de dados a serem utilizados são:_
@@ -33,7 +32,6 @@ _* **Arquivo** - campo de upload de documento_
 _* **Link** - campo que armazena uma URL_
 
 _* **Tabela** - campo formado por uma matriz de valores_
-
 
 **Nome da atividade 1**
 
