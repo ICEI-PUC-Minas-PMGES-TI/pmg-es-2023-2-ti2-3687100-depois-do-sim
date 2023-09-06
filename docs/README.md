@@ -111,17 +111,17 @@ Para melhorar de forma constante nossa proposta, incluiremos um sistema robusto 
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Lista de Convidados](processo-1-nome-do-processo.md "")
+[PROCESSO 1 - Lista de Convidados](processo-1-lista-de-convidados.md "")
 
-[PROCESSO 2 - Lista de Presentes](processo-2-nome-do-processo.md "")
+[PROCESSO 2 - Lista de Presentes](processo-2-lista-de-presentes.md "")
 
-[PROCESSO 3 - Calendário e Agenda](processo-3-nome-do-processo.md "")
+[PROCESSO 3 - Calendário e Agenda](processo-3-calendario-e-agenda.md "")
 
-[PROCESSO 4 - Orçamento e Despesas](processo-4-nome-do-processo.md "")
+[PROCESSO 4 - Orçamento e Despesas](processo-4-orcamento-e-despesas.md "")
 
-[PROCESSO 5 - Álbum de fotos compartilhavél](processo-5-nome-do-processo.md "")
+[PROCESSO 5 - Álbum de fotos compartilhavél](processo-5-album-de-fotos-compartilhavel.md "")
 
-[PROCESSO 6 - Comentários do Site e Estatísticas](processo-6-nome-do-processo.md "")
+[PROCESSO 6 - Comentários do Site e Estatísticas](processo-6-comentario-do-site-e-estatistica.md "")
 
 ## 4. Projeto da solução
 
