@@ -1,8 +1,5 @@
 ### 3.3.1 Processo 1 – LISTA DE CONVIDADOS
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
-
 ![Modelo do processo de lista de convidados](lista_de_convidados.png)
 
 
