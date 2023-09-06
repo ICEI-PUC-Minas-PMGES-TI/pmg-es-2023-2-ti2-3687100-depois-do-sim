@@ -1,15 +1,22 @@
-### 3.3.3 Processo 3 – NOME DO PROCESSO
+### 3.3.3 Processo 3 – Calendário e agenda
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 3. 
-Em seguida, apresente o modelo do processo 3, descrito no padrão BPMN._
-
-![Exemplo de um Modelo BPMN do PROCESSO 3](images/process.png "Modelo BPMN do Processo 3.")
+![Exemplo de um Modelo BPMN do PROCESSO 3](calendario.drawio.png "Modelo BPMN do Processo 3.")
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 3. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+- **Cadastro inicial de datas disponíveis:** Os noivos adicionam em um calendário todas as datas disponíveis para resolver questões relacionadas ao casamento.
+
+- **Compartilhar agenda com os fornecedores:** O sistema compartilha a agenda dos noivos com os fornecedores cadastrados.
+
+- **Fornecedores marcam em uma data que os noivos estão disponíveis:** O fornecedor marca um evento em uma data livre na agenda dos noivos.
+
+- **Pedir para os noivos aceitarem nova data:** Quando os fornecedores não acham uma data livre na agenda dos noivos que os atenda, solicita que eles abram uma exceção em determinada data.
+
+- **Aceitação dos noivos à nova data:** Quando uma nova data é solicitada, cabe aos noivos aceitar ou não, se aceitarem, a data fica disponível para os fornecedores, senão, uma resposta é enviada aos fornecedores que precisam escolher uma nova data até que a mesma seja aceita.
+
+- **Notificação aos noivos de evento marcado:** Quando os fornecedores criam um evento em data disponível, os noivos são notificados e o evento aparece na agenda.
+
 
 _Os tipos de dados a serem utilizados são:_
 

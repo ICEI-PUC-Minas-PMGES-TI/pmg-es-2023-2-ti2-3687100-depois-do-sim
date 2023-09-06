@@ -1,15 +1,18 @@
 ### 3.3.4 Processo 4 – NOME DO PROCESSO
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 4. 
-Em seguida, apresente o modelo do processo 4, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 4](images/process.png "Modelo BPMN do Processo 4.")
+![Exemplo de um Modelo BPMN do PROCESSO 4](images/Despesas-Diagrama.png "Modelo BPMN do Processo 4.")
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 4. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Cadastro de orçamento:** Esse processo envolve a capacidade dos noivos registrarem um orçamento.
+
+**Mostrar os serviços disponíveis:** Esse processo mostra quais os serviços cadastrados no site, em uma listagem por tipo de serviço, como buffet, fotógrafos, espaços, decoração e atrações, com seus respectivos preços, avaliações e quantidade de pessoas que eles atendem.
+
+**Calcular o orçamento baseado nos itens selecionados:** Esse processo faria com que ao selecionar algum item, um valor seria adicionado ao lado do orçamento dos noivos, para facilitar a montagem do casamento e caso os itens selecionados ultrapassem o orçamento previamente cadastrado o orçamento original ficaria vermelho e a diferença de preço seria exibida para o casal.
+
+**Despesas adicionais:** Esse processo permite aos noivos cadastrar despesas extras, tais como vestido da noiva, e outros insumos não citados anteriormente.
 
 _Os tipos de dados a serem utilizados são:_
 
