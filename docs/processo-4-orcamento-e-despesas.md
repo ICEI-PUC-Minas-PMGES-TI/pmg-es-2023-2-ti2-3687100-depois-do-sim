@@ -1,19 +1,18 @@
 ### 3.3.4 Processo 4 – NOME DO PROCESSO
 
 
-![Exemplo de um Modelo BPMN do PROCESSO 4](images/album-fotos-bpmn.png "Modelo BPMN do Processo 4.")
+![Exemplo de um Modelo BPMN do PROCESSO 4](images/Despesas-Diagrama.png "Modelo BPMN do Processo 4.")
 
 
 #### Detalhamento das atividades
 
-Upload de Fotos: Esse processo envolve a capacidade de os noivos, convidados, e fotógrafos fazerem o upload de fotos e vídeos para o álbum de casamento.
+**Cadastro de orçamento:** Esse processo envolve a capacidade dos noivos registrarem um orçamento.
 
-Organização e Classificação de Fotos: As fotos enviadas são organizadas e classificadas conforme os eventos do casamento, os participantes e outros critérios relevantes. Os usuários podem adicionar etiquetas (tags) às fotos para descrever quem está na foto e o que está acontecendo. Criar uma galeria separada para os momentos mais emocionantes, como a troca de votos ou o primeiro beijo, destacando essas imagens.
+**Mostrar os serviços disponíveis:** Esse processo mostra quais os serviços cadastrados no site, em uma listagem por tipo de serviço, como buffet, fotógrafos, espaços, decoração e atrações, com seus respectivos preços, avaliações e quantidade de pessoas que eles atendem.
 
-Controle de Privacidade: Permita que os noivos controlem a privacidade das fotos, decidindo quem pode ver e fazer o download delas.
+**Calcular o orçamento baseado nos itens selecionados:** Esse processo faria com que ao selecionar algum item, um valor seria adicionado ao lado do orçamento dos noivos, para facilitar a montagem do casamento e caso os itens selecionados ultrapassem o orçamento previamente cadastrado o orçamento original ficaria vermelho e a diferença de preço seria exibida para o casal.
 
-Geração de Link de Compartilhamento: Essa funcionalidade permite que os noivos ou administradores do aplicativo gerem um link exclusivo que pode ser compartilhado com qualquer pessoa. Qualquer pessoa que tenha acesso a esse link pode visualizar o álbum de fotos do casamento, mesmo que não seja um convidado registrado.
-
+**Despesas adicionais:** Esse processo permite aos noivos cadastrar despesas extras, tais como vestido da noiva, e outros insumos não citados anteriormente.
 
 _Os tipos de dados a serem utilizados são:_
 
