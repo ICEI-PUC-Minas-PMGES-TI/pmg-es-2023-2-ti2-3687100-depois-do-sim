@@ -3,13 +3,23 @@
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 6. 
 Em seguida, apresente o modelo do processo 6, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 6](images/process.png "Modelo BPMN do Processo 6.")
+![Exemplo de um Modelo BPMN do PROCESSO 6](images/processo-comentarios.png "Modelo BPMN do Processo 6.")
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 6. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Postar comentário sobre o fornecedor:** postar um comentário sobre a experiência dos noivos com os serviços prestados pelo fornecedor, para que esteja exposto em um fórum onde futuros noivos poderão ver. 
+
+**Receber notificação do comentário:** o fornecedor recebe uma notificação, avisando que foi feito um comentário sobre o seu serviço, e pode responder. 
+
+**Avaliar os aspectos sobre o fornecedor:** avaliação de aspectos como tempo de resposta, qualidade do serviço, quantitavamente para uso desses dados. 
+
+**Receber o feedback geral:** o fornecedor recebe o feedback completo com suas estatísticas. 
+
+**Feedback registrado na página do fornecedor:** na página em que os clientes podem visualizar aquele fornecedor, esse feedback fica registrado. 
+
+**Atualização das estatísticas:** as estatísticas sobre aquele fornecedor são atualizadas a cada feedback. 
+
 
 _Os tipos de dados a serem utilizados são:_
 
