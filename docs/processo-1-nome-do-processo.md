@@ -3,7 +3,8 @@
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
 Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](lista_de_convidados/process.png "Modelo BPMN do Processo 1.")
+![Modelo do processo de lista de convidados](lista_de_convidados.png)
+
 
 #### Detalhamento das atividades
 
