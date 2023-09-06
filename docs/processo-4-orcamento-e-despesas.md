@@ -1,15 +1,19 @@
 ### 3.3.4 Processo 4 – NOME DO PROCESSO
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 4. 
-Em seguida, apresente o modelo do processo 4, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 4](images/process.png "Modelo BPMN do Processo 4.")
+![Exemplo de um Modelo BPMN do PROCESSO 4](images/album-fotos-bpmn.png "Modelo BPMN do Processo 4.")
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 4. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+Upload de Fotos: Esse processo envolve a capacidade de os noivos, convidados, e fotógrafos fazerem o upload de fotos e vídeos para o álbum de casamento.
+
+Organização e Classificação de Fotos: As fotos enviadas são organizadas e classificadas conforme os eventos do casamento, os participantes e outros critérios relevantes. Os usuários podem adicionar etiquetas (tags) às fotos para descrever quem está na foto e o que está acontecendo. Criar uma galeria separada para os momentos mais emocionantes, como a troca de votos ou o primeiro beijo, destacando essas imagens.
+
+Controle de Privacidade: Permita que os noivos controlem a privacidade das fotos, decidindo quem pode ver e fazer o download delas.
+
+Geração de Link de Compartilhamento: Essa funcionalidade permite que os noivos ou administradores do aplicativo gerem um link exclusivo que pode ser compartilhado com qualquer pessoa. Qualquer pessoa que tenha acesso a esse link pode visualizar o álbum de fotos do casamento, mesmo que não seja um convidado registrado.
+
 
 _Os tipos de dados a serem utilizados são:_
 
