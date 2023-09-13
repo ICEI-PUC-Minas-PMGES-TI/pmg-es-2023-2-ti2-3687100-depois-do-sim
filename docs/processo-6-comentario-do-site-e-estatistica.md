@@ -1,9 +1,10 @@
 ### 3.3.6 Processo 6 – NOME DO PROCESSO
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 6. 
-Em seguida, apresente o modelo do processo 6, descrito no padrão BPMN._
+### Processo de comentários e estatísticas 
 
-![Exemplo de um Modelo BPMN do PROCESSO 6](images/processo-comentarios.png "Modelo BPMN do Processo 6.")
+O processo representado abaixo, diz respeito à área do software que terá função de colher informações, comentários e feedbacks de usuários. Essas informações, irão gerar estatísticas que serão exibidas na aplicação. 
+
+![Exemplo de um Modelo BPMN do PROCESSO 6](images/processo_comentarios_1.1.png "Modelo BPMN do Processo 6.")
 
 
 #### Detalhamento das atividades
