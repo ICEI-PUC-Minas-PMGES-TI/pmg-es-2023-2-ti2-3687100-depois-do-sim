@@ -1,6 +1,6 @@
 ### 3.3.3 Processo 3 – Calendário e agenda
 
-![Exemplo de um Modelo BPMN do PROCESSO 3](calendario.jpg "Modelo BPMN do Processo 3.")
+![Exemplo de um Modelo BPMN do PROCESSO 3](agenda.png "Modelo BPMN do Processo 3.")
 
 
 #### Detalhamento das atividades
