@@ -1,5 +1,6 @@
-### 3.3.5 Processo 5 – NOME DO PROCESSO
+### 3.3.5 Processo 5 – ÁLBUM DE FOTOS COMPARTILHÁVEL
 
+Um álbum de fotos compartilhável para um casamento envolve criar um álbum, convidar convidados para enviar fotos e compartilhar as memórias do grande dia de forma interativa.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 5](images/album-fotos-bpmn.png "Modelo BPMN do Processo 5.")
 
