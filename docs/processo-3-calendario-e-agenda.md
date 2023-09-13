@@ -1,7 +1,6 @@
 ### 3.3.3 Processo 3 – Calendário e agenda
 
-![Exemplo de um Modelo BPMN do PROCESSO 3](agenda.png "Modelo BPMN do Processo 3.")
-
+![Calendário e Agenda Diagram](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/09c14cec-68ec-4638-ad10-3010a649fa28)
 
 #### Detalhamento das atividades
 
