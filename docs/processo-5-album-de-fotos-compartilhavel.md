@@ -2,7 +2,8 @@
 
 Um álbum de fotos compartilhável para um casamento envolve criar um álbum, convidar convidados para enviar fotos e compartilhar as memórias do grande dia de forma interativa.
 
-![Exemplo de um Modelo BPMN do PROCESSO 5](images/album-fotos-bpmn.png "Modelo BPMN do Processo 5.")
+![WhatsApp Image 2023-09-13 at 09 39 08](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/43049ca7-0129-49c0-b8ce-de6204ae35df)
+
 
 #### Detalhamento das atividades
 
