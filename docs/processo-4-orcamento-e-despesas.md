@@ -1,7 +1,7 @@
-### 3.3.4 Processo 4 – NOME DO PROCESSO
+### 3.3.4 Processo 4 – Cadastro de orçamento
 
 
-![Exemplo de um Modelo BPMN do PROCESSO 4](images/Despesas-Diagrama.png "Modelo BPMN do Processo 4.")
+![Exemplo de um Modelo BPMN do PROCESSO 4](images/Despesas.png "Modelo BPMN do Processo 4.")
 
 
 #### Detalhamento das atividades
@@ -10,9 +10,9 @@
 
 **Mostrar os serviços disponíveis:** Esse processo mostra quais os serviços cadastrados no site, em uma listagem por tipo de serviço, como buffet, fotógrafos, espaços, decoração e atrações, com seus respectivos preços, avaliações e quantidade de pessoas que eles atendem.
 
-**Calcular o orçamento baseado nos itens selecionados:** Esse processo faria com que ao selecionar algum item, um valor seria adicionado ao lado do orçamento dos noivos, para facilitar a montagem do casamento e caso os itens selecionados ultrapassem o orçamento previamente cadastrado o orçamento original ficaria vermelho e a diferença de preço seria exibida para o casal.
-
 **Despesas adicionais:** Esse processo permite aos noivos cadastrar despesas extras, tais como vestido da noiva, e outros insumos não citados anteriormente.
+
+**Validar orçamento:** Esse processo lida com o capacidade dos noivos validarem o orçamento montado por eles, para que eles possam confirmar e seguir adiante com o casamento.
 
 _Os tipos de dados a serem utilizados são:_
 
