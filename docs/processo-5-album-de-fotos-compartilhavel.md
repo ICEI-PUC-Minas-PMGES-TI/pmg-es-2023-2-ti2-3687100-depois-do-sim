@@ -2,8 +2,7 @@
 
 Um álbum de fotos compartilhável para um casamento envolve criar um álbum, convidar convidados para enviar fotos e compartilhar as memórias do grande dia de forma interativa.
 
-![WhatsApp Image 2023-09-13 at 09 39 08](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/43049ca7-0129-49c0-b8ce-de6204ae35df)
-
+![diagrama-album-de-fotos](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/123561984/c9d29add-4d8d-4fbe-968c-dd177ec9b933)
 
 #### Detalhamento das atividades
 
