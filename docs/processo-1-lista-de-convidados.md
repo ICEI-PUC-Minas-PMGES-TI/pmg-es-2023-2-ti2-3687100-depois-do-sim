@@ -6,8 +6,17 @@ Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+_Os tipos de dados a serem utilizados são:_
+
+_* **Criar lista de convidados e enviar o "Save the Date"** - inserir os dados dos convidados e selecionar o envio do "Save the Date"._
+
+_* **Enviar o "Save the Date"** - o sistema envia o Save the Date para todos os convidados cadastrados._
+
+_* **Receber o Save the Date e confirmar ou não a presença** - receber o Save the Date e confirmar ou não a presença no evento_
+
+_* **Receber relatório de confirmados e escolher data para enviar os convites** - os convidados recebem um relatório com os convidados que confirmaram ou não e escolhem uma data para enviar os convites do casamento._
+
+_* **Enviar o convite do casamento** - o convite do casamento é enviado pelo sistema para aqueles que confirmaram o Save the Date_
 
 _Os tipos de dados a serem utilizados são:_
 
@@ -41,16 +50,16 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| Nome do convidado | área de texto   | mínimo 1 caractere e máximo 2000 carácteres	               |                   |
+| telefone do convidado       | número   | aceita somente números|                |
+|        |  |  |           |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
 | ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| confirmar presença       | relatório de confirmados             | bool true         |
+| não confirmar presença      | relatório de não confirmadors |     bool false              |
 
 
 **Nome da atividade 2**
