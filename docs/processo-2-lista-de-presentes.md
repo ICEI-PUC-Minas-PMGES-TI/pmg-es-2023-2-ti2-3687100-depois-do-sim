@@ -6,8 +6,11 @@ Este processo pode ser melhorado por meio de um sistema de envio de agradeciment
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Cadastrar os presentes desejados:** os noivos podem cadastrar os presentes desejados
+**Vizualizar as opções de presentes e escolherer os presentes a serem presentados:** os convidados podem escolher um presente que eles desejam da lista dos noivos e marcar como presentar.
+**Adicionar um recado ao presente escolhido:** uma tela de pop up aparece para inserir uma mensagem para os noivos.
+**Presente escolhido some da view dos convidados:** view dos convidados é atualizada
+**Recebem um relatório de presentes escolhidos:** os noivos recebem uma lista dos presentes escolhidos pelos convidados e as mensagens enviadas.
 
 _Os tipos de dados a serem utilizados são:_
 
@@ -40,26 +43,15 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| nome do presente   |caixa de texto   |  mínimo 1 caractere e máximo 2000 carácteres            |                   |
+| Link do presente           | link   |  |                |
+| Adicionar recado          | Caixa de Texto   | mínimo 1 caractere |           |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
 | ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
+| Escolher presente             | View dos noivos             |           |
 | cadastrar            | Início do proceso de cadastro  |                   |
 
 
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
