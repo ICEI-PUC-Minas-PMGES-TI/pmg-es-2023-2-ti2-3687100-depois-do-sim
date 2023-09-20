@@ -2,7 +2,8 @@
 
 Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de convites personalizados, lembretes de confirmação, relatórios e estatísticas em tempo real dos convidados convidados, inclusão de opção para convidados informarem restrições alimentares.
 
-![Modelagem do processo 1](<Modelagem do processo de lista de convidados.png>)
+![Lista de convidados Diagrama](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/3d250682-ef73-4fa4-bea6-586b293681bb)
+
 
 #### Detalhamento das atividades
 
