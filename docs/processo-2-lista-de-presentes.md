@@ -6,11 +6,11 @@ Este processo pode ser melhorado por meio de um sistema de envio de agradeciment
 
 #### Detalhamento das atividades
 
-**Cadastrar os presentes desejados:** os noivos podem cadastrar os presentes desejados
-**Vizualizar as opções de presentes e escolherer os presentes a serem presentados:** os convidados podem escolher um presente que eles desejam da lista dos noivos e marcar como presentar.
-**Adicionar um recado ao presente escolhido:** uma tela de pop up aparece para inserir uma mensagem para os noivos.
-**Presente escolhido some da view dos convidados:** view dos convidados é atualizada
-**Recebem um relatório de presentes escolhidos:** os noivos recebem uma lista dos presentes escolhidos pelos convidados e as mensagens enviadas.
+_**Cadastrar os presentes desejados:** os noivos podem cadastrar os presentes desejados_
+_**Vizualizar as opções de presentes e escolherer os presentes a serem presentados:** os convidados podem escolher um presente que eles desejam da lista dos noivos e marcar como presentar._
+_**Adicionar um recado ao presente escolhido:** uma tela de pop up aparece para inserir uma mensagem para os noivos._
+_**Presente escolhido some da view dos convidados:** view dos convidados é atualizada._
+_**Recebem um relatório de presentes escolhidos:** os noivos recebem uma lista dos presentes escolhidos pelos convidados e as mensagens enviadas._
 
 _Os tipos de dados a serem utilizados são:_
 
