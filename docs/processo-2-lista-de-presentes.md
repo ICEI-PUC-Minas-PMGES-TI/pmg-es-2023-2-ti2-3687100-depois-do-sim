@@ -54,7 +54,6 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
 | Escolher presente             | View dos noivos             |           |
 | cadastrar            | Início do proceso de cadastro  |                   |
 
