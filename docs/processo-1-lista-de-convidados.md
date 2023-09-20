@@ -54,8 +54,8 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | telefone do convidado       | número   | aceita somente números|                |
 
 
-| **Comandos**            |  **Destino**                  | **Tipo**       |                   |
-| ---                     | ---                           | ---            | ---               |
-| confirmar presença      | relatório de confirmados      | bool true      |                   |
-| não confirmar presença  | relatório de não confirmadors | bool false     |                   |
+| **Comandos**            |  **Destino**                  | **Tipo**       |                   
+| ---                     | ---                           | ---            | 
+| confirmar presença      | relatório de confirmados      | bool true      |                   
+| não confirmar presença  | relatório de não confirmadors | bool false     |                   
 
