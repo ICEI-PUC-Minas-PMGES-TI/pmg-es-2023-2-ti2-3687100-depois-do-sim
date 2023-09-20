@@ -61,15 +61,3 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | confirmar presença       | relatório de confirmados             | bool true         |
 | não confirmar presença      | relatório de não confirmadors |     bool false              |
 
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
