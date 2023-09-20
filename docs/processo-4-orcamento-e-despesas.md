@@ -53,9 +53,6 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Registrar orçamento | Fim atividade 1                 |  default |
-| ***Exemplo:***       |                                |                   |
-| Cadastrar            | Fim do Processo 1              | default           |
-|                      | Início do proceso de cadastro  |                   |
 
 **Escolher os fornecedores dos disponiveis**
 
