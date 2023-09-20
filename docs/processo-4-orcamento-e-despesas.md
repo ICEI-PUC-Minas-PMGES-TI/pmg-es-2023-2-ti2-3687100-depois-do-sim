@@ -41,31 +41,55 @@ _* **Link** - campo que armazena uma URL_
 
 _* **Tabela** - campo formado por uma matriz de valores_
 
-**Nome da atividade 1**
+**Cadastro de orçamento**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
+| Cadastro de orçamento| Número  |     Apenas numeros positivos       |        R$0,00           |
 | ***Exemplo:***  |                  |                |                   |
 | login           | Caixa de Texto   | formato de e-mail |                |
 | senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
+| Registrar orçamento | Fim atividade 1                 |  default |
 | ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| Cadastrar            | Fim do Processo 1              | default           |
+|                      | Início do proceso de cadastro  |                   |
 
-
-**Nome da atividade 2**
+**Escolher os fornecedores dos disponiveis**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
+| Escolher fornecedores | Seleção multipla  |               |                   |
 |                 |                  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
+| Selecionar fornecedores | Fim atividade 2  | default |
 |                      |                                |                   |
+
+**Cadastrar despesas adicionais**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Adicionar novas despesas | Numero  |      valores negativos         |       R$0,00            |
+|                 |                  |                |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Cadastrar despesas extras/por fora | Fim atividade 3  | default |
+|                      |                                |                   |
+
+**Validar orçamento montado**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Validação de orçamento | Numero  |               |                   |
+|                 |                  |                |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Validar orçamento | Fim atividade 4  | default |
+|                      |                                |                   |
+
