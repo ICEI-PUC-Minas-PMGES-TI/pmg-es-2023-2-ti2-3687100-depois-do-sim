@@ -49,11 +49,13 @@ _* **Tabela** - campo formado por uma matriz de valores_
 **Nome da atividade 1**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
 | Nome do convidado | área de texto   | mínimo 1 caractere e máximo 2000 carácteres	               |                   |
 | telefone do convidado       | número   | aceita somente números|                |
 
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
+| ---             | ---              | ---            | ---               |
 | confirmar presença       | relatório de confirmados             | bool true         |
 | não confirmar presença      | relatório de não confirmadors |     bool false              |
 
