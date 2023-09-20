@@ -1,21 +1,18 @@
 ### 3.3.3 Processo 3 – Calendário e agenda
 
 Este processo pode ser melhorado com a implementação de tags coloridas diferentes para distinguir eventos e uma view do calendário diferente para cada fornecedor mostrando seus eventos.
-![Calendário e Agenda Diagram](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/09c14cec-68ec-4638-ad10-3010a649fa28)
+
+![Calendário e Agenda Diagram](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/60365983/63052c12-7872-4c09-91da-0348d3424eff)
 
 #### Detalhamento das atividades
 
-- **Cadastro inicial de datas disponíveis:** Os noivos adicionam em um calendário todas as datas disponíveis para resolver questões relacionadas ao casamento.
+- **Escolher uma data e adiconar um compromisso:** Os noivos adicionam em um calendário todas as datas disponíveis para resolver questões relacionadas ao casamento.
 
-- **Compartilhar agenda com os fornecedores:** O sistema compartilha a agenda dos noivos com os fornecedores cadastrados.
+- **Adicioanar compromisso à agenda:** O sistema salva o compromisso no calendário dos noivos e terceiros, caso existam.
 
-- **Fornecedores marcam em uma data que os noivos estão disponíveis:** O fornecedor marca um evento em uma data livre na agenda dos noivos.
+- **Receber um pedido de evento:** Os fornecedores são notificados e aceitam ou não o evento. Caso aceitem, é adicionado ao calendário, senão, os noivos são notificados.
 
-- **Pedir para os noivos aceitarem nova data:** Quando os fornecedores não acham uma data livre na agenda dos noivos que os atenda, solicita que eles abram uma exceção em determinada data.
-
-- **Aceitação dos noivos à nova data:** Quando uma nova data é solicitada, cabe aos noivos aceitar ou não, se aceitarem, a data fica disponível para os fornecedores, senão, uma resposta é enviada aos fornecedores que precisam escolher uma nova data até que a mesma seja aceita.
-
-- **Notificação aos noivos de evento marcado:** Quando os fornecedores criam um evento em data disponível, os noivos são notificados e o evento aparece na agenda.
+- **Receber notificação de falta de disponibilidade** Quando os fornecedores não aceitam um evento, os noivos são notificados através do sistema.
 
 
 _Os tipos de dados a serem utilizados são:_
@@ -44,31 +41,22 @@ _* **Link** - campo que armazena uma URL_
 
 _* **Tabela** - campo formado por uma matriz de valores_
 
-**Nome da atividade 1**
+**Escolher uma data e adicionar um compromisso**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| Data           | Data e Hora   | Apenas datas futuras | Data atual      |
+| Terceiros           | Seleção única |               |                   |
+| Tipo de evento      | Seleção única |               |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| Salvar               | Salvar data                    |                   |
 
 
-**Nome da atividade 2**
+**Receber um pedido de evento**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Comandos**         |  **Destino**                                   | **Tipo**          |
+| ---                  | ---                                            | ---               |
+| Aceitar              | Salvar evento                                  |                   |
+| Recusar              | Envia falta de disponibilidade pros noivos     |                   |

@@ -2,12 +2,20 @@
 
 Este processo pode ser melhorado por meio de um sistema de envio de agradecimentos aos presentes, opções de presentes virtuais como contribuições monetárias, informar o link de acesso à lista de presentes no convite do casamento.
 
-![Modelagem do processo 2](<Lista de presentes Diagrama.png>)
+![Lista de presentes Diagrama (1)](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/c6f7acf5-32ce-46af-a93c-8030103e1f8f)
+
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+_**Cadastrar presentes:** os noivos podem cadastrar os presentes desejados_
+
+_**Vizualizar e escolher presentes:** os convidados podem escolher um presente que eles desejam da lista dos noivos e marcar como presentar._
+
+_**Adicionar recado:** uma tela de pop up aparece para inserir uma mensagem para os noivos._
+
+_**Tirar presente da view dos convidados:** view dos convidados é atualizada._
+
+_**Receber relatório de presentes:** os noivos recebem uma lista dos presentes escolhidos pelos convidados e as mensagens enviadas._
 
 _Os tipos de dados a serem utilizados são:_
 
@@ -40,26 +48,14 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| nome do presente   |caixa de texto   |  mínimo 1 caractere e máximo 2000 carácteres            |                   |
+| Link do presente           | link   |  |                |
+| Adicionar recado          | Caixa de Texto   | mínimo 1 caractere |           |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
+| Escolher presente             | View dos noivos             |           |
 | cadastrar            | Início do proceso de cadastro  |                   |
 
 
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |

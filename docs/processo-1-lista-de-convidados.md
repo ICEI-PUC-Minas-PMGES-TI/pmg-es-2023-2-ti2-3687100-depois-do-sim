@@ -2,12 +2,22 @@
 
 Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de convites personalizados, lembretes de confirmação, relatórios e estatísticas em tempo real dos convidados convidados, inclusão de opção para convidados informarem restrições alimentares.
 
-![Modelagem do processo 1](<Modelagem do processo de lista de convidados.png>)
+![Lista de convidados Diagrama](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/3d250682-ef73-4fa4-bea6-586b293681bb)
+
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+_Os tipos de dados a serem utilizados são:_
+
+_* **Listar convidados e enviar Save the Date"** - inserir os dados dos convidados e selecionar o envio do "Save the Date"._
+
+_* **Enviar "Save the Date"** - o sistema envia o Save the Date para todos os convidados cadastrados._
+
+_* **Receber o "Save the Date" e confirmar  presença** - receber o Save the Date e confirmar ou não a presença no evento_
+
+_* **Confirmar confirmados e escolher data para enviar o convite** - os convidados recebem um relatório com os convidados que confirmaram ou não e escolhem uma data para enviar os convites do casamento._
+
+_* **Enviar o convite de casamento** - o convite do casamento é enviado pelo sistema para aqueles que confirmaram o Save the Date_
 
 _Os tipos de dados a serem utilizados são:_
 
@@ -40,27 +50,12 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| Nome do convidado | área de texto   | mínimo 1 caractere e máximo 2000 carácteres	               |                   |
+| telefone do convidado       | número   | aceita somente números|                |
 
 
-**Nome da atividade 2**
+| **Comandos**            |  **Destino**                  | **Tipo**       |                   |
+| ---                     | ---                           | ---            | ---               |
+| confirmar presença      | relatório de confirmados      | bool true      |                   |
+| não confirmar presença  | relatório de não confirmadors | bool false     |                   |
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
