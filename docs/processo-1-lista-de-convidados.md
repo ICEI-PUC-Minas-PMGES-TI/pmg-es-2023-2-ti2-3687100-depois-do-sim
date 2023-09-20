@@ -57,7 +57,7 @@ _* **Tabela** - campo formado por uma matriz de valores_
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
+|     |                                |                   |
 | confirmar presença       | relatório de confirmados             | bool true         |
 | não confirmar presença      | relatório de não confirmadors |     bool false              |
 
