@@ -9,7 +9,7 @@ Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de
 
 _Os tipos de dados a serem utilizados são:_
 
-_* **Listar convidados e enviar Save the Date"** - inserir os dados dos convidados e selecionar o envio do "Save the Date"._
+_* **Listar convidados e enviar Save the Date** - inserir os dados dos convidados e selecionar o envio do "Save the Date"._
 
 _* **Enviar "Save the Date"** - o sistema envia o Save the Date para todos os convidados cadastrados._
 
@@ -19,43 +19,40 @@ _* **Confirmar confirmados e escolher data para enviar o convite** - os convidad
 
 _* **Enviar o convite de casamento** - o convite do casamento é enviado pelo sistema para aqueles que confirmaram o Save the Date_
 
-_Os tipos de dados a serem utilizados são:_
-
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
 
 
-**Nome da atividade 1**
+**Listar convidados e enviar Save the Date**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Nome do convidado | área de texto   | mínimo 1 caractere e máximo 2000 carácteres	               |                   |
-| telefone do convidado       | número   | aceita somente números|                |
+| **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
+| ---                 | ---              | ---                                          | ---               |
+| Nome do convidado   | Área de texto    | mínimo 1 caractere e máximo 2000 carácteres  |      edit         |
+| E-mail do convidado | Área de texto    | mínimo 1 caractere e máximo 2000 carácteres	|      edit         |
+| Idade do convidado  | Campo numérico   | mínimo 1 caractere e máximo 2000 carácteres	|      edit         |
 
 
-| **Comandos**            |  **Destino**                  | **Tipo**       |                   
-| ---                     | ---                           | ---            | 
-| confirmar presença      | relatório de confirmados      | bool true      |                   
-| não confirmar presença  | relatório de não confirmadors | bool false     |                   
+| **Comandos**                     |  **Destino**                           | **Tipo**       |                   
+| ---                              | ---                                    | ---            | 
+| Adicionar convidado              | Transição para a próxima atividade     | default        |                   
+| Salvar convidado                 | Lista de convidados                    |   -            |      
+| Data de envio de "Save the Date" | Atividade de envio dos "Save the Date" | -              |    
+
+**Receber o "Save the Date" e confirmar  presença**
+
+| **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
+| ---                 | ---              | ---                                          | ---               |
+| Confirmar           | Seleção única    | Verdadeiro ou Falso                          |      null         |
+
+| **Comandos**                     |  **Destino**                           | **Tipo**       |                   
+| ---                              | ---                                    | ---            | 
+| Enviar Resposta                  | Lista de convidados confirmados        | -              | 
+
+**Confirmar confirmados e escolher data para enviar o convite**
+
+| **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
+| ---                 | ---              | ---                                          | ---               |
+| Nome do convidado   | Indicador        | Verdadeiro ou Falso                          |      NULL, até resposta do convidado       |
+
+| **Comandos**                     |  **Destino**                           | **Tipo**       |                   
+| ---                              | ---                                    | ---            |     
+| Data de envio dos convites       | Atividade de envio dos convites        | -              |    
 
