@@ -27,7 +27,7 @@ _* **Enviar o convite de casamento** - o convite do casamento é enviado pelo si
 | ---                 | ---              | ---                                          | ---               |
 | Nome do convidado   | Área de texto    | mínimo 1 caractere e máximo 2000 carácteres  |      edit         |
 | E-mail do convidado | Área de texto    | mínimo 1 caractere e máximo 2000 carácteres	|      edit         |
-| Idade do convidado  | Campo numérico   | mínimo 1 caractere e máximo 2000 carácteres	|      edit         |
+| Idade do convidado  | Campo numérico   | De 1 a 3 caracteres                        	|      edit         |
 
 
 | **Comandos**                     |  **Destino**                           | **Tipo**       |                   
