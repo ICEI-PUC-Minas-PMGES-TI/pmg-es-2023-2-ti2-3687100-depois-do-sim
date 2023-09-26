@@ -35,12 +35,12 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 
 **Escolher os fornecedores dos disponiveis**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| **Campo**       | **Tipo**         |
 | ---             | ---              | ---            | ---               |
 | Imagem do fornecedor | Imagem  |               |                   |
 |                 |                  |                |                   |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
+| **Tipo**          |
 | ---                  | ---                            | ---               |
 |  |  | default |
 |                      |                                |                   |
