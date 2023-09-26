@@ -2,7 +2,7 @@
 
 O processo representado abaixo, diz respeito à área do software que terá função de colher informações, comentários e feedbacks de usuários. Essas informações, irão gerar estatísticas que serão exibidas na aplicação. 
 
-![Exemplo de um Modelo BPMN do PROCESSO 6](images/processo_comentarios_1.1.png "Modelo BPMN do Processo 6.")
+![Exemplo de um Modelo BPMN do PROCESSO 6](images/processo_comentarios.png "Modelo BPMN do Processo 6.")
 
 
 #### Detalhamento das atividades
