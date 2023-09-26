@@ -96,9 +96,10 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | Valor total do orçamento montado| Numero  |  somente valores positivos  |  R$0,00   |
 
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Botão de confirmar| Seleção unica  |    |    |
+
+| **Campo**       | **Tipo**         | 
+| ---             | ---              |
+| Botão de confirmar| Seleção unica  |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | Fim do processo 4                           | ---               |
