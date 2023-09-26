@@ -37,8 +37,7 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 
 | **Campo**       | **Tipo**         |
 | ---             | ---              | 
-| Imagem do fornecedor | Imagem  |
-|                 |                  | 
+| Imagem do fornecedor | Imagem  | 
 
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
@@ -46,18 +45,18 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
 
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Descrição breve do forncedor| Area de texto  |    |    |
+| **Campo**       | **Tipo**         |
+| ---             | ---              |
+| Descrição breve do forncedor| Area de texto  |
 
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Botão de selecionar fornecedor| Seleção unica  |       |         |
+| **Campo**       | **Tipo**         |
+| ---             | ---              |
+| Botão de selecionar fornecedor| Seleção unica  |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Salvar fornecedor escolhido | Fim atividade 2                 |  default |
+| **Comandos**         |  **Destino**                   |
+| ---                  | ---                            |
+| Salvar fornecedor escolhido | Fim atividade 2         |
 
 
 
@@ -66,19 +65,17 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | Adicionar novas despesas | Numero  |      valores negativos         |       R$0,00            |
-|                 |                  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Cadastrar despesas extras/por fora | Fim atividade 3  | default |
-|                      |                                |                   |
 
 **Validar orçamento montado**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Imagem do fornecedor | Imagem  |               |                   |
-|                 |                  |                |                   |
+| **Campo**       | **Tipo**         |
+| ---             | ---              |
+| Imagem do fornecedor | Imagem  |
+
 
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
@@ -86,9 +83,9 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
 
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Descrição breve do forncedor| Area de texto  |    |    |
+| **Campo**       | **Tipo**         |
+| ---             | ---              |
+| Descrição breve do forncedor| Area de texto  |
 
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
@@ -101,7 +98,7 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | ---             | ---              |
 | Botão de confirmar| Seleção unica  |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | Fim do processo 4                           | ---               |
-|  |    |  default |
+| **Comandos**         |  **Destino**         | **Tipo** |
+| Confirmar orçamento montado com os fornecedores selecionados   | Fim do processo 4        | Default   |
+
 
