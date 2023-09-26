@@ -99,6 +99,7 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | Botão de confirmar| Seleção unica  |
 
 | **Comandos**         |  **Destino**         | **Tipo** |
+| ---            | ---     |            --- |
 | Confirmar orçamento montado com os fornecedores selecionados   | Fim do processo 4        | Default   |
 
 
