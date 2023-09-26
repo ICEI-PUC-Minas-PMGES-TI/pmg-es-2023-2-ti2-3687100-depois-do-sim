@@ -22,6 +22,8 @@ Um álbum de fotos compartilhável para um casamento envolve criar um álbum, co
 | Etiquetas  |      Caixa de Texto (lista)	     |       Separação por vírgulas, no máximo 5 etiquetas	         |       -            |
 | Data de Captura	           | Data  | Deve ser uma data válida	 |      Data atual          |
 | Localização           | Caixa de Texto   | Máximo de 100 caracteres	 |        -   |
+| Mídias           | Imagem ou vídeo   | -	 |        -   |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
@@ -36,6 +38,8 @@ Um álbum de fotos compartilhável para um casamento envolve criar um álbum, co
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
 | Opção de Privacidade	 | Caixa de Seleção	  |       Público/Privado	         |         Público          |
+| Mídias           | Imagem ou vídeo   | -	 |        -   |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
@@ -61,7 +65,8 @@ Um álbum de fotos compartilhável para um casamento envolve criar um álbum, co
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Nenhum campo necessário		 | -	  |       -         |       -          |
+| Mídias           | Imagem ou vídeo   | -	 |        -   |
+
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
