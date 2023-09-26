@@ -49,19 +49,53 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Registrar orçamento | Fim atividade 1                 |  default |
+| Registrar orçamento |                |  default |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Botão confirmar | Seleção única  |       |           |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| confirmar se o orçamento cadastrado está correto | Fim atividade 1                 |  default |
 
 **Escolher os fornecedores dos disponiveis**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Escolher fornecedores | Seleção multipla  |               |                   |
+| Imagem do fornecedor | Imagem  |               |                   |
 |                 |                  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Selecionar fornecedores | Fim atividade 2  | default |
+|  |  | default |
 |                      |                                |                   |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| |                 |  default |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Descrição breve do forncedor| Area de texto  |    |    |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|  |    |  default |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Botão de selecionar fornecedor| Seleção unica  |       |         |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Salvar fornecedor escolhido | Fim atividade 2                 |  default |
+
+
 
 **Cadastrar despesas adicionais**
 
@@ -79,11 +113,43 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| Validação de orçamento | Numero  |               |                   |
+| Imagem do fornecedor | Imagem  |               |                   |
 |                 |                  |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Validar orçamento | Fim atividade 4  | default |
+|  |  | default |
 |                      |                                |                   |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| |                 |  default |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Descrição breve do forncedor| Area de texto  |    |    |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|  |    |  default |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Valor total do orçamento montado| Numero  |  somente valores positivos  |  R$0,00   |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+|  |    |  default |
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Botão de confirmar| Seleção unica  |    |    |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | Fim do processo 4                           | ---               |
+|  |    |  default |
 
