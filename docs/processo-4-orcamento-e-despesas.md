@@ -17,11 +17,15 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 
 **Cadastro de orçamento**
 
-| **Campo**| **Tipo**| **Restrições**| **Valor default**|
-| ---      | ---     | ---           | ---              |
-| Cadastro de orçamento| Número  |     Apenas numeros positivos       |        R$0,00           |
+| **Campo**            | **Tipo**| **Restrições**                     | **Valor default**|
+| ---                  | ---     | ---                                | ---              |
+| Cadastro de orçamento| Número  |     Apenas numeros positivos       |        R$0,00    |
+
 | **Comandos**         | **Tipo** |
-| Registrar orçamento|  default |
+| ---                  | ---      |
+| Registrar orçamento  |  default |
+
+
 | **Campo**       | **Tipo**         |
 | Botão confirmar | Seleção única  |
 | **Comandos**         |  **Destino**                   | **Tipo** |
