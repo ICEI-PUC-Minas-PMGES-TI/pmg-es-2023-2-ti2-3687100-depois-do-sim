@@ -17,35 +17,26 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 
 **Cadastro de orçamento**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** | ---            | ---               |
 | Cadastro de orçamento| Número  |     Apenas numeros positivos       |        R$0,00           |
 | **Comandos**         | **Tipo** |
-| ---                  | ---       |
 | Registrar orçamento|  default |
 | **Campo**       | **Tipo**         |
-| ---             | ---              |
 | Botão confirmar | Seleção única  |
 | **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
 | confirmar se o orçamento cadastrado está correto | Fim atividade 1                 |  default |
 
 **Escolher os fornecedores dos disponiveis**
 
-| **Campo**       | **Tipo**         |
-| ---             | ---              | 
+| **Campo**       | **Tipo**         | 
 | Imagem do fornecedor | Imagem  | 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
 | Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
 | **Campo**       | **Tipo**         |
-| ---             | ---              |
 | Descrição breve do forncedor| Area de texto  |
 | **Campo**       | **Tipo**         |
-| ---             | ---              |
 | Botão de selecionar fornecedor| Seleção unica  |
 | **Comandos**         |  **Destino**                   |
-| ---                  | ---                            |
 | Salvar fornecedor escolhido | Fim atividade 2         |
 
 
@@ -53,31 +44,23 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 **Cadastrar despesas adicionais**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
 | Adicionar novas despesas | Numero  |      valores negativos         |       R$0,00            |
 | **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
 | Cadastrar despesas extras/por fora | Fim atividade 3  | default |
 
 **Validar orçamento montado**
 
 | **Campo**       | **Tipo**         |
-| ---             | ---              |
 | Imagem do fornecedor | Imagem  |
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
 | Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
 | **Campo**       | **Tipo**         |
-| ---             | ---              |
 | Descrição breve do forncedor| Area de texto  |
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
 | Valor total do orçamento montado| Numero  |  somente valores positivos  |  R$0,00   |
 | **Campo**       | **Tipo**         | 
-| ---             | ---              |
 | Botão de confirmar| Seleção unica  |
 | **Comandos**         |  **Destino**         | **Tipo** |
-| ---            | ---     |            --- |
 | Confirmar orçamento montado com os fornecedores selecionados   | Fim do processo 4        | Default   |
 
 
