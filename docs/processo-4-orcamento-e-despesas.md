@@ -26,17 +26,25 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 | Registrar orçamento  |  default |
 
 
-| **Campo**       | **Tipo**         |
-| Botão confirmar | Seleção única  |
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| confirmar se o orçamento cadastrado está correto | Fim atividade 1                 |  default |
+| **Campo**        | **Tipo**       |
+| ---              | ---            |
+| Botão confirmar  | Seleção única  |
+
+| **Comandos**                                     |  **Destino**                   | **Tipo** |
+| ---                                              | ---                            | ---      |
+| confirmar se o orçamento cadastrado está correto | Fim atividade 1                |  default |
 
 **Escolher os fornecedores dos disponiveis**
 
-| **Campo**       | **Tipo**         | 
-| Imagem do fornecedor | Imagem  | 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| Preço médio fornecedores| Número  |     Apenas numeros positivos       |        R$0,00           |
+| **Campo**            | **Tipo**   | 
+| ---                  | ---        |
+| Imagem do fornecedor | Imagem     | 
+
+
+| **Campo**               | **Tipo**    | **Restrições**           | **Valor default** |
+| ---                     | ---         | ---                      | ---               |
+| Preço médio fornecedores| Número      |Apenas numeros positivos  |  R$0,00           |
+
 | **Campo**       | **Tipo**         |
 | Descrição breve do forncedor| Area de texto  |
 | **Campo**       | **Tipo**         |
