@@ -29,23 +29,12 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 
 **Escolher os fornecedores dos disponiveis**
 
-| **Campo**            | **Tipo**   | 
-| ---                  | ---        |
-| Imagem do fornecedor | Imagem     | 
-
-
-| **Campo**               | **Tipo**    | **Restrições**           | **Valor default** |
-| ---                     | ---         | ---                      | ---               |
+| **Campo**            | **Tipo**   | **Restrições**           | **Valor default** |
+| ---                  | ---        | ---                      | ---               |
+| Imagem do fornecedor | Imagem     |                          |                     |
 | Preço médio fornecedores| Número      |Apenas numeros positivos  |  R$0,00           |
-
-| **Campo**                   | **Tipo**       |
-| ---                         | ---            |
-| Descrição breve do forncedor| Area de texto  |
-
- 
-| **Campo**                     | **Tipo**       |
-| ---                           | ---            |
-| Botão de selecionar fornecedor| Seleção unica  |
+| Descrição breve do forncedor| Area de texto  | | |
+| Botão de selecionar fornecedor| Seleção unica  | | |
 
 | **Comandos**                |  **Destino**      |
 | ---                         | ---               |
@@ -65,25 +54,13 @@ Esse processo pode ser melhorado calculando o orçamento cadastrado pelos noivos
 
 **Validar orçamento montado**
 
-| **Campo**             | **Tipo**  |
-| ---                   | ---       |
-| Imagem do fornecedor  | Imagem    |
-
-| **Campo**                | **Tipo**  | **Restrições**            | **Valor default** |
-| ---                      | ---       | ---                       | ---               |
-| Preço médio fornecedores | Número    |Apenas numeros positivos   |  R$0,00           |
-
-| **Campo**                   | **Tipo**         |
-| ---                         | ---              |
-| Descrição breve do forncedor| Area de texto    |
-
-| **Campo**                       | **Tipo** | **Restrições**              | **Valor default** |
-| ---                             | ---      | ---                         | ---               |
-| Valor total do orçamento montado| Numero   |  somente valores positivos  |  R$0,00           |
-
-| **Campo**          | **Tipo**       | 
-| ---                | ---            |
-| Botão de confirmar | Seleção unica  |
+| **Campo**                       | **Tipo**                    | **Restrições**            | **Valor default** |
+| ---                             | ---                         | ---                       | ---               |
+| Imagem do fornecedor            | Imagem                      |                           |                   |
+| Preço médio fornecedores        | Número                      |Apenas numeros positivos   |  R$0,00           |
+| Descrição breve do forncedor    | Area de texto               |                           |                   |
+| Valor total do orçamento montado| Numero                      |  somente valores positivos|  R$0,00           |
+| Botão de confirmar              | Seleção unica               |                           |                   |
 
 | **Comandos**                                                   |  **Destino**        | **Tipo**  |
 | ---                                                            | ---                 | ---       |
