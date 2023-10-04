@@ -33,12 +33,12 @@ _Detalhe os layouts que serão utilizados. Apresente onde será colocado o logo 
 
 ## Cores
 
-_Apresente a paleta de cores que será utilizada. Uma ferramenta interessante para a criação de palestas de cores é o *Adobe Color*_ ([https://color.adobe.com/pt/create/color-wheel](https://color.adobe.com/pt/create/color-wheel)).
+![depois-do-sim-cores](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/123561984/e4eacfad-307c-4464-ad97-e3233dc3a6a0)
 
 
 ## Tipografia
 
-_Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de seção, Rótulos de componentes e Corpo de Texto._
+![depois-do-sim-tipografia](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/123561984/5cfbb91f-8656-46e4-a23f-b8a93f8c570e)
 
 
 ## Iconografia
