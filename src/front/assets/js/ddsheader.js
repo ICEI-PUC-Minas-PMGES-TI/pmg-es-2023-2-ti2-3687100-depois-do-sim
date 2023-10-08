@@ -1,4 +1,4 @@
-class DDSHeader extends HTMLElement {
+export class DDSHeader extends HTMLElement {
     constructor() {
         super();
 
@@ -89,4 +89,4 @@ class DDSHeader extends HTMLElement {
     }
 }
 
-customElements.define('dds-header', DDSHeader);
+
