@@ -1,9 +1,5 @@
 package com.depoisdosim.depoisdosim.models;
 
-import java.util.Objects;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,41 +10,38 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.util.Objects;
 
 @Entity
-@Table(name = User.TABLE_NAME)
-public class User {
-    public interface CreateUser {}
-    public interface UpdateUser {}
-
-    public static final String TABLE_NAME = "user";
+@Table(name = Gift.TABLE_NAME)
+public class Gift {
+    public static final String TABLE_NAME = "gift";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "username", length = 100, nullable = false, unique = true)
-    @NotBlank(groups = CreateUser.class)
-    @Size(groups = CreateUser.class, min = 2, max = 100)
-    private String username;
+    @Column(name = "name", length = 100, nullable = false, unique = true)
+    @NotBlank
+    @Size(min = 2, max = 100)
+    private String name;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @Column(name = "password", length = 60, nullable = false)
-    @NotBlank(groups = {CreateUser.class, UpdateUser.class})
-    @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
-    private String password;
+    @Column(name = "description", length = 255, nullable = false)
+    @NotBlank
+    @Size(min = 1, max = 255)
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = false)
     private Wedding wedding;
 
-    public User() {}
+    public Gift() {}
 
-    public User(Long id, String username, String password) {
+    public Gift(Long id, String name, String description) {
         this.id = id;
-        this.username = username;
-        this.password = password;
+        this.name = name;
+        this.description = description;
     }
 
     public Long getId() {
@@ -59,20 +52,35 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return this.username;
+    public String getName() {
+        return this.name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return this.password;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Gift id(Long id) {
+        setId(id);
+        return this;
+    }
+
+    public Gift name(String name) {
+        setName(name);
+        return this;
+    }
+
+    public Gift description(String description) {
+        setDescription(description);
+        return this;
     }
 
     // HashCode and Equals
@@ -81,16 +89,16 @@ public class User {
             return true;
         if(obj == null) 
             return false;
-        if(!(obj instanceof User)) 
+        if(!(obj instanceof Gift)) 
             return false;
-        User other = (User) obj;
+        Gift other = (Gift) obj;
 
         if(this.id == null)
             if(other.id != null) 
                 return false;
             else if(!this.id.equals(other.id)) 
                 return false;
-        return Objects.equals(this.id, other.id) && Objects.equals(this.username, other.username) && Objects.equals(this.password, other.password);
+        return Objects.equals(this.id, other.id) && Objects.equals(this.name, other.name) && Objects.equals(this.description, other.description);
     }
 
     @Override
@@ -100,5 +108,5 @@ public class User {
         result = (prime * result) + ((this.id == null) ? 0 : this.id.hashCode());
         return result;
     }
-
+    
 }
