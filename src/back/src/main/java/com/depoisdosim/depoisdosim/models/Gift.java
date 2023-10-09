@@ -16,6 +16,9 @@ import java.util.Objects;
 @Entity
 @Table(name = Gift.TABLE_NAME)
 public class Gift {
+    public interface CreateGift {}
+    public interface UpdateGift {}
+
     public static final String TABLE_NAME = "gift";
 
     @Id
@@ -24,19 +27,20 @@ public class Gift {
     private Long id;
 
     @Column(name = "name", length = 100, nullable = false, unique = true)
-    @NotBlank
-    @Size(min = 2, max = 100)
+    @NotBlank(groups = {CreateGift.class, UpdateGift.class})
+    @Size(groups = {CreateGift.class, UpdateGift.class}, min = 2, max = 100)
     private String name;
 
     @Column(name = "description", length = 255, nullable = false)
-    @NotBlank
-    @Size(min = 1, max = 255)
+    @NotBlank(groups = {CreateGift.class, UpdateGift.class})
+    @Size(groups = {CreateGift.class, UpdateGift.class}, min = 1, max = 255)
     private String description;
 
     @Column(name = "price", nullable = false)
-    @NotBlank
-    @DecimalMin(value = "0.0")
+    @DecimalMin(groups = {CreateGift.class, UpdateGift.class}, value = "0.0")
     private Double price;
+
+    // private Boolean isReserved = false;
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)
