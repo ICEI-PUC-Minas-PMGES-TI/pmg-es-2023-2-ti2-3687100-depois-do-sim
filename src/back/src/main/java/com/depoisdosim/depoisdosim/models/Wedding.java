@@ -82,10 +82,10 @@ public class Wedding {
         return this;
     }
 
-    // public Wedding users(List<User> users) {
-    //     setUsers(users);
-    //     return this;
-    // }
+    public Wedding users(List<User> users) {
+        setUsers(users);
+        return this;
+    }
 
     public Wedding guests(List<Guest> guests) {
         setGuests(guests);
