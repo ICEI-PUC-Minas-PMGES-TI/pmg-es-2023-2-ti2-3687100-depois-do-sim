@@ -36,16 +36,17 @@ public class Guest {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "wedding_id", nullable = false)
+    @JoinColumn(name = "wedding_id", nullable = true)
     private Wedding wedding;
-
+    
     public Guest() {
     }
 
-    public Guest(Long id, String name, String email) {
+    public Guest(Long id, String name, String email, Wedding wedding) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.wedding = wedding;
     }
 
     public Long getId() {
@@ -72,6 +73,14 @@ public class Guest {
         this.email = email;
     }
 
+    public Wedding getWedding() {
+        return this.wedding;
+    }
+
+    public void setWedding(Wedding wedding) {
+        this.wedding = wedding;
+    }
+
     public Guest id(Long id) {
         setId(id);
         return this;
@@ -87,6 +96,11 @@ public class Guest {
         return this;
     }
 
+    public Guest wedding(Wedding wedding) {
+        setWedding(wedding);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -95,12 +109,22 @@ public class Guest {
             return false;
         }
         Guest guest = (Guest) o;
-        return Objects.equals(id, guest.id) && Objects.equals(name, guest.name) && Objects.equals(email, guest.email);
+        return Objects.equals(id, guest.id) && Objects.equals(name, guest.name) && Objects.equals(email, guest.email) && Objects.equals(wedding, guest.wedding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email);
+        return Objects.hash(id, name, email, wedding);
     }
-    
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", wedding='" + getWedding() + "'" +
+            "}";
+    }
+
 }

@@ -3,6 +3,7 @@ package com.depoisdosim.depoisdosim.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.Objects;
-// import java.util.Objects;
 
 @Entity
 @Table(name = Wedding.TABLE_NAME)
@@ -23,8 +23,8 @@ public class Wedding {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @OneToMany(mappedBy = "wedding")
-    @Column(name = "users")
+    @OneToMany(mappedBy = "wedding", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(name = "users", nullable = false)
     private List<User> users = new ArrayList<User>();
 
     @OneToMany(mappedBy = "wedding")
@@ -38,7 +38,7 @@ public class Wedding {
     public Wedding() {
     }
 
-    public Wedding(Long id, List<User> users, List<Guest> guests, List<Gift> gifts) {
+    public Wedding(Long id, List<Guest> guests, List<Gift> gifts, List<User> users) {
         this.id = id;
         this.users = users;
         this.guests = guests;
@@ -82,10 +82,10 @@ public class Wedding {
         return this;
     }
 
-    public Wedding users(List<User> users) {
-        setUsers(users);
-        return this;
-    }
+    // public Wedding users(List<User> users) {
+    //     setUsers(users);
+    //     return this;
+    // }
 
     public Wedding guests(List<Guest> guests) {
         setGuests(guests);
@@ -105,12 +105,12 @@ public class Wedding {
             return false;
         }
         Wedding wedding = (Wedding) o;
-        return Objects.equals(id, wedding.id) && Objects.equals(users, wedding.users) && Objects.equals(guests, wedding.guests) && Objects.equals(gifts, wedding.gifts);
+        return Objects.equals(id, wedding.id) && Objects.equals(guests, wedding.guests) && Objects.equals(gifts, wedding.gifts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, users, guests, gifts);
+        return Objects.hash(id, guests, gifts);
     }
 
 }

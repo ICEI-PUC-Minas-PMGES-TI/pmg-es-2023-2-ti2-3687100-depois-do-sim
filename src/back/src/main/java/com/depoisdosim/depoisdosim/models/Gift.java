@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.util.Objects;
@@ -32,16 +33,23 @@ public class Gift {
     @Size(min = 1, max = 255)
     private String description;
 
+    @Column(name = "price", nullable = false)
+    @NotBlank
+    @DecimalMin(value = "0.0")
+    private Double price;
+
     @ManyToOne
-    @JoinColumn(name = "wedding_id", nullable = false)
+    @JoinColumn(name = "wedding_id", nullable = true)
     private Wedding wedding;
 
-    public Gift() {}
+    public Gift() {
+    }
 
-    public Gift(Long id, String name, String description) {
+    public Gift(Long id, String name, String description, Double price) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.price = price;
     }
 
     public Long getId() {
@@ -68,6 +76,14 @@ public class Gift {
         this.description = description;
     }
 
+    public Double getPrice() {
+        return this.price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public Gift id(Long id) {
         setId(id);
         return this;
@@ -83,30 +99,25 @@ public class Gift {
         return this;
     }
 
-    // HashCode and Equals
-    public boolean equals(Object obj) {
-        if(obj == this) 
-            return true;
-        if(obj == null) 
-            return false;
-        if(!(obj instanceof Gift)) 
-            return false;
-        Gift other = (Gift) obj;
+    public Gift price(Double price) {
+        setPrice(price);
+        return this;
+    }
 
-        if(this.id == null)
-            if(other.id != null) 
-                return false;
-            else if(!this.id.equals(other.id)) 
-                return false;
-        return Objects.equals(this.id, other.id) && Objects.equals(this.name, other.name) && Objects.equals(this.description, other.description);
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Gift)) {
+            return false;
+        }
+        Gift gift = (Gift) o;
+        return Objects.equals(id, gift.id) && Objects.equals(name, gift.name) && Objects.equals(description, gift.description) && Objects.equals(price, gift.price);
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = (prime * result) + ((this.id == null) ? 0 : this.id.hashCode());
-        return result;
+        return Objects.hash(id, name, description, price);
     }
     
 }
