@@ -15,6 +15,8 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = Wedding.TABLE_NAME)
 public class Wedding {
@@ -30,15 +32,15 @@ public class Wedding {
     @Column(name = "name", length = 100, nullable = false)
     private String name;
 
-    // @Column(name = "users", nullable = false)
+    @JsonIgnore
     @OneToMany(mappedBy = "wedding")
     private List<User> users = new ArrayList<User>();
 
-    // @Column(name = "guests")
+    @JsonIgnore
     @OneToMany(mappedBy = "wedding")
     private List<Guest> guests = new ArrayList<Guest>();
 
-    // @Column(name = "gifts")
+    @JsonIgnore
     @OneToMany(mappedBy = "wedding")
     private List<Gift> gifts = new ArrayList<Gift>();
 
