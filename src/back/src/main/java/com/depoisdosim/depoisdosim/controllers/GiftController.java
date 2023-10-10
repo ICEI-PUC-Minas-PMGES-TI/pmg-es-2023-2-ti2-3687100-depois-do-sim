@@ -1,6 +1,7 @@
 package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,9 +31,15 @@ public class GiftController {
     private GiftService giftService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Gift> findById(@PathVariable Long Id) {
-        Gift obj = this.giftService.findById(Id);
+    public ResponseEntity<Gift> findById(@PathVariable Long id) {
+        Gift obj = this.giftService.findById(id);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @GetMapping("/wedding/{weddingId}")
+    public ResponseEntity<List<Gift>> findAllByWeddingId(@PathVariable Long weddingId) {
+        List<Gift> objs = this.giftService.findAllByWeddingId(weddingId);
+        return ResponseEntity.ok().body(objs);
     }
 
     @PostMapping

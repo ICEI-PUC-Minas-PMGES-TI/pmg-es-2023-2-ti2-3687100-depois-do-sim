@@ -4,7 +4,6 @@ import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,47 +14,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.depoisdosim.depoisdosim.models.User;
-import com.depoisdosim.depoisdosim.models.User.CreateUser;
-import com.depoisdosim.depoisdosim.models.User.UpdateUser;
-import com.depoisdosim.depoisdosim.services.UserService;
+import com.depoisdosim.depoisdosim.models.Wedding;
+import com.depoisdosim.depoisdosim.services.WeddingService;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
-@Validated
-public class UserController {
-
-    @Autowired
-    private UserService userService;
+@RequestMapping("/wedding")    
+public class WeddingController {
     
-    // localhost:8080/user/{id}
+    @Autowired
+    private WeddingService weddingService;
+
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
-        User obj = this.userService.findById(id);
+    public ResponseEntity<Wedding> findById(@PathVariable Long id) {
+        Wedding obj = this.weddingService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 
     @PostMapping
-    @Validated(CreateUser.class)
-    public ResponseEntity<Void> create(@Valid @RequestBody User obj) {
-        this.userService.create(obj);
+    public ResponseEntity<Void> create(@Valid @RequestBody Wedding obj) {
+        this.weddingService.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping("/{id}")
-    @Validated(UpdateUser.class)
-    public ResponseEntity<Void> update(@Valid @RequestBody User obj, @PathVariable Long id) {
+    public ResponseEntity<Void> update(@Valid @RequestBody Wedding obj, @PathVariable Long id) {
         obj.setId(id);
-        this.userService.update(obj);
+        this.weddingService.update(obj);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        this.userService.delete(id);
+        this.weddingService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

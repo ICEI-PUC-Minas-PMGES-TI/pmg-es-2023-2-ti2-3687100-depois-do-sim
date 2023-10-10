@@ -3,7 +3,6 @@ package com.depoisdosim.depoisdosim.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +10,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import java.util.Objects;
 
 @Entity
@@ -23,23 +25,29 @@ public class Wedding {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @OneToMany(mappedBy = "wedding", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Column(name = "users", nullable = false)
+    @NotBlank
+    @Size(min = 2, max = 100)
+    @Column(name = "name", length = 100, nullable = false)
+    private String name;
+
+    // @Column(name = "users", nullable = false)
+    @OneToMany(mappedBy = "wedding")
     private List<User> users = new ArrayList<User>();
 
+    // @Column(name = "guests")
     @OneToMany(mappedBy = "wedding")
-    @Column(name = "guests")
     private List<Guest> guests = new ArrayList<Guest>();
 
+    // @Column(name = "gifts")
     @OneToMany(mappedBy = "wedding")
-    @Column(name = "gifts")
     private List<Gift> gifts = new ArrayList<Gift>();
 
     public Wedding() {
     }
 
-    public Wedding(Long id, List<Guest> guests, List<Gift> gifts, List<User> users) {
+    public Wedding(Long id, String name, List<User> users, List<Guest> guests, List<Gift> gifts) {
         this.id = id;
+        this.name = name;
         this.users = users;
         this.guests = guests;
         this.gifts = gifts;
@@ -52,6 +60,16 @@ public class Wedding {
     public void setId(Long id) {
         this.id = id;
     }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
     public List<User> getUsers() {
         return this.users;
@@ -111,6 +129,11 @@ public class Wedding {
     @Override
     public int hashCode() {
         return Objects.hash(id, guests, gifts);
+    }
+
+    public Wedding name(String name) {
+        setName(name);
+        return this;
     }
 
 }

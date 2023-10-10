@@ -1,5 +1,6 @@
 package com.depoisdosim.depoisdosim.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class GiftService {
     public Gift findById(Long id) {
         Optional<Gift> gift = this.giftRepository.findById(id);
         return gift.orElseThrow(() -> new RuntimeException("Presente não encontrado! Id: " + id + ", Tipo: " + Gift.class.getName()));
+    }
+
+    public List<Gift> findAllByWeddingId(Long weddingId) {
+        List<Gift> gifts = this.giftRepository.findAllByWeddingId(weddingId);
+        return gifts;
     }
 
     @Transactional

@@ -43,7 +43,7 @@ public class Gift {
     // private Boolean isReserved = false;
 
     @ManyToOne
-    @JoinColumn(name = "wedding_id", nullable = true)
+    @JoinColumn(name = "wedding_id", nullable = false)
     private Wedding wedding;
 
     public Gift() {
@@ -55,6 +55,16 @@ public class Gift {
         this.description = description;
         this.price = price;
     }
+
+
+    public Wedding getWedding() {
+        return this.wedding;
+    }
+
+    public void setWedding(Wedding wedding) {
+        this.wedding = wedding;
+    }
+
 
     public Long getId() {
         return this.id;
@@ -108,6 +118,20 @@ public class Gift {
         return this;
     }
 
+
+    public Gift(Long id, String name, String description, Double price, Wedding wedding) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.wedding = wedding;
+    }
+
+    public Gift wedding(Wedding wedding) {
+        setWedding(wedding);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -116,12 +140,11 @@ public class Gift {
             return false;
         }
         Gift gift = (Gift) o;
-        return Objects.equals(id, gift.id) && Objects.equals(name, gift.name) && Objects.equals(description, gift.description) && Objects.equals(price, gift.price);
+        return Objects.equals(id, gift.id) && Objects.equals(name, gift.name) && Objects.equals(description, gift.description) && Objects.equals(price, gift.price) && Objects.equals(wedding, gift.wedding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, price);
+        return Objects.hash(id, name, description, price, wedding);
     }
-    
 }

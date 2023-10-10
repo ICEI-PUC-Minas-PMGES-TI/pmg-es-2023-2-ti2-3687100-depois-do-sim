@@ -2,7 +2,6 @@ package com.depoisdosim.depoisdosim.models;
 
 import java.util.Objects;
 
-// import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -105,7 +104,7 @@ public class User {
         setWedding(wedding);
         return this;
     }
-
+    
     @Override
     public boolean equals(Object o) {
         if (o == this)
