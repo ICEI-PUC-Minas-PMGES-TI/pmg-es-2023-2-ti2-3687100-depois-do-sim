@@ -1,120 +1,104 @@
-const url = "http://localhost:8080/wedding/1"; // Substitua pelo URL real do casamento desejado
+document.addEventListener("DOMContentLoaded", () => {
+    const url = "http://localhost:8080/gift/wedding/1";
 
-async function show(wedding) {
-let tab =   `<thead>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Preço</th>
-            </thead>`;
+    const giftForm = document.getElementById("giftForm");
+    const giftsList = document.getElementById("giftsList");
 
-document.getElementById("gifts").innerHTML = tab;
-tab =   `<tr>
-            <td>${wedding.id}</td>
-            <td>${wedding.name}</td>
-            <td>${wedding.description}</td>
-            <td>${wedding.price}</td>
-        </tr>`;
+    // Função para adicionar um presente
+    async function addGift() {
+        const name = document.getElementById("nome").value;
+        console.log(name)
+        const description = document.getElementById("descricao").value;
+        const price = parseFloat(document.getElementById("preco").value);
 
-document.getElementById("gifts").innerHTML += tab;
-}
+        const giftData = {
+            "name": name,
+            "description": description,
+            "price": price,
+            "wedding": {
+                "id": 1
+            }
+        };
 
-async function getAPI(url) {
-try {
-    const response = await fetch(url, { method: "GET" });
+        try {
+            const response = await fetch("http://localhost:8080/gift", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(giftData)
+            });
 
-    if (!response.ok) {
-        throw new Error(`Erro de rede: ${response.status}`);
+            if (!response.ok) {
+                throw new Error("Erro ao adicionar presente.");
+            }
+
+            // Limpar o formulário após adicionar com sucesso
+            // giftForm.reset();
+
+            // // Atualizar a lista de presentes
+            // updateGiftsList();
+        } catch (error) {
+            console.error("Erro ao adicionar presente:", error);
+        }
     }
 
-    const data = await response.json();
-    show(data);
-} catch (error) {
-    console.error(`Ocorreu um erro ao acessar a API: ${error}`);
-}
-}
+    // Função para atualizar a lista de presentes
+    async function updateGiftsList() {
+        const response = await fetch("http://localhost:8080/gift", { method: "GET" });
 
-getAPI(url);
+        if (!response.ok) {
+            console.error("Erro ao buscar presentes.");
+            return;
+        }
 
-  
+        const gifts = await response.json();
+        displayGifts(gifts);
+    }
 
+    async function show(gifts) {
+        let tab = `<thead>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Preço</th>
+                    </thead>
+                    <tbody>`;
 
+        for (let gift of gifts) {
+            tab += `<tr>
+                        <td>${gift.id}</td>
+                        <td>${gift.name}</td>
+                        <td>${gift.description}</td>
+                        <td>${gift.price}</td>
+                    </tr>`;
+        }
 
+        tab += `</tbody>`;
+        document.getElementById("gifts").innerHTML = tab;
+    }
 
+    async function getAPI(url) {
+        try {
+            const response = await fetch(url, { method: "GET" });
 
+            if (!response.ok) {
+                throw new Error("Erro ao buscar dados da API.");
+            }
 
+            const data = await response.json();
+            show(data);
+        } catch (error) {
+            console.error("Erro ao buscar dados da API:", error);
+        }
+    }
 
+    getAPI(url);
 
+    // Evento de envio do formulário
+    document.getElementById("giftForm").addEventListener("submit", function (event) {
+        event.preventDefault();
 
-
-
-
-
-
-
-
-
-
-
-// const url = "http://localhost:8080/wedding/{id";
-
-// function show(gifts) {
-//     let tab =   `<thead>
-//                     <th scope="col">#</th>
-//                     <th scope="col">Nome</th>
-//                     <th scope="col">Descrição</th>
-//                     <th scope="col">Preço</th>
-//                 <thead/>`;
-
-//     document.getElementById("gifts").innerHTML = tab;
-//         tab =   `<tr>
-//                     <td>${wedding.id}</td>
-//                     <td>${wedding.name}</td>
-//                 </tr>`;
-//     }
-
-
-// async function getAPI(url) {
-//     const response = await fetch(url, {method: "GET"});
-
-//     var data = await response.json();
-//     if(response) {
-//         show(data);
-//     }
-// }
-
-// getAPI(url);
-
-
-
-
-
-
-// const inputFile = document.querySelector("#picture__input");
-// const pictureImage = document.querySelector(".picture__image");
-// const pictureImageTxt = "Imagem do presente";
-// pictureImage.innerHTML = pictureImageTxt;
-
-// inputFile.addEventListener("change", function (e) {
-//   const inputTarget = e.target;
-//   const file = inputTarget.files[0];
-
-//   if (file) {
-//     const reader = new FileReader();
-
-//     reader.addEventListener("load", function (e) {
-//       const readerTarget = e.target;
-
-//       const img = document.createElement("img");
-//       img.src = readerTarget.result;
-//       img.classList.add("picture__img");
-
-//       pictureImage.innerHTML = "";
-//       pictureImage.appendChild(img);
-//     });
-
-//     reader.readAsDataURL(file);
-//   } else {
-//     pictureImage.innerHTML = pictureImageTxt;
-//   }
-// });
+        addGift();
+    });
+});
