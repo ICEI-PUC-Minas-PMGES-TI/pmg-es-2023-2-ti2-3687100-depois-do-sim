@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
     const weddingId = 1;
 
-    const giftForm = document.getElementById("giftForm");
-    const giftsTable = document.getElementById("gifts");
+    const giftsContainer = document.getElementById("giftsContainer");
+
 
     // Função para buscar dados da API
     async function getAPI(url) {
@@ -23,25 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para exibir os dados na tabela
     function show(gifts) {
-        let tableHTML = `<thead>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Descrição</th>
-                            <th scope="col">Preço</th>
-                        </thead>
-                        <tbody>`;
 
         for (let gift of gifts) {
-            tableHTML += `<tr>
-                            <td>${gift.id}</td>
-                            <td>${gift.name}</td>
-                            <td>${gift.description}</td>
-                            <td>${gift.price}</td>
-                        </tr>`;
-        }
+            const card = document.createElement("div");
+            card.classList.add("gift-card", "col-3");
 
-        tableHTML += `</tbody>`;
-        giftsTable.innerHTML = tableHTML;
+            card.innerHTML = `
+                <img src="https://source.unsplash.com/random/?gifts" class="card-img-top">
+                <div class="testeeee"
+                    <h2 class="card-title" id="gift-title">${gift.name}</h2>
+                    <p class="card-text" id="gift-description">${gift.description}</p>
+                    <p class="card-text">Preço: R$${gift.price}</p>
+                    <button type="submit" class="btn-presentear" id="btnPresentear">Presentear</button>
+                </div>
+            `;
+
+            giftsContainer.appendChild(card);
+        }
     }
 
     // Função para adicionar um presente
@@ -84,6 +82,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    async function deleteGift(giftId) {
+        try {
+            const response = await fetch(`${baseUrl}/gift/${giftId}`, {
+                method: "DELETE"
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao excluir presente.");
+            }
+
+            // Atualizar a tabela após a exclusão bem-sucedida
+            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+        } catch (error) {
+            console.error("Erro ao excluir presente:", error);
+        }
+    }
+
     getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
 
     // Evento de envio do formulário
@@ -92,5 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Evento de clique no botão de adicionar presente
-    document.getElementById("btnCadastrar").addEventListener("click", addGift);
+    document.getElementById("btnCreate").addEventListener("click", addGift);
+    // document.getElementById("btnDelete").addEventListener("click", deleteGift());
+
 });
