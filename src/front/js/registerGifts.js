@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para exibir os dados na tabela
     function show(gifts) {
+        // Limpar o conteúdo existente
+        giftsContainer.innerHTML = '';
 
         for (let gift of gifts) {
             const card = document.createElement("div");
@@ -30,12 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.innerHTML = `
             <div class="gift-card">
+                <div class="btn-delete-wrapper">
+                    <button type="button" class="btn-deletar card-delete-button" data-giftid="${gift.id}">&times;</button>
+                </div>
                 <img src="https://source.unsplash.com/random/?gifts" class="card-img-top">
                 <div class="card-body">
                     <h2 class="card-title" id="gift-title">${gift.name}</h2>
                     <p class="card-text" id="gift-description">${gift.description}</p>
-                    <p class="card-text">Preço: R$${gift.price}</p>
-                    <button type="submit" class="btn-presentear" id="btnPresentear">Presentear</button>
+                    <p class="card-price">R$${gift.price}</p>
+                    <button type="submit" class="btn-presentear" id="btnPresentear"><i class="bi bi-bag"></i>Presentear</button>
                 </div>
             </div>
             `;
@@ -84,6 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Fora do loop, adicione um ouvinte de evento para os botões de deletar
+const deleteButtons = document.querySelectorAll(".card-delete-button");
+deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        const giftId = this.getAttribute("data-giftid");
+        console.log("ID do presente:", giftId); // Imprime o ID no console
+        // Agora você tem o ID do presente e pode executar a lógica de exclusão
+        deleteGift(giftId);
+    });
+});
+
     async function deleteGift(giftId) {
         try {
             const response = await fetch(`${baseUrl}/gift/${giftId}`, {
@@ -103,13 +119,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
 
-    // Evento de envio do formulário
+
     document.getElementById("giftForm").addEventListener("submit", function (event) {
         event.preventDefault();
     });
 
     // Evento de clique no botão de adicionar presente
     document.getElementById("btn-create").addEventListener("click", addGift);
-    // document.getElementById("btnDelete").addEventListener("click", deleteGift());
+
+    // Evento de clique no botão de excluir presente
+    document.getElementById("btn-deleter").addEventListener("click", deleteGift);
+    document.getElementById("btn-deleter").addEventListener("click", deleteGift());
 
 });
