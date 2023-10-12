@@ -36,43 +36,57 @@
         
     </style>
 
-    <div class="lista-presentes">
-        <div class="container">
-            <h1 class="gold-title text-center mt-5">Cadastro de Presente</h1>
-            <form id="giftForm">
-                <!-- Campo Nome -->
-                <div class="mb-3">
-                    <label for="nome" class="form-label h-color text-center">Nome do Presente</label>
-                    <input type="text" class="form-control " id="nome" name="nome" required>
-                </div>
-
-                <!-- Campo Descrição -->
-                <div class="mb-3">
-                    <label for="descricao" class="form-label h-color text-center">Descrição</label>
-                    <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
-                </div>
-
-                <!-- Campo Preço -->
-                <div class="mb-3">
-                    <label for="preco" class="form-label h-color text-center">Preço</label>
-                    <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
-                </div>
-
-                <!-- Botão de Envio -->
-                <button type="submit" class="btn btn-primary" id="btnCreate">Cadastrar</button>
-                <!-- <button type="submit" class="btn btn-danger" id="btnDelete">Deletar</button>
-                <button type="submit" class="btn btn-warning" id="btnPut">Alterar</button> -->
-            </form>
-
-            <hr>
-
+    <main class="container">
+        <div class="row">
+            <div class="header-wrapper">
+                <h2>Lista de Presentes</h2>
+                <button type="button" class="btn-register" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastrar</button>  
+            </div>
+            <!-- Lista de presentes -->
             <div class="container">
                 <div class="row" id="giftsContainer">
 
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="cadastroModalLabel">Cadastro de Presente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="giftForm">
+                        <!-- Campo Nome -->
+                        <div class="mb-3">
+                            <label for="nome" class="form-label h-color text-center">Nome do Presente</label>
+                            <input type="text" class="form-control " id="nome" name="nome" required>
+                        </div>
+        
+                        <!-- Campo Descrição -->
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label h-color text-center">Descrição</label>
+                            <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+                        </div>
+        
+                        <!-- Campo Preço -->
+                        <div class="mb-3">
+                            <label for="preco" class="form-label h-color text-center">Preço</label>
+                            <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
+                        </div>           
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-create" data-bs-toggle="modal" data-bs-target="#cadastroModal">Salvar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
 
 
     <!-- Scripts -->

@@ -29,6 +29,12 @@ p {
 	display: none;
 }
 
+/* Cabeçalho - Título e botões */
+.header-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
 .picture {
 	width: 400px;
 	aspect-ratio: 32/18;
@@ -72,7 +78,7 @@ input#descPresente{
 
 .gift-card {
 	padding: 0 !important;
-	margin: 16px 8px;
+	/* margin: 8px; */
 }
 
 .btn-presentear {
@@ -85,8 +91,8 @@ input#descPresente{
 	border-radius: 12px;
 }
 
-.testeeee {
-	padding: 24px;
+.card-body {
+	padding: 24px !important;
 	border: 1px solid #dddddd;
 	border-radius: 0 0 16px 16px !important;
 	margin-top: -1px;
@@ -106,12 +112,12 @@ input#descPresente{
 	color: #333333;
 }
 
-#btnCreate {
-	background-color: #C2A300;
+.btn-register {
 	border: none;
-	border-radius: 12px;
+	background-color: #D4B23D;
 	font-size: 16px;
-	font-weight: 600;
+	color: #111111;
+	text-transform: uppercase;
 	padding: 8px 24px;
 }
 
@@ -123,4 +129,8 @@ input#descPresente{
 #gift-description {
 	font-size: 14px;
 	margin: 8px 0 8px 0;
+}
+
+.card-wrapper {
+	padding: 8px !important;
 }

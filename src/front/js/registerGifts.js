@@ -26,16 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let gift of gifts) {
             const card = document.createElement("div");
-            card.classList.add("gift-card", "col-3");
+            card.classList.add("card-wrapper", "col-3");
 
             card.innerHTML = `
+            <div class="gift-card">
                 <img src="https://source.unsplash.com/random/?gifts" class="card-img-top">
-                <div class="testeeee"
+                <div class="card-body">
                     <h2 class="card-title" id="gift-title">${gift.name}</h2>
                     <p class="card-text" id="gift-description">${gift.description}</p>
                     <p class="card-text">Preço: R$${gift.price}</p>
                     <button type="submit" class="btn-presentear" id="btnPresentear">Presentear</button>
                 </div>
+            </div>
             `;
 
             giftsContainer.appendChild(card);
@@ -107,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Evento de clique no botão de adicionar presente
-    document.getElementById("btnCreate").addEventListener("click", addGift);
+    document.getElementById("btn-create").addEventListener("click", addGift);
     // document.getElementById("btnDelete").addEventListener("click", deleteGift());
 
 });
