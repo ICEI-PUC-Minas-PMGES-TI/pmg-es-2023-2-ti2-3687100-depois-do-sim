@@ -1,0 +1,109 @@
+.nossos-beneficios {
+    background: #EFEFEF;
+}
+
+.titulo {
+    color: #494949;
+    font-family: Inria Serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 60px;
+}
+
+.h-color {
+    color: #494949;
+    font-family: Inria Serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.p-color {
+    color: #494949;
+    text-align: center;
+    font-family: Inria Serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 0px 50px 20px;
+}
+
+.gold-typography {
+    color: #C2A300;
+    font-family: Inria Serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.subtitulo {
+    color: #464646;
+    font-family: Inria Serif;
+    font-size: 20px;
+    width: 431px;
+    margin-bottom: 0px;
+}
+
+.subtitulo2 {
+    color: #464646;
+    font-family: Inria Serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+
+.btn-menu {
+    border-radius: 15px;
+    background: rgba(73, 73, 73, 0.70);
+    font-family: Inria Serif;
+    font-size: 16px;
+    color: white;
+    margin: 20px;
+    padding: 4px 25px;
+}
+
+.subtitulo3 {
+    color: #464646;
+    font-family: Inria Serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.gold-title {
+    color: #C2A300;
+    font-family: Inria Serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 60px;
+}
+
+.feedback {
+    padding: 50px;
+}
+
+.nossos-beneficios {
+    padding: 50px;
+}
+
+.feedback-casal {
+    border-radius: 20px;
+    background: rgba(194, 163, 0, 0.12);
+    padding: 0px;
+}
+
+.anuncio {
+    padding: 30px;
+}
