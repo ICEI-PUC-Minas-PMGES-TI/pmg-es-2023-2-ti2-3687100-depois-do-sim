@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ptBR">
+<html lang="pt_BR">
 
 <head>
     <meta charset="UTF-8">
@@ -13,37 +13,12 @@
 </head>
 
 <body>
-    <style>
-        .gold-title {
-            color: #111111;
-            font-family: 'Forum', serif;
-            font-size: 32px;
-            text-transform: uppercase;    
-            line-height: normal;
-            margin-bottom: 25px;
-            margin-top: 25px;
-        }
-
-        .h-color {
-            color: #333;
-            font-family: 'Forum', serif;
-            font-size: 20px;
-            font-style: normal;
-            
-            line-height: normal;
-            margin-bottom: 8px;
-            margin-top: 8px;
-        }
-        
-    </style>
-
     <main class="container">
         <div class="row">
             <div class="header-wrapper">
                 <h2>Lista de Presentes</h2>
                 <div class="btn-wrapper">
                     <button type="button" class="btn-register" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastrar</button>
-                    <!-- <button type="button" class="btn-delete" data-bs-toggle="modal" data-bs-target="#cadastroModal">Deletar</button>   -->
                 </div>
 
             </div>
@@ -66,22 +41,29 @@
                 <div class="modal-body">
                     <form id="giftForm">
                         <!-- Campo Nome -->
-                        <div class="mb-3">
-                            <label for="nome" class="form-label h-color text-center">Nome do Presente</label>
-                            <input type="text" class="form-control " id="nome" name="nome" required>
+                        <div>
+                            <!-- <label for="nome" class="form-label h-color text-center"></label> -->
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Presente" required>
                         </div>
         
                         <!-- Campo Descrição -->
-                        <div class="mb-3">
-                            <label for="descricao" class="form-label h-color text-center">Descrição</label>
-                            <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
+                        <div>
+                            <!-- <label for="descricao" class="form-label h-color text-center"></label> -->
+                            <textarea class="form-control mt-3" id="descricao" name="descricao" rows="3" placeholder="Descrição"></textarea>
                         </div>
         
                         <!-- Campo Preço -->
-                        <div class="mb-3">
-                            <label for="preco" class="form-label h-color text-center">Preço</label>
-                            <input type="number" class="form-control" id="preco" name="preco" step="0.01" required>
-                        </div>           
+                        <div>
+                            <!-- <label for="preco" class="form-label h-color text-center"></label> -->
+                            <input type="number" class="form-control mt-3" id="preco" name="preco" step="0.01" placeholder="Preço" required>
+                        </div>    
+                        
+                        <!-- Campo Imagem -->
+                        <div>
+                            <!-- <label for="nome" class="form-label h-color text-center"></label> -->
+                            <input type="text" class="form-control mt-3 " id="image" name="image" placeholder="Link da imagem: " required>
+                        </div>
+
                     </form>
                 </div>
                 <div class="modal-footer">

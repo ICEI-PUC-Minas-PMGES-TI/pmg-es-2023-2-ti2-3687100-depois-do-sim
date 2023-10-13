@@ -43,6 +43,9 @@ public class Gift {
     @DecimalMin(groups = {CreateGift.class, UpdateGift.class}, value = "0.0")
     private Double price;
 
+    @Column(name = "image", nullable = false)
+    private String image;
+
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = false)
     private Wedding wedding;
@@ -51,13 +54,14 @@ public class Gift {
     public Gift() {
     }
 
-    public Gift(Long id, String name, String description, Boolean available, Double price, Wedding wedding) {
+    public Gift(Long id, String name, String description, Boolean available, Double price, Wedding wedding, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.available = available;
         this.price = price;
         this.wedding = wedding;
+        this.image = image;
     }
 
     public Long getId() {
@@ -110,6 +114,14 @@ public class Gift {
 
     public void setWedding(Wedding wedding) {
         this.wedding = wedding;
+    }
+
+    public String getImage() {
+        return this.image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Gift id(Long id) {

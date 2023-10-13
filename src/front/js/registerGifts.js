@@ -32,13 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="gift-card">
                     <div class="btn-delete-wrapper"><button type="button" class="btn-deletar card-delete-button" data-giftid="${gift.id}">&times;</button></div>
                     ${!gift.available ? '<div class="already-gifted">Já presenteado</div>' : ''}
-                    <img src="https://source.unsplash.com/random/?gift" class="card-img-top">
+                    <img src="${gift.image}" class="card-img-top">
                 </div>
                 <div class="card-body">
                     <h2 class="card-title" id="gift-title">${gift.name}</h2>
                     <p class="card-text" id="gift-description">${gift.description}</p>
                     <p class="card-price">R$${gift.price}</p>
-                    <p class="card-reserved">Disponível: ${gift.available}</p>
                     <button type="submit" class="btn-presentear" data-giftid="${gift.id}" id="btnPresentear"><i class="bi bi-bag"></i>Presentear</button>
                 </div>
             `;
@@ -51,12 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
     async function addGift() {
         const name = document.getElementById("nome").value;
         const description = document.getElementById("descricao").value;
-        const price = parseFloat(document.getElementById("preco").value);
+        const price = parseFloat(document.getElementById("preco").value);  
+        const image = document.getElementById("image").value; 
 
         const giftData = {
             "name": name,
             "description": description,
             "price": price,
+            "image": image,
             "wedding": {
                 "id": weddingId
             }
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("nome").value = "";
             document.getElementById("descricao").value = "";
             document.getElementById("preco").value = "";
+            document.getElementById("image").value = "";
 
             // Atualizar a tabela após adicionar o presente
             getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
@@ -91,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     giftsContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("btn-deletar")) {
             const giftId = event.target.getAttribute("data-giftid");
-            console.log(giftId);
             if (giftId) {
                 if (confirm("Tem certeza de que deseja remover este item?")) {
                     removeGift(giftId);
@@ -122,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     giftsContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("btn-presentear")) {
             const giftId = event.target.getAttribute("data-giftid");
-            console.log(giftId);
             if (giftId) {
                 if (confirm("Tem certeza de que deseja presentear este item?")) {
                     presentGift(giftId);

@@ -40,6 +40,7 @@ public class GiftService {
         newObj.setDescription(obj.getDescription());
         newObj.setPrice(obj.getPrice());
         newObj.setAvailable(obj.getAvailable());
+        newObj.setImage(obj.getImage());
         return this.giftRepository.save(newObj);
     }
 
