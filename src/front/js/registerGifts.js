@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const giftsContainer = document.getElementById("giftsContainer");
 
-
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para exibir os dados na tabela
     function show(gifts) {
-        // Limpar o conteúdo existente
         giftsContainer.innerHTML = '';
 
         for (let gift of gifts) {
@@ -31,18 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add("card-wrapper", "col-3");
 
             card.innerHTML = `
-            <div class="gift-card">
-                <div class="btn-delete-wrapper">
-                    <button type="button" class="btn-deletar card-delete-button" data-giftid="${gift.id}">&times;</button>
+                <div class="gift-card">
+                    <div class="btn-delete-wrapper"><button type="button" class="btn-deletar card-delete-button" data-giftid="${gift.id}">&times;</button></div>
+                    ${!gift.available ? '<div class="already-gifted">Já presenteado</div>' : ''}
+                    <img src="https://source.unsplash.com/random/?gift" class="card-img-top">
                 </div>
-                <img src="https://source.unsplash.com/random/?gifts" class="card-img-top">
                 <div class="card-body">
                     <h2 class="card-title" id="gift-title">${gift.name}</h2>
                     <p class="card-text" id="gift-description">${gift.description}</p>
                     <p class="card-price">R$${gift.price}</p>
-                    <button type="submit" class="btn-presentear" id="btnPresentear"><i class="bi bi-bag"></i>Presentear</button>
+                    <p class="card-reserved">Disponível: ${gift.available}</p>
+                    <button type="submit" class="btn-presentear" data-giftid="${gift.id}" id="btnPresentear"><i class="bi bi-bag"></i>Presentear</button>
                 </div>
-            </div>
             `;
 
             giftsContainer.appendChild(card);
@@ -89,31 +87,74 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Fora do loop, adicione um ouvinte de evento para os botões de deletar
-const deleteButtons = document.querySelectorAll(".card-delete-button");
-deleteButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-        const giftId = this.getAttribute("data-giftid");
-        console.log("ID do presente:", giftId); // Imprime o ID no console
-        // Agora você tem o ID do presente e pode executar a lógica de exclusão
-        deleteGift(giftId);
+    // Evento de clique no botão de remover presente
+    giftsContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-deletar")) {
+            const giftId = event.target.getAttribute("data-giftid");
+            console.log(giftId);
+            if (giftId) {
+                if (confirm("Tem certeza de que deseja remover este item?")) {
+                    removeGift(giftId);
+                }
+            }
+        }
     });
-});
 
-    async function deleteGift(giftId) {
+    // Função para remover um presente
+    async function removeGift(giftId) {
         try {
             const response = await fetch(`${baseUrl}/gift/${giftId}`, {
                 method: "DELETE"
             });
 
             if (!response.ok) {
-                throw new Error("Erro ao excluir presente.");
+                throw new Error("Erro ao remover o presente.");
             }
 
-            // Atualizar a tabela após a exclusão bem-sucedida
+            // Atualizar a tabela após remover o presente
             getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
         } catch (error) {
-            console.error("Erro ao excluir presente:", error);
+            console.error("Erro ao remover o presente:", error);
+        }
+    }
+
+    // Evento de clique no botão de presentear
+    giftsContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-presentear")) {
+            const giftId = event.target.getAttribute("data-giftid");
+            console.log(giftId);
+            if (giftId) {
+                if (confirm("Tem certeza de que deseja presentear este item?")) {
+                    presentGift(giftId);
+                }
+            }
+        }
+    });
+
+    // Função para presentear
+    async function presentGift(giftId) {
+        try {
+            // Crie um objeto com os dados que você deseja atualizar
+            const updateData = {
+                "available": false
+            };
+    
+            const response = await fetch(`${baseUrl}/gift/${giftId}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updateData) // Envie os dados de atualização
+            });
+    
+            if (!response.ok) {
+                throw new Error("Erro ao presentear o presente.");
+            }
+    
+            // Atualize a tabela após presentear o presente
+            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+        } catch (error) {
+            console.error("Erro ao presentear o presente:", error);
         }
     }
 
@@ -127,8 +168,5 @@ deleteButtons.forEach((button) => {
     // Evento de clique no botão de adicionar presente
     document.getElementById("btn-create").addEventListener("click", addGift);
 
-    // Evento de clique no botão de excluir presente
-    document.getElementById("btn-deleter").addEventListener("click", deleteGift);
-    document.getElementById("btn-deleter").addEventListener("click", deleteGift());
 
 });

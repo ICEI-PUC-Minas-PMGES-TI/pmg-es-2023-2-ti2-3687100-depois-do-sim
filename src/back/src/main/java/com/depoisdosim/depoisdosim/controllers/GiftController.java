@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -55,6 +56,14 @@ public class GiftController {
     public ResponseEntity<Void> update(@Valid @RequestBody Gift obj, @PathVariable Long id) {
         obj.setId(id);
         this.giftService.update(obj);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> updateAvailable(@RequestBody Gift obj, @PathVariable Long id) {
+        obj.setId(id);
+        Boolean available = obj.getAvailable();
+        giftService.updateAvailable(obj, available);
         return ResponseEntity.noContent().build();
     }
 

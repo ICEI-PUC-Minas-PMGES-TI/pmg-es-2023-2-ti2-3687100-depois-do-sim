@@ -164,3 +164,13 @@ input#descPresente{
 .card-wrapper {
 	padding: 8px !important;
 }
+
+.already-gifted {	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255, 0, 0, 0.7); /* Cor de fundo com transparência */
+	color: #fff; /* Cor do texto */
+	padding: 5px; /* Espaçamento interno */
+}

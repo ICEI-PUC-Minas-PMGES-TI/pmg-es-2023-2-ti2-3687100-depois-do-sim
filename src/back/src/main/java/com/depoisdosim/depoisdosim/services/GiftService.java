@@ -39,6 +39,14 @@ public class GiftService {
         newObj.setName(obj.getName());
         newObj.setDescription(obj.getDescription());
         newObj.setPrice(obj.getPrice());
+        newObj.setAvailable(obj.getAvailable());
+        return this.giftRepository.save(newObj);
+    }
+
+    @Transactional
+    public Gift updateAvailable(Gift obj, Boolean available) {
+        Gift newObj = this.findById(obj.getId());
+        newObj.setAvailable(available);
         return this.giftRepository.save(newObj);
     }
 
