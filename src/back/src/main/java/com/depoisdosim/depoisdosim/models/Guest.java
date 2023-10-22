@@ -35,6 +35,12 @@ public class Guest {
     @Size(min = 2, max = 100)
     private String email;
 
+    @Column(name = "num_people", nullable = false)
+    private int numPeople = 1;
+
+    @Column(name = "name_people", length = 400, nullable = true)
+    private String namePeople;
+
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)
     private Wedding wedding;
