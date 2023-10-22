@@ -1,5 +1,6 @@
 package com.depoisdosim.depoisdosim.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class GuestService {
     public Guest findById(Long id) {
         Optional<Guest> Guest = this.guestRepository.findById(id);
         return Guest.orElseThrow(() -> new RuntimeException("Convidado não encontrado! Id: " + id + ", Tipo: " + Guest.class.getName()));
+    }
+
+    public List<Guest> findAllByWeddingId(Long weddingId) {
+        List<Guest> guests = this.guestRepository.findAllByWeddingId(weddingId);
+        return guests;
     }
 
     @Transactional
