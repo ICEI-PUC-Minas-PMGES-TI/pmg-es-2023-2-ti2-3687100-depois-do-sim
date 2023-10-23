@@ -53,49 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-async function addGuest() {
-    const name = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const num_people = parseInt(document.getElementById("qtdPessoas").value); 
-    const name_people = document.getElementById("nomesPessoas").value;  
-    
-
-    const guestData = {
-
-        "name": name,
-        "email": email,
-        "num_people": num_people,
-        "name_people": name_people,
-        "wedding": {
-            "id": weddingId,
-        }
-    };
-
-    try {
-        const response = await fetch(`${baseUrl}/guest`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(guestData)
+async function removeGuest(guestId) {
+    try {//conferir o caminho do fetch
+        const response = await fetch(`${baseUrl}/guest/${guestId}`, {
+            method: "DELETE"
         });
 
         if (!response.ok) {
-            throw new Error("Erro ao adicionar convidado.");
+            throw new Error("Erro ao remover o convidado.");
         }
 
-        // Limpar campos do formulário após o sucesso
-        document.getElementById("nome").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("qtdPessoas").value = "";
-        document.getElementById("nomesPessoas").value = "";
-
-        // Atualizar a tabela após adicionar o presente
+        // Atualizar a tabela após remover o presente
         getAPI(`${baseUrl}/guest/wedding/${weddingId}`);
     } catch (error) {
-        console.error("Erro ao adicionar convidado:", error);
+        console.error("Erro ao remover o convidado:", error);
     }
 }
-
-document.getElementById("btn-create-guest").addEventListener("click", addGuest);
-

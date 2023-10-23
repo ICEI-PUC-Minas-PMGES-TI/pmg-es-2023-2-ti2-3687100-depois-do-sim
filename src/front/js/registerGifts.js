@@ -102,20 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Função para remover um presente
-    async function removeGuest(guestId) {
+    async function removeGift(giftId) {
         try {//conferir o caminho do fetch
-            const response = await fetch(`${baseUrl}/guest/${guestId}`, {
+            const response = await fetch(`${baseUrl}/gift/${giftId}`, {
                 method: "DELETE"
             });
 
             if (!response.ok) {
-                throw new Error("Erro ao remover o convidado.");
+                throw new Error("Erro ao remover o presente.");
             }
 
             // Atualizar a tabela após remover o presente
-            getAPI(`${baseUrl}/guest/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/giftt/wedding/${weddingId}`);
         } catch (error) {
-            console.error("Erro ao remover o convidado:", error);
+            console.error("Erro ao remover o presente:", error);
         }
     }
 
