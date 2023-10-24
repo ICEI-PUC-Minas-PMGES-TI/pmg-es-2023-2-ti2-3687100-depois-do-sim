@@ -30,10 +30,16 @@ public class Guest {
     private String name;
 
     @Email
-    @Column(name = "email", length = 100, nullable = false, unique = true)
+    @Column(name = "email", length = 100, nullable = false)
     @NotBlank
     @Size(min = 2, max = 100)
     private String email;
+
+    @Column(name = "num_people", nullable = false)
+    private int numPeople;
+
+    @Column(name = "name_people", length = 400, nullable = true)
+    private String namePeople;
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)
@@ -47,6 +53,23 @@ public class Guest {
         this.name = name;
         this.email = email;
         this.wedding = wedding;
+    }
+
+
+    public int getNumPeople() {
+        return this.numPeople;
+    }
+
+    public void setNumPeople(int numPeople) {
+        this.numPeople = numPeople;
+    }
+
+    public String getNamePeople() {
+        return this.namePeople;
+    }
+
+    public void setNamePeople(String namePeople) {
+        this.namePeople = namePeople;
     }
 
     public Long getId() {

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h2 class="card-title" id="gift-title">${gift.name}</h2>
                     <p class="card-text" id="gift-description">${gift.description}</p>
                     <p class="card-price">R$${gift.price}</p>
-                    <button type="submit" class="btn-presentear" data-giftid="${gift.id}" id="btnPresentear"><i class="bi bi-bag"></i>Presentear</button>
+                    <button type="submit" class="btn-presentear" data-bs-toggle="modal" data-bs-target="#giftMessageModal" data-giftid="${gift.id}" id="btnPresentear"><i class="bi bi-bag"></i>Presentear</button>
                 </div>
             `;
 
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para remover um presente
     async function removeGift(giftId) {
-        try {
+        try {//conferir o caminho do fetch
             const response = await fetch(`${baseUrl}/gift/${giftId}`, {
                 method: "DELETE"
             });
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Atualizar a tabela após remover o presente
-            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/giftt/wedding/${weddingId}`);
         } catch (error) {
             console.error("Erro ao remover o presente:", error);
         }
@@ -123,11 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     giftsContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("btn-presentear")) {
             const giftId = event.target.getAttribute("data-giftid");
-            if (giftId) {
-                if (confirm("Tem certeza de que deseja presentear este item?")) {
-                    presentGift(giftId);
-                }
-            }
+            const testt = document.getElementById("btn-save-gift-message");
+            testt.addEventListener("click", function (event) {
+                presentGift(giftId);
+        });
         }
     });
 
@@ -167,6 +166,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Evento de clique no botão de adicionar presente
     document.getElementById("btn-create").addEventListener("click", addGift);
-
 
 });
