@@ -167,5 +167,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Evento de clique no botão de adicionar presente
     document.getElementById("btn-create").addEventListener("click", addGift);
 
-
 });

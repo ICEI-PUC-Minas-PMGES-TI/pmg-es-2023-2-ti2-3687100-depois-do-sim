@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
     const weddingId = 1;
 
-    // const convidadosList = document.getElementById("table");
+    const convidadosList = document.getElementById("guest-table");
 
     // Função para buscar dados da API
     async function getAPI(url) {
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${guest.name}</td>
                     <td>${guest.email}</td>
                     <td>${guest.num_people}</td>
+                    <td><button type="button" class="btn btn-danger btn-remove" data-guestid="${guest.id}">Excluir</button></td>
                 </tr>`;
 
             tab += `</tbody>`;
@@ -51,21 +52,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-});
-
-async function removeGuest(guestId) {
-    try {//conferir o caminho do fetch
-        const response = await fetch(`${baseUrl}/guest/${guestId}`, {
-            method: "DELETE"
-        });
-
-        if (!response.ok) {
-            throw new Error("Erro ao remover o convidado.");
+    // Evento para remover convidado
+    convidadosList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-remove")) {
+            const guestId = event.target.getAttribute("data-guestid");
+            if (confirm("Deseja realmente excluir este convidado?"))
+                removeGuest(guestId);
         }
+    });
 
-        // Atualizar a tabela após remover o presente
-        getAPI(`${baseUrl}/guest/wedding/${weddingId}`);
-    } catch (error) {
-        console.error("Erro ao remover o convidado:", error);
+    // Função para remover convidado
+    async function removeGuest(guestId) {
+        try {
+            const response = await fetch(`${baseUrl}/guest/${guestId}`, {
+                method: "DELETE"
+            });
+    
+            if (!response.ok) {
+                throw new Error("Erro ao remover o convidado.");
+            }
+    
+            // Atualizar a tabela após remover o presente
+            getAPI(`${baseUrl}/guest/wedding/${weddingId}`);
+        } catch (error) {
+            console.error("Erro ao remover o convidado:", error);
+        }
     }
-}
+});

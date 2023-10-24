@@ -30,7 +30,7 @@ public class Guest {
     private String name;
 
     @Email
-    @Column(name = "email", length = 100, nullable = false, unique = true)
+    @Column(name = "email", length = 100, nullable = false)
     @NotBlank
     @Size(min = 2, max = 100)
     private String email;
