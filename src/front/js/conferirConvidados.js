@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
     const weddingId = 1;
 
+    const sendInviteButton = document.getElementById("btn-send-invite");
     const convidadosList = document.getElementById("guest-table");
 
     // Função para buscar dados da API
@@ -19,6 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } catch (error) {
             console.error("Erro ao buscar dados da API:", error);
+        }
+    }
+
+    async function postAPI(url) {
+        try {
+            const response = await fetch(url, {method: "POST"});
+
+            if (!response.ok) {
+                throw new Error("Erro ao enviar convites.");
+            } else {
+                alert("Convites enviados com sucesso!");
+            }
+        } catch (error) {
+            alert(error);
         }
     }
 
@@ -51,6 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("guest-table").innerHTML = tab;
 
     }
+
+    sendInviteButton.addEventListener("click", (event) => {
+        postAPI(`${baseUrl}/guest/wedding/${weddingId}/invite`);
+    })
 
     // Evento para remover convidado
     convidadosList.addEventListener("click", (event) => {

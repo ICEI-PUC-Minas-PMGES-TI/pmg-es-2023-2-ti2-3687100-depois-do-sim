@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.depoisdosim.depoisdosim.models.Wedding;
+import com.depoisdosim.depoisdosim.services.GuestService;
 import com.depoisdosim.depoisdosim.services.WeddingService;
 
 import jakarta.validation.Valid;
