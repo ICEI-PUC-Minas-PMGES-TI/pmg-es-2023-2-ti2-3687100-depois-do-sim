@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
-    const weddingId = 1;
+    const photoAlbumId = 1;
 
     const imagesContainer = document.getElementById("imagesContainer");
 
@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.innerHTML = `
                 <div class="image-card">
-                    <div class="btn-delete-wrapper"><button type="button" class="btn-deletar card-delete-button" data-imageId="${image.id}">&times;</button></div>
-                    <img src="${image.image}" class="card-img-top">
+                    <img src="${image.link}" class="card-img-top">
                 </div>
             `;
 
@@ -41,17 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para adicionar um presente
     async function addImage() { 
-        const image = document.getElementById("image").value; 
+        const link = document.getElementById("image").value; 
 
         const imageData = {
-            "image": image,
-            "wedding": {
-                "id": weddingId
+            "link": link,
+            "photoAlbum": {
+                "id": photoAlbumId
             }
         };
 
         try {
-            const response = await fetch(`${baseUrl}/image`, {
+            const response = await fetch(`${baseUrl}/photo`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -67,44 +66,44 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("image").value = "";
 
             // Atualizar a tabela após adicionar o presente
-            getAPI(`${baseUrl}/image/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/photo/photo_album/${photoAlbumId}`);
         } catch (error) {
-            console.error("Erro ao adicionar imagem:", error);
+            console.error("Erro ao adicionar a imagem:", error);
         }
     }
 
-    // Evento de clique no botão de remover imagem
-    imagesContainer.addEventListener("click", (event) => {
-        if (event.target.classList.contains("btn-deletar")) {
-            const imageId = event.target.getAttribute("data-imageId");
-            if (imageId) {
-                if (confirm("Tem certeza de que deseja remover esta imagem?")) {
-                    removeImage(imageId);
-                }
-            }
-        }
-    });
+    // // Evento de clique no botão de remover imagem
+    // imagesContainer.addEventListener("click", (event) => {
+    //     if (event.target.classList.contains("btn-deletar")) {
+    //         const imageId = event.target.getAttribute("data-imageId");
+    //         if (imageId) {
+    //             if (confirm("Tem certeza de que deseja remover esta imagem?")) {
+    //                 removeImage(imageId);
+    //             }
+    //         }
+    //     }
+    // });
 
-    // Função para remover um presente
-    async function removeImage(imageId) {
-        try {//conferir o caminho do fetch
-            const response = await fetch(`${baseUrl}/image/${imageId}`, {
-                method: "DELETE"
-            });
+    // // Função para remover um presente
+    // async function removeImage(imageId) {
+    //     try {//conferir o caminho do fetch
+    //         const response = await fetch(`${baseUrl}/image/${imageId}`, {
+    //             method: "DELETE"
+    //         });
 
-            if (!response.ok) {
-                throw new Error("Erro ao remover o presente.");
-            }
+    //         if (!response.ok) {
+    //             throw new Error("Erro ao remover o presente.");
+    //         }
 
-            // Atualizar a tabela após remover o presente
-            getAPI(`${baseUrl}/giftt/wedding/${weddingId}`);
-        } catch (error) {
-            console.error("Erro ao remover o presente:", error);
-        }
-    }
+    //         // Atualizar a tabela após remover o presente
+    //         getAPI(`${baseUrl}/giftt/wedding/${weddingId}`);
+    //     } catch (error) {
+    //         console.error("Erro ao remover o presente:", error);
+    //     }
+    // }
 
 
-    getAPI(`${baseUrl}/image/wedding/${weddingId}`);
+    getAPI(`${baseUrl}/photo/photo_album/${photoAlbumId}`);
 
 
     document.getElementById("imageForm").addEventListener("submit", function (event) {
@@ -112,6 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Evento de clique no botão de adicionar presente
-    document.getElementById("btn-create").addEventListener("click", addGift);
+    document.getElementById("btn-create").addEventListener("click", addImage);
 
 });

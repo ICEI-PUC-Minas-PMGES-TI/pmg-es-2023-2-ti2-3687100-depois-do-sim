@@ -7,12 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.depoisdosim.depoisdosim.models.PhotoAlbum;
+import com.depoisdosim.depoisdosim.models.Photo;
 
 @Repository
-public interface PhotoAlbumRepository extends JpaRepository<PhotoAlbum, Long> {
-    
-    @Query(value = "SELECT * FROM photoAlbum g WHERE g.wedding_id = :id", nativeQuery = true)
-    List<PhotoAlbum> findAllByWeddingId(@Param("id") Long id);
+public interface PhotoRepository extends JpaRepository<Photo, Long> {
 
+    @Query(value = "SELECT * FROM photo g WHERE g.photo_album_id = :id", nativeQuery = true)
+    List<Photo> findAllByPhotoAlbumId(@Param("id") Long id);
+    
 }

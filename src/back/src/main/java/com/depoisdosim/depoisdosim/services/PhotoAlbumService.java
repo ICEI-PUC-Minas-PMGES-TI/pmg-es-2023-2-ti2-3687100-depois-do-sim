@@ -18,7 +18,7 @@ public class PhotoAlbumService {
 
     public PhotoAlbum findById(Long id) {
         Optional<PhotoAlbum> photo_album = this.photoAlbumRepository.findById(id);
-        return PhotoAlbum.orElseThrow(() -> new RuntimeException("Foto não encontrada! Id: " + id + ", Tipo: " + PhotoAlbum.class.getName()));
+        return photo_album.orElseThrow(() -> new RuntimeException("Foto não encontrada! Id: " + id + ", Tipo: " + PhotoAlbum.class.getName()));
     }
 
     public List<PhotoAlbum> findAllByWeddingId(Long weddingId) {
