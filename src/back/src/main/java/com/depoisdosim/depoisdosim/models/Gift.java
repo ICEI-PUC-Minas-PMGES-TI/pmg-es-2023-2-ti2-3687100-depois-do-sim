@@ -11,10 +11,19 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = Gift.TABLE_NAME)
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Gift {
     public interface CreateGift {}
     public interface UpdateGift {}
@@ -49,125 +58,4 @@ public class Gift {
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = false)
     private Wedding wedding;
-
-
-    public Gift() {
-    }
-
-    public Gift(Long id, String name, String description, Boolean available, Double price, Wedding wedding, String image) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.available = available;
-        this.price = price;
-        this.wedding = wedding;
-        this.image = image;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Boolean isAvailable() {
-        return this.available;
-    }
-
-    public Boolean getAvailable() {
-        return this.available;
-    }
-
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public Double getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Wedding getWedding() {
-        return this.wedding;
-    }
-
-    public void setWedding(Wedding wedding) {
-        this.wedding = wedding;
-    }
-
-    public String getImage() {
-        return this.image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public Gift id(Long id) {
-        setId(id);
-        return this;
-    }
-
-    public Gift name(String name) {
-        setName(name);
-        return this;
-    }
-
-    public Gift description(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    public Gift available(Boolean available) {
-        setAvailable(available);
-        return this;
-    }
-
-    public Gift price(Double price) {
-        setPrice(price);
-        return this;
-    }
-
-    public Gift wedding(Wedding wedding) {
-        setWedding(wedding);
-        return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Gift)) {
-            return false;
-        }
-        Gift gift = (Gift) o;
-        return Objects.equals(id, gift.id) && Objects.equals(name, gift.name) && Objects.equals(description, gift.description) && Objects.equals(available, gift.available) && Objects.equals(price, gift.price) && Objects.equals(wedding, gift.wedding);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description, available, price, wedding);
-    }
-    
 }
