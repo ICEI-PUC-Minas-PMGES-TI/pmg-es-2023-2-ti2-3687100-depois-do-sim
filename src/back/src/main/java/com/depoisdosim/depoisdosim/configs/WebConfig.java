@@ -13,8 +13,4 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**").allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH");
     }
 
-    public WebConfig(){
-        System.out.println("WebConfig careegado!");
-    }
-
 }
