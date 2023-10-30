@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.depoisdosim.depoisdosim.models.Guest;
 import com.depoisdosim.depoisdosim.models.Task;
 import com.depoisdosim.depoisdosim.repositories.TaskRepository;
 
@@ -19,7 +18,7 @@ public class TaskService {
 
     public Task findById(Long id) {
         Optional<Task> Task = this.taskRepository.findById(id);
-        return Task.orElseThrow(() -> new RuntimeException("Convidado não encontrado! Id: " + id + ", Tipo: " + Guest.class.getName()));
+        return Task.orElseThrow(() -> new RuntimeException("Task não encontrada! Id: " + id + ", Tipo: " + Task.class.getName()));
     }
 
     public List<Task> findAllByUserId(Long userId) {
@@ -39,6 +38,7 @@ public class TaskService {
         Task newObj = this.findById(obj.getId());
         newObj.setDate(obj.getDate());
         newObj.setTime(obj.getTime());
+        newObj.setDescription(obj.getDescription());
         return this.taskRepository.save(newObj);
     }
 
@@ -47,7 +47,7 @@ public class TaskService {
         try {
             this.taskRepository.deleteById(id);
         } catch(Exception e) {
-            throw new RuntimeException("Não é possível excluir o convidado!");
+            throw new RuntimeException("Não é possível excluir a task!");
         }
     }
     

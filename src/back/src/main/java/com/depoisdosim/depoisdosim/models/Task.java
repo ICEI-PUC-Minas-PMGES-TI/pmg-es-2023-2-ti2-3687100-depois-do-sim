@@ -41,6 +41,12 @@ public class Task {
     @Column(name = "time", length = 100, nullable = false)
     private Time time;
 
+    @Column(name = "description", length = 100, nullable = false)
+    private String description;
+
+    @Column(name = "done", nullable = false)
+    private boolean done = false;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

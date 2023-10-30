@@ -43,8 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
     async function show(tasks) {
         let tab = `<thead>
                         <th scope="col">#</th>
+                        <th scope="col">Descrição</th>
                         <th scope="col">Data</th>
                         <th scope="col">Horário</th>
+                        <th scope="col">Fornecedor</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Ação</th>
                     </thead>
                     <tbody>`;
@@ -53,10 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = new Date(task.date);
             const formattedDate = date.toLocaleDateString();
 
+            const statusText = task.status ? "Feito" : "Pendente";
+
+
             tab += `<tr>
                     <td>${task.id}</td>
+                    <td>${task.description}</td>
                     <td>${formattedDate}</td>
-                    <td>${task.time}</td>
+                    <td>${task.time.slice(0, 5)}</td>
+                    <td>Davi Salgadinhos</td>
+                    <td>${statusText}</td>
                     <td><button type="button" class="btn btn-danger btn-remove" data-taskid="${task.id}">Excluir</button></td>
                 </tr>`;
 
