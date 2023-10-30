@@ -107,4 +107,24 @@ document.addEventListener("DOMContentLoaded", () => {
     //         console.error("Erro ao remover o convidado:", error);
     //     }
     // }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("task-form");
+        const submitButton = document.getElementById("submit-button");
+
+        form.addEventListener("input", function() {
+            // Verifique se todos os campos obrigatórios estão preenchidos
+            const date = document.getElementById("date");
+            const time = document.getElementById("time");
+            const info = document.getElementById("info");
+
+            if (date.value.trim() !== "" && time.value.trim() !== "" && info.value.trim() !== "") {
+                submitButton.removeAttribute("disabled");
+            } else {
+                submitButton.setAttribute("disabled", "disabled");
+            }
+        }
+    )}
+    );
+    
 });
