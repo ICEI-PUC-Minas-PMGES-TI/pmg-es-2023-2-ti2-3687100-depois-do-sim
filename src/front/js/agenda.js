@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
     const userId = 1;
 
-    const sendInviteButton = document.getElementById("btn-send-invite");
-    const convidadosList = document.getElementById("guest-table");
+    const tasksList = document.getElementById("task-list");
 
     // Função para buscar dados da API
     async function getAPI(url) {
@@ -16,28 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
             show(data);
-            console.log(data);
+            
         } catch (error) {
             console.error("Erro ao buscar dados da API:", error);
         }
     }
 
-    // async function postAPI(url) {
-    //     try {
-    //         const response = await fetch(url, {method: "POST"});
-
-    //         if (!response.ok) {
-    //             throw new Error("Erro ao enviar convites.");
-    //         } else {
-    //             alert("Convites enviados com sucesso!");
-    //         }
-    //     } catch (error) {
-    //         alert(error);
-    //     }
-    // }
-
     getAPI(`${baseUrl}/task/user/${userId}`);
 
+    // Função para buscar dados da API por email do fornecedor
+    async function getAPIByEmail(url) {
+        try {
+            const response = await fetch(url, { method: "GET" });
+    
+            if (!response.ok) {
+                throw new Error("Erro ao buscar dados da API.");
+            }
+    
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Erro ao buscar dados da API:", error);
+            return null;
+        }
+    }
+
+    
     // Função para criar elementos HTML
     async function show(tasks) {
         let tab = `<thead>
@@ -56,19 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = new Date(task.date);
             const formattedDate = date.toLocaleDateString();
 
-            const statusText = task.status ? "Feito" : "Pendente";
-
             tab += `<tr>
                     <td>${task.id}</td>
                     <td>${task.title}</td>
                     <td>${task.description}</td>
                     <td>${formattedDate}</td>
                     <td>${task.time.slice(0, 5)}</td>
-                    <td>Davi Salgadinhos</td>
-                    <td>${statusText}</td>
-                    <td><button type="button" class="btn btn-danger btn-remove" data-taskid="${
-                        task.id
-                    }">Excluir</button></td>
+                    <td>Fornecedor</td>
+                    <td>${task.status}</td>
+                    <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
                 </tr>`;
 
             tab += `</tbody>`;
@@ -77,22 +76,30 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("task-list").innerHTML = tab;
     }
 
-    // Função para adicionar um presente
+    // Função para adicionar uma tarefa
     async function addTask() {
         const title = document.getElementById("title").value;
         const description = document.getElementById("description").value;
-        const dateStr = parseFloat(document.getElementById("date").value);
-        const dateDate = new Date(dateStr);
-        const timeStr = document.getElementById("time").value; 
-        const timeTime = new Date(timeStr);
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const email_fornecedor = document.getElementById("email_fornecedor").value;
+
+        const supplierData = await getAPIByEmail(`${baseUrl}/supplier/email/${email_fornecedor}`);
+        const supplierId = supplierData.id;
+
+        console.log(supplierData)
+        console.log(supplierId)
 
         const taskData = {
             "title": title,
             "description": description,
-            "date": dateDate,
-            "time": timeTime,
+            "date": date,
+            "time": time,
             "user": {
                 "id": userId
+            },
+            "supplier": {
+                "id": supplierId
             }
         };
 
@@ -106,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (!response.ok) {
-                throw new Error("Erro ao adicionar task.");
+                throw new Error("Erro ao adicionar tarefa.");
             }
 
             // Limpar campos do formulário após o sucesso
@@ -114,13 +121,45 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("description").value = "";
             document.getElementById("date").value = "";
             document.getElementById("time").value = "";
+            document.getElementById("email_fornecedor").value = "";
 
-            // Atualizar a tabela após adicionar o presente
+            // Atualizar a tabela após adicionar a tarefa
             getAPI(`${baseUrl}/task/user/${userId}`);
         } catch (error) {
-            console.error("Erro ao adicionar Task:", error);
+            console.error("Erro ao adicionar tarefa:", error);
         }
     }
+
+    // Evento para remover convidado
+    tasksList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-remove")) {
+            const taskId = event.target.getAttribute("data-task-id");
+            if (confirm("Deseja realmente excluir esta task?"))
+                removeTask(taskId);
+        }
+    });
+
+    // Função para remover convidado
+    async function removeTask(taskId) {
+        try {
+            const response = await fetch(`${baseUrl}/task/${taskId}`, {
+                method: "DELETE"
+            });
+    
+            if (!response.ok) {
+                throw new Error("Erro ao remover a task.");
+            }
+    
+            // Atualizar a tabela após remover o presente
+            getAPI(`${baseUrl}/task/user/${userId}`);
+        } catch (error) {
+            console.error("Erro ao remover a task:", error);
+        }
+    }
+
+    document.getElementById("task-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+    });
 
     document.getElementById("btn-create-task").addEventListener("click", addTask);
 

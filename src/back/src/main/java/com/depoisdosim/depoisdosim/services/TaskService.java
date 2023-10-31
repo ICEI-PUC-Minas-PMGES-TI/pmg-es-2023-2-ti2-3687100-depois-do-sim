@@ -52,4 +52,20 @@ public class TaskService {
         }
     }
     
+    public void confirmarPresenca(Long taskId) {
+        Task task = taskRepository.findById(taskId).orElse(null);
+        if (task != null) {
+            task.setStatus("aceito");
+            taskRepository.save(task);
+        }
+    }
+
+    public void negarPresenca(Long taskId) {
+        Task task = taskRepository.findById(taskId).orElse(null);
+        if (task != null) {
+            task.setStatus("negado");
+            taskRepository.save(task);
+        }
+    }
+    
 }

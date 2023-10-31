@@ -2,13 +2,6 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -66,34 +59,14 @@ public class TaskController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{id}/send-email/")
-    public ResponseEntity<Void> sendTaskEmail(@PathVariable Long id) {
-        Task task = this.taskService.findById(id);
+    @PostMapping("/{taskId}/confirmar")
+    public void confirmarPresenca(@PathVariable Long taskId) {
+        taskService.confirmarPresenca(taskId);
+    }
 
-        String to = task.getEmail_fornecedor();
-        String from = "convite@depoisdosim.com.br";
-        String host = "smtp-relay.brevo.com";
-
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
-        properties.setProperty("mail.smtp.port", "587");
-
-        Session session = Session.getDefaultInstance(properties);
-
-        try {
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setSubject("Assunto do e-mail para o fornecedor");
-            message.setText("Conteúdo do e-mail para o fornecedor");
-
-            Transport.send(message, "convite@depoisdosim.com.br", "sua-senha-de-email");
-            System.out.println("E-mail enviado com sucesso para o fornecedor!");
-        } catch (Exception mex) {
-            mex.printStackTrace();
-        }
-    
-        return ResponseEntity.ok().build();
+    @PostMapping("/{taskId}/negar")
+    public void negarPresenca(@PathVariable Long taskId) {
+        taskService.negarPresenca(taskId);
     }
 
 }
