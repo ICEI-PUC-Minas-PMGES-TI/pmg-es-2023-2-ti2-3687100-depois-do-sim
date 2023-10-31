@@ -43,9 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     async function show(tasks) {
         let tab = `<thead>
                         <th scope="col">#</th>
+                        <th scope="col">Título</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Data</th>
-                        <th scope="col">Horário</th>
+                        <th scope="col">Hora</th>
                         <th scope="col">Fornecedor</th>
                         <th scope="col">Status</th>
                         <th scope="col">Ação</th>
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             tab += `<tr>
                     <td>${task.id}</td>
+                    <td>${task.title}</td>
                     <td>${task.description}</td>
                     <td>${formattedDate}</td>
                     <td>${task.time.slice(0, 5)}</td>
@@ -77,34 +79,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // sendInviteButton.addEventListener("click", (event) => {
-    //     postAPI(`${baseUrl}/guest/wedding/${weddingId}/invite`);
-    // })
+    // Função para adicionar um presente
+    async function addTask() {
+        const name = document.getElementById("nome").value;
+        const description = document.getElementById("descricao").value;
+        const price = parseFloat(document.getElementById("preco").value);  
+        const image = document.getElementById("image").value; 
 
-    // Evento para remover convidado
-    // convidadosList.addEventListener("click", (event) => {
-    //     if (event.target.classList.contains("btn-remove")) {
-    //         const guestId = event.target.getAttribute("data-guestid");
-    //         if (confirm("Deseja realmente excluir este convidado?"))
-    //             removeGuest(guestId);
-    //     }
-    // });
+        const giftData = {
+            "name": name,
+            "description": description,
+            "price": price,
+            "image": image,
+            "wedding": {
+                "id": weddingId
+            }
+        };
 
-    // Função para remover convidado
-    // async function removeGuest(guestId) {
-    //     try {
-    //         const response = await fetch(`${baseUrl}/guest/${guestId}`, {
-    //             method: "DELETE"
-    //         });
-    
-    //         if (!response.ok) {
-    //             throw new Error("Erro ao remover o convidado.");
-    //         }
-    
-    //         // Atualizar a tabela após remover o presente
-    //         getAPI(`${baseUrl}/guest/wedding/${weddingId}`);
-    //     } catch (error) {
-    //         console.error("Erro ao remover o convidado:", error);
-    //     }
-    // }
+        try {
+            const response = await fetch(`${baseUrl}/gift`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(giftData)
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao adicionar presente.");
+            }
+
+            // Limpar campos do formulário após o sucesso
+            document.getElementById("nome").value = "";
+            document.getElementById("descricao").value = "";
+            document.getElementById("preco").value = "";
+            document.getElementById("image").value = "";
+
+            // Atualizar a tabela após adicionar o presente
+            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+        } catch (error) {
+            console.error("Erro ao adicionar presente:", error);
+        }
+    }
 });

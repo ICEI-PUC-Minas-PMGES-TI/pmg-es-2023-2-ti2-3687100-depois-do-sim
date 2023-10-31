@@ -90,7 +90,6 @@ public class GuestController {
                 mex.printStackTrace();
             }
         }
-
         return ResponseEntity.ok().build();
     }
 }

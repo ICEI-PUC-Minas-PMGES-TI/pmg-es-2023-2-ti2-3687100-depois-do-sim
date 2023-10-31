@@ -33,6 +33,9 @@ public class Task {
     @Column(name = "id", unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "title", length = 100, nullable = false)
+    private String title;
     
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date", length = 100, nullable = false)
@@ -50,4 +53,7 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @Column(name = "email_fornecedor", length = 100, nullable = false)
+    private String email_fornecedor;
 }

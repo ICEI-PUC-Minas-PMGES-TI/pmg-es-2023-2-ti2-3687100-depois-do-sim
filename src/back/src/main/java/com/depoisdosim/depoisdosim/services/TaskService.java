@@ -36,6 +36,7 @@ public class TaskService {
     @Transactional
     public Task update(Task obj) {
         Task newObj = this.findById(obj.getId());
+        newObj.setTitle(obj.getTitle());
         newObj.setDate(obj.getDate());
         newObj.setTime(obj.getTime());
         newObj.setDescription(obj.getDescription());
