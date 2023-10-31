@@ -79,44 +79,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para adicionar um presente
     async function addTask() {
-        const name = document.getElementById("nome").value;
-        const description = document.getElementById("descricao").value;
-        const price = parseFloat(document.getElementById("preco").value);
-        const image = document.getElementById("image").value;
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const dateStr = parseFloat(document.getElementById("date").value);
+        const dateDate = new Date(dateStr);
+        const timeStr = document.getElementById("time").value; 
+        const timeTime = new Date(timeStr);
 
-        const giftData = {
-            name: name,
-            description: description,
-            price: price,
-            image: image,
-            wedding: {
-                id: weddingId,
-            },
+        const taskData = {
+            "title": title,
+            "description": description,
+            "date": dateDate,
+            "time": timeTime,
+            "user": {
+                "id": userId
+            }
         };
 
         try {
-            const response = await fetch(`${baseUrl}/gift`, {
+            const response = await fetch(`${baseUrl}/task`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(giftData),
+                body: JSON.stringify(taskData)
             });
 
             if (!response.ok) {
-                throw new Error("Erro ao adicionar presente.");
+                throw new Error("Erro ao adicionar task.");
             }
 
             // Limpar campos do formulário após o sucesso
-            document.getElementById("nome").value = "";
-            document.getElementById("descricao").value = "";
-            document.getElementById("preco").value = "";
-            document.getElementById("image").value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("description").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("time").value = "";
 
             // Atualizar a tabela após adicionar o presente
-            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/task/user/${userId}`);
         } catch (error) {
-            console.error("Erro ao adicionar presente:", error);
+            console.error("Erro ao adicionar Task:", error);
         }
     }
+
+    document.getElementById("btn-create-task").addEventListener("click", addTask);
+
 });

@@ -54,6 +54,6 @@ public class Task {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "email_fornecedor", length = 100, nullable = false)
+    @Column(name = "email_fornecedor", length = 100, nullable = true)
     private String email_fornecedor;
 }
