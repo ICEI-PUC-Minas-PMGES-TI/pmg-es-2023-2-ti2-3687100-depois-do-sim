@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
             show(data);
             console.log(data);
-
         } catch (error) {
             console.error("Erro ao buscar dados da API:", error);
         }
@@ -53,12 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     </thead>
                     <tbody>`;
 
-        for(let task of tasks) {
+        for (let task of tasks) {
             const date = new Date(task.date);
             const formattedDate = date.toLocaleDateString();
 
             const statusText = task.status ? "Feito" : "Pendente";
-
 
             tab += `<tr>
                     <td>${task.id}</td>
@@ -68,41 +66,41 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${task.time.slice(0, 5)}</td>
                     <td>Davi Salgadinhos</td>
                     <td>${statusText}</td>
-                    <td><button type="button" class="btn btn-danger btn-remove" data-taskid="${task.id}">Excluir</button></td>
+                    <td><button type="button" class="btn btn-danger btn-remove" data-taskid="${
+                        task.id
+                    }">Excluir</button></td>
                 </tr>`;
 
             tab += `</tbody>`;
-            
-            }
+        }
 
         document.getElementById("task-list").innerHTML = tab;
-
     }
 
     // Função para adicionar um presente
     async function addTask() {
         const name = document.getElementById("nome").value;
         const description = document.getElementById("descricao").value;
-        const price = parseFloat(document.getElementById("preco").value);  
-        const image = document.getElementById("image").value; 
+        const price = parseFloat(document.getElementById("preco").value);
+        const image = document.getElementById("image").value;
 
         const giftData = {
-            "name": name,
-            "description": description,
-            "price": price,
-            "image": image,
-            "wedding": {
-                "id": weddingId
-            }
+            name: name,
+            description: description,
+            price: price,
+            image: image,
+            wedding: {
+                id: weddingId,
+            },
         };
 
         try {
             const response = await fetch(`${baseUrl}/gift`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(giftData)
+                body: JSON.stringify(giftData),
             });
 
             if (!response.ok) {
