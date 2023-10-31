@@ -2,7 +2,7 @@
 
 Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de convites personalizados, lembretes de confirmação, relatórios e estatísticas em tempo real dos convidados convidados, inclusão de opção para convidados informarem restrições alimentares.
 
-![Lista de convidados Diagrama](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/3d250682-ef73-4fa4-bea6-586b293681bb)
+![Lista de convidados Diagrama](images/lista_de_convidados.png)
 
 
 #### Detalhamento das atividades
@@ -21,22 +21,18 @@ _* **Enviar o convite de casamento** - o convite do casamento é enviado pelo si
 
 
 
-**Listar convidados e enviar Save the Date**
+**Fazer upload do convite**
 
 | **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
 | ---                 | ---              | ---                                          | ---               |
-| Nome do convidado   | Área de texto    | mínimo 1 caractere e máximo 2000 carácteres  |      edit         |
-| E-mail do convidado | Área de texto    | mínimo 1 caractere e máximo 2000 carácteres	|      edit         |
-| Idade do convidado  | Campo numérico   | De 1 a 3 caracteres                        	|      edit         |
+| imagem do convite   | Campo de texto    | url  |      null         |                       	|      edit         |
 
 
 | **Comandos**                     |  **Destino**                           | **Tipo**       |                   
 | ---                              | ---                                    | ---            | 
-| Adicionar convidado              | Transição para a próxima atividade     | default        |                   
-| Salvar convidado                 | Lista de convidados                    |   -            |      
-| Data de envio de "Save the Date" | Atividade de envio dos "Save the Date" | -              |    
+| Adicionar convite              | Fim da tarefa     |         |                   
 
-**Receber o "Save the Date" e confirmar  presença**
+**Enviar o formulário de cadastro**
 
 | **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
 | ---                 | ---              | ---                                          | ---               |
@@ -46,7 +42,7 @@ _* **Enviar o convite de casamento** - o convite do casamento é enviado pelo si
 | ---                              | ---                                    | ---            | 
 | Enviar Resposta                  | Lista de convidados confirmados        | -              | 
 
-**Confirmar confirmados e escolher data para enviar o convite**
+**Cadastrar quem comparecerá**
 
 | **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
 | ---                 | ---              | ---                                          | ---               |
