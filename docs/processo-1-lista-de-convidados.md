@@ -32,23 +32,29 @@ _* **Enviar o convite de casamento** - o convite do casamento é enviado pelo si
 | ---                              | ---                                    | ---            | 
 | Adicionar convite              | Fim da tarefa     |         |                   
 
-**Enviar o formulário de cadastro**
-
-| **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
-| ---                 | ---              | ---                                          | ---               |
-| Confirmar           | Seleção única    | Verdadeiro ou Falso                          |      null         |
-
-| **Comandos**                     |  **Destino**                           | **Tipo**       |                   
-| ---                              | ---                                    | ---            | 
-| Enviar Resposta                  | Lista de convidados confirmados        | -              | 
 
 **Cadastrar quem comparecerá**
 
 | **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
 | ---                 | ---              | ---                                          | ---               |
-| Nome do convidado   | Indicador        | Verdadeiro ou Falso                          |      NULL, até resposta do convidado       |
+| Nome | Campo de texto        | required                         |      NULL      |
+| Email | Campo de texto        | required                          |      NULL       |
+| Quantidade de pessoas | Campo numérico        | required                        |      NULL       |
+| Nome das pessoas| àrea de texto        | required                          |      NULL       |
 
 | **Comandos**                     |  **Destino**                           | **Tipo**       |                   
 | ---                              | ---                                    | ---            |     
-| Data de envio dos convites       | Atividade de envio dos convites        | -              |    
+| Cadastrar       | Fim da tarefa do convidado        | -              |    
+
+**Analisar convidados e aceitar**
+
+| **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
+| ---                 | ---              | ---                                          | ---               |
+| Lista de convidados | lista        |                        |            |
+
+
+| **Comandos**                     |  **Destino**                           | **Tipo**       |                   
+| ---                              | ---                                    | ---            |     
+| Confirmar       | Fim do processo        | -              |    
+|  Excluir        | Apaga as informações do convidado no Banco | |
 
