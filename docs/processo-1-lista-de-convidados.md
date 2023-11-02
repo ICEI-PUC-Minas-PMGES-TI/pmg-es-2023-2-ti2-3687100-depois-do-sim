@@ -9,15 +9,15 @@ Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de
 
 _Os tipos de dados a serem utilizados são:_
 
-_* **Listar convidados e enviar Save the Date** - inserir os dados dos convidados e selecionar o envio do "Save the Date"._
+_* **Fazer upload do convite** - subir a foto do convite no site._
 
-_* **Enviar "Save the Date"** - o sistema envia o Save the Date para todos os convidados cadastrados._
+_* **Enviar o formulário de cadastro** - enviar o link do formulário para convidados._
 
-_* **Receber o "Save the Date" e confirmar  presença** - receber o Save the Date e confirmar ou não a presença no evento_
+_* **Cadastrar quem comparecerá** - o convidado preenche o formulário_
 
-_* **Confirmar confirmados e escolher data para enviar o convite** - os convidados recebem um relatório com os convidados que confirmaram ou não e escolhem uma data para enviar os convites do casamento._
+_* **Analisar convidados e aceitar** - os noivos recebem a lista de cadastrados e podem excluir aqueles convidados não condizentes._
 
-_* **Enviar o convite de casamento** - o convite do casamento é enviado pelo sistema para aqueles que confirmaram o Save the Date_
+_* **Registar convidados aceitos na lista** - os convidados aceitos ficam na lista._
 
 
 
