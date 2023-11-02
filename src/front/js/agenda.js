@@ -59,13 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = new Date(task.date);
             const formattedDate = date.toLocaleDateString();
 
+            getAPIByEmail(`${baseUrl}/supplier/${task.supplier.id}`)
+
             tab += `<tr>
                     <td>${task.id}</td>
                     <td>${task.title}</td>
                     <td>${task.description}</td>
                     <td>${formattedDate}</td>
                     <td>${task.time.slice(0, 5)}</td>
-                    <td>Fornecedor</td>
+                    <td>${task.supplier.username}</td>
                     <td>${task.status}</td>
                     <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
                 </tr>`;
@@ -86,9 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const supplierData = await getAPIByEmail(`${baseUrl}/supplier/email/${email_fornecedor}`);
         const supplierId = supplierData.id;
+        const supplierName = supplierData.username;
 
         console.log(supplierData)
         console.log(supplierId)
+        console.log(supplierName)
 
         const taskData = {
             "title": title,
