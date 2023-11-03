@@ -1,4 +1,4 @@
-package com.depoisdosim.depoisdosim.configs;
+package com.depoisdosim.depoisdosim.security;
 
 import java.io.IOException;
 
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.depoisdosim.depoisdosim.repositories.UserRepository;
-import com.depoisdosim.depoisdosim.services.TokenService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -43,7 +42,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     private String recoverToken(HttpServletRequest request) {
         var authHeader = request.getHeader("Authorization");
         if(authHeader == null) return null;
-        return authHeader.replace("Bearer", "");
+        return authHeader.replace("Bearer ", "");
     }
 
 }

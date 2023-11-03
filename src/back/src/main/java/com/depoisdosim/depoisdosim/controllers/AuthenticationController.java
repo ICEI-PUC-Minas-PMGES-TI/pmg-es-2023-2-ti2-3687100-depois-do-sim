@@ -15,7 +15,7 @@ import com.depoisdosim.depoisdosim.domain.user.LoginResponseDTO;
 import com.depoisdosim.depoisdosim.domain.user.RegisterDTO;
 import com.depoisdosim.depoisdosim.models.User;
 import com.depoisdosim.depoisdosim.repositories.UserRepository;
-import com.depoisdosim.depoisdosim.services.TokenService;
+import com.depoisdosim.depoisdosim.security.TokenService;
 
 import jakarta.validation.Valid;
 
