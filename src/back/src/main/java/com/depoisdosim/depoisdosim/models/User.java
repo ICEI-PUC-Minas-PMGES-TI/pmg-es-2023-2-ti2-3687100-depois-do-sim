@@ -1,8 +1,14 @@
 package com.depoisdosim.depoisdosim.models;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.depoisdosim.depoisdosim.domain.user.UserRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -30,9 +36,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class User {
-    public interface CreateUser {}
-    public interface UpdateUser {}
+public class User implements UserDetails {
 
     public static final String TABLE_NAME = "user";
 
@@ -42,15 +46,17 @@ public class User {
     private Long id;
 
     @Column(name = "username", length = 100, nullable = false, unique = true)
-    @NotBlank(groups = CreateUser.class)
-    @Size(groups = CreateUser.class, min = 2, max = 100)
+    @NotBlank
+    @Size(min = 2, max = 100)
     private String username;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password", length = 60, nullable = false)
-    @NotBlank(groups = {CreateUser.class, UpdateUser.class})
-    @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
+    @NotBlank
+    @Size(min = 8, max = 60)
     private String password;
+
+    private UserRole role;
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)
@@ -59,4 +65,41 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Task> tasks = new ArrayList<Task>();
+
+    public User(String username, String password, UserRole role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        if(this.role == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
+    @Override
+    public String getUsername() {
+        return this.username;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
