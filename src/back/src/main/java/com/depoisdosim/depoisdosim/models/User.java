@@ -18,8 +18,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -56,11 +56,12 @@ public class User implements UserDetails {
     @Size(min = 8, max = 60)
     private String password;
 
-    private UserRole role;
+    @Column(name = "role", length = 20, nullable = false)
+    private UserRole role = UserRole.USER;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "wedding_id", nullable = true)
-    private Wedding wedding;
+    private Wedding wedding = null;
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")

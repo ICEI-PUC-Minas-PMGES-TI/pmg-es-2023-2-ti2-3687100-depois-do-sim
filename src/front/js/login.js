@@ -15,19 +15,17 @@ async function login() {
     });
 
     if (response.ok) {
-        console.log("Login successful");
+        alert("Login sucssful");
         const data = await response.json();
         const token = data.token;
 
-        // Armazenar o token no Local Storage
         window.localStorage.setItem("Authorization", token);
         window.localStorage.setItem("username", username);
 
-        // Atualize o elemento HTML com o nome do usuário
         document.getElementById("username").textContent = username;
-    } else {
-        console.log("Login failed");
-    }
+        window.location = 'weddingRegistration.html';
+    } else 
+        alert("Login failed");
 }
 
 // Vincular a função de login ao evento de clique do botão de login
@@ -39,5 +37,5 @@ document.getElementById("loginButton").addEventListener("click", function (event
 document.getElementById("logoutButton").addEventListener("click", function() {
     localStorage.removeItem('Authorization');
     localStorage.removeItem('username');
-    window.location = 'login.html'; // Redirecionar para a página de login
+    window.location = 'login.html';
 });
