@@ -15,7 +15,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    // CRUD - Optional: Posso receber "Null"
     public User findById(Long id) {
         Optional<User> user = this.userRepository.findById(id);
         return user.orElseThrow(() -> new RuntimeException("Usuário não encontrado! Id: " + id + ", Tipo: " + User.class.getName()));
@@ -35,7 +34,6 @@ public class UserService {
         return this.userRepository.save(newObj);
     }
 
-    // Usuário não pode ser excluído se possuir registros de presentes, convidados ou casamentos
     public void delete(Long id) {
         this.findById(id);
         try {

@@ -58,5 +58,15 @@ public class TaskController {
         this.taskService.delete(id);
         return ResponseEntity.noContent().build();
     }
-    
+
+    @PostMapping("/{taskId}/confirmar")
+    public void confirmarPresenca(@PathVariable Long taskId) {
+        taskService.confirmarPresenca(taskId);
+    }
+
+    @PostMapping("/{taskId}/negar")
+    public void negarPresenca(@PathVariable Long taskId) {
+        taskService.negarPresenca(taskId);
+    }
+
 }
