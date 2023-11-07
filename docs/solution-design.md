@@ -4,7 +4,7 @@
 
 _Apresente o modelo de dados por meio de um modelo relacional ou Diagrama de Entidade-Relacionamento (DER) que contemple todos os conceitos e atributos apresentados na modelagem dos processos._ 
 
-![Diagrama de Entidade Relacionamento de Exemplo](images/modelo-relacional.png "Diagrama de Entidade Relacionamento de Exemplo")
+![Diagrama de Entidade Relacionamento de Exemplo](images/MER_atualizado.jpeg "Diagrama de Entidade Relacionamento de Exemplo")
 
 ### 4.2. Tecnologias
 
