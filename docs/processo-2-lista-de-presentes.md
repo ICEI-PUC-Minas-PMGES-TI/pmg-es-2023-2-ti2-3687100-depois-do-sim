@@ -2,7 +2,7 @@
 
 Este processo pode ser melhorado por meio de um sistema de envio de agradecimentos aos presentes, opções de presentes virtuais como contribuições monetárias, informar o link de acesso à lista de presentes no convite do casamento.
 
-![Lista de presentes Diagrama (1)](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/blob/7b43110f8e11179081c64904c32486459bcac9ef/docs/images/Lista%20de%20presentes%20Diagrama.png)
+![Lista de presentes Diagrama (1)](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/c6f7acf5-32ce-46af-a93c-8030103e1f8f)
 
 
 #### Detalhamento das atividades

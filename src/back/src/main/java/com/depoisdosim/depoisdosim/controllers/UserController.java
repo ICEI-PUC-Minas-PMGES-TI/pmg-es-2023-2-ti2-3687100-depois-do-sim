@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.depoisdosim.depoisdosim.models.User;
+import com.depoisdosim.depoisdosim.models.User.CreateUser;
+import com.depoisdosim.depoisdosim.models.User.UpdateUser;
 import com.depoisdosim.depoisdosim.services.UserService;
 
 import jakarta.validation.Valid;
@@ -28,6 +30,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     
+    // localhost:8080/user/{id}
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         User obj = this.userService.findById(id);
@@ -35,6 +38,7 @@ public class UserController {
     }
 
     @PostMapping
+    @Validated(CreateUser.class)
     public ResponseEntity<Void> create(@Valid @RequestBody User obj) {
         this.userService.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
@@ -42,6 +46,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
+    @Validated(UpdateUser.class)
     public ResponseEntity<Void> update(@Valid @RequestBody User obj, @PathVariable Long id) {
         obj.setId(id);
         this.userService.update(obj);

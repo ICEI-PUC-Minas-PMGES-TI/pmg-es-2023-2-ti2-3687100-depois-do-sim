@@ -1,14 +1,8 @@
 package com.depoisdosim.depoisdosim.models;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import com.depoisdosim.depoisdosim.domain.user.UserRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -18,8 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -36,7 +30,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class User implements UserDetails {
+public class User {
+    public interface CreateUser {}
+    public interface UpdateUser {}
 
     public static final String TABLE_NAME = "user";
 
@@ -46,61 +42,21 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(name = "username", length = 100, nullable = false, unique = true)
-    @NotBlank
-    @Size(min = 2, max = 100)
+    @NotBlank(groups = CreateUser.class)
+    @Size(groups = CreateUser.class, min = 2, max = 100)
     private String username;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password", length = 60, nullable = false)
-    @NotBlank
-    @Size(min = 8, max = 60)
+    @NotBlank(groups = {CreateUser.class, UpdateUser.class})
+    @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
     private String password;
 
-    @Column(name = "role", length = 20, nullable = false)
-    private UserRole role = UserRole.USER;
-
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)
-    private Wedding wedding = null;
+    private Wedding wedding;
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Task> tasks = new ArrayList<Task>();
-
-    public User(String username, String password, UserRole role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.role == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-        else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
-    }
-
-    @Override
-    public String getUsername() {
-        return this.username;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 }

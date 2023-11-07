@@ -1,5 +1,10 @@
 package com.depoisdosim.depoisdosim.models;
 
+import java.sql.Date;
+import java.sql.Time;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,27 +33,21 @@ public class Task {
     @Column(name = "id", unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "date", length = 100, nullable = false)
+    private Date date;
 
-    @Column(name = "title", length = 100, nullable = false)
-    private String title;
+    @Column(name = "time", length = 100, nullable = false)
+    private Time time;
 
     @Column(name = "description", length = 100, nullable = false)
     private String description;
-    
-    @Column(name = "date", length = 100, nullable = false)
-    private String date;
 
-    @Column(name = "time", length = 100, nullable = false)
-    private String time;
-
-    @Column(name = "status", nullable = false)
-    private String status = "Pendente";
+    @Column(name = "done", nullable = false)
+    private boolean done = false;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "supplier_id", nullable = true)
-    private Supplier supplier = null;
 }
