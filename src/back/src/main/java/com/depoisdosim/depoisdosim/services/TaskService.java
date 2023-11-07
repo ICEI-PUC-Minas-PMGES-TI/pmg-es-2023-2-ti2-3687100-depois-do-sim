@@ -36,7 +36,6 @@ public class TaskService {
     @Transactional
     public Task update(Task obj) {
         Task newObj = this.findById(obj.getId());
-        newObj.setTitle(obj.getTitle());
         newObj.setDate(obj.getDate());
         newObj.setTime(obj.getTime());
         newObj.setDescription(obj.getDescription());
@@ -49,22 +48,6 @@ public class TaskService {
             this.taskRepository.deleteById(id);
         } catch(Exception e) {
             throw new RuntimeException("Não é possível excluir a task!");
-        }
-    }
-    
-    public void confirmarPresenca(Long taskId) {
-        Task task = taskRepository.findById(taskId).orElse(null);
-        if (task != null) {
-            task.setStatus("aceito");
-            taskRepository.save(task);
-        }
-    }
-
-    public void negarPresenca(Long taskId) {
-        Task task = taskRepository.findById(taskId).orElse(null);
-        if (task != null) {
-            task.setStatus("negado");
-            taskRepository.save(task);
         }
     }
     
