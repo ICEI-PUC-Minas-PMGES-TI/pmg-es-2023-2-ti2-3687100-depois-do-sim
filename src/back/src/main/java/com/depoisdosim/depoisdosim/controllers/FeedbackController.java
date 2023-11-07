@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.depoisdosim.depoisdosim.models.Feedback;
-import com.depoisdosim.depoisdosim.models.Feedback.CreateFeedback;
 import com.depoisdosim.depoisdosim.services.FeedbackService;
 
 import jakarta.validation.Valid;
@@ -37,14 +35,19 @@ public class FeedbackController {
         return ResponseEntity.ok().body(obj);
     }
 
-    @GetMapping("/user/userId}")
+    @GetMapping("/user/{userId}")
     public ResponseEntity<List<Feedback>> findAllByUserId(@PathVariable Long userId) {
         List<Feedback> objs = this.feedbackService.findAllByUserId(userId);
         return ResponseEntity.ok().body(objs);
     }
 
+    @GetMapping("/supplier/{supplierId}")
+    public ResponseEntity<List<Feedback>> findAllBySupplierId(@PathVariable Long supplierId) {
+        List<Feedback> objs = this.feedbackService.findAllBySupplierId(supplierId);
+        return ResponseEntity.ok().body(objs);
+    }
+
     @PostMapping
-    @Validated(CreateFeedback.class)
     public ResponseEntity<Void> create(@Valid @RequestBody Feedback obj) {
         this.feedbackService.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
@@ -52,7 +55,6 @@ public class FeedbackController {
     }
 
     @PutMapping("/{id}")
-    @Validated(CreateFeedback.class)
     public ResponseEntity<Void> update(@Valid @RequestBody Feedback obj, @PathVariable Long id) {
         obj.setId(id);
         this.feedbackService.update(obj);

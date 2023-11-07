@@ -25,8 +25,6 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class Feedback {
-    public interface CreateFeedback {}
-    public interface UpdateFeedback {}
 
     public static final String TABLE_NAME = "feedback";
 
@@ -35,19 +33,14 @@ public class Feedback {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "nome", length = 100, nullable = false)
-    @NotBlank(groups = {CreateFeedback.class, UpdateFeedback.class})
-    @Size(groups = {CreateFeedback.class, UpdateFeedback.class}, min = 2, max = 100)
-    private String nome;
+    @Column(name = "description", length = 2000, nullable = false)
+    @NotBlank
+    @Size(min = 1, max = 2000)
+    private String description;
 
-    @Column(name = "comentario", length = 2000, nullable = false)
-    @NotBlank(groups = {CreateFeedback.class, UpdateFeedback.class})
-    @Size(groups = {CreateFeedback.class, UpdateFeedback.class}, min = 1, max = 255)
-    private String comentario;
-
-    @Column(name = "avaliacao", nullable = false)
-    @DecimalMin(groups = {CreateFeedback.class, UpdateFeedback.class}, value = "0.0")
-    private Double avaliacao;
+    @Column(name = "rating", nullable = false)
+    @DecimalMin(value = "0.0")
+    private Double rating;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

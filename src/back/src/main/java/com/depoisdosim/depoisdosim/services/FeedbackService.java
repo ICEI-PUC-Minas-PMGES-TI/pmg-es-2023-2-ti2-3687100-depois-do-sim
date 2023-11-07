@@ -41,9 +41,8 @@ public class FeedbackService {
     @Transactional
     public Feedback update(Feedback obj) {
         Feedback newObj = this.findById(obj.getId());
-        newObj.setNome(obj.getNome());
-        newObj.setComentario(obj.getComentario());
-        newObj.setAvaliacao(obj.getAvaliacao());
+        newObj.setDescription(obj.getDescription());
+        newObj.setRating(obj.getRating());
         return this.feedbackRepository.save(newObj);
     }
 
