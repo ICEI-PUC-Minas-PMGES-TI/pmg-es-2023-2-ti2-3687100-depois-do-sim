@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
     const userId = 1;
-    
+
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </thead>
                     <tbody>`;
 
-        for(let supplier of suppliers) {
+        for (let supplier of suppliers) {
             tab += `<tr>
                         <td>${supplier.id}</td>
                         <td>${supplier.username}</td>
@@ -51,26 +51,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const supplierList = document.getElementById("supplier-table");
 
+    var supChose = 0
     supplierList.addEventListener("click", (event) => {
         if (event.target.classList.contains("btn-feedback")) {
             const supplierId = event.target.getAttribute("data-supplier-id");
             console.log(supplierId);
-        } 
+            supChose = supplierId
+        }
     });
+
+    var ratingSelected = 0
+    const rating = document.querySelectorAll(".rating");
+    rating.forEach((star) => {
+        star.addEventListener("click", (event) => {
+            ratingSelected = event.target.getAttribute("value");
+            console.log(ratingSelected);
+        });
+    });
+
+
 
     // Função para adicionar uma tarefa
     async function addFeedback(sup) {
         const description = document.getElementById("description").value;
-        // const rating = document.getElementById("rating").value;
+
+
+        console.log(supChose)
+
 
         const feedbackData = {
             "description": description,
-            "rating": 3.5,
+            "rating": ratingSelected,
             "user": {
                 "id": 1
             },
             "supplier": {
-                "id": sla
+                "id": supChose
             }
         }
 
