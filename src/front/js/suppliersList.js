@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
             show(data);
-            console.log(data);
-
         } catch (error) {
             console.error("Erro ao buscar dados da API:", error);
         }
@@ -37,7 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <td>${supplier.id}</td>
                         <td>${supplier.username}</td>
                         <td>${supplier.email}</td>
-                        <td><button type="button" class="btn btn-primary btn-feedback" id ="AdicionarComentario" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-supplier-id="${supplier.id}">Avaliar</button></td>
+                        <td>
+                            <button type="button" class="btn btn-warning btn-profile" id ="btn-perfil-supplier" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-supplier-id="${supplier.id}">Perfil</button>
+                            <button type="button" class="btn btn-primary btn-feedback" id ="AdicionarComentario" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-supplier-id="${supplier.id}">Avaliar</button>
+                        </td>
                     </tr>`;
 
             tab += `</tbody>`;
@@ -121,6 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Feedback enviado com sucesso!");
     });
 
+
+    supplierList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-profile")) {
+            const supplierId = event.target.getAttribute("data-supplier-id");
+            window.location.href = `./supplierProfile.html?id=${supplierId}`;
+            getSupplierData(supplierId);
+        }
+    });
+  
 
 });
 
