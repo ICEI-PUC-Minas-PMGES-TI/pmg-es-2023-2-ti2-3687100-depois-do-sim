@@ -19,8 +19,10 @@ _Usar o seguinte modelo:_
 
 | **Indicador** | **Objetivos** | **Descrição** | **Fonte dados** | **Perspectiva** |
 | ---           | ---           | ---           | ---             | ---             |
-| Percentual de reclamações | Avaliar quantitativamente as reclamações | Percentual de reclamações em relação ao total atendimento | Tabela reclamações | Aprendizado e Crescimento |
-| Taxa de requisições atendidas | Melhorar a prestação de serviços medindo a porcentagem de requisições atendidas| Mede % de requisições atendidas na semana | Tabela solicitações | Processos internos |
-| Taxa de entrega de material | Manter controle sobre os materiais que estão sendo entregues | Mede % de material entregue dentro do mês | Tabela Pedidos | Clientes |
+| Avaliações dos fornecedores | Avaliar quantitativamente a qualidade dos serviços dos fornecedores | Avaliação em estrelas e comentário dos noivos sobre os serviços disponibilizado pelos fornecedores | Formulário | Alta confiabilidade da qualidade dos serviços fornecidos |
+| Avaliação do site | Validar a eficiência do processo de planejamento de casamentos oferecidos| Avaliação em estrelas e comentário sobre o site| Formulário | Avaliar o processo de planejamento do casamento|
+| Tempo médio de planejamento do casamento |Quantificar o tempo médio necessário para se planejar uma cerimônia de casamento |   Calcular o tempo médio do cadastro inicial até a cerimônia | Tabela de login e de cadastro de fotos da cerimônia | Noivos |
+| Porcentagem de casais que ficam dentro do orçamento do casamento|Quantificar a eficacia do planjamento da cerimônia |   Calcular a porcentagem de casais que fica dentro do orçamento esperado da cerimônia | Tabela de orçamentos| Noivos |
+| Taxa de retenção de clientes |Quantificar a quantidade de de noivos que finalizam o processo |  Medir a retenção de clientes | Tabela de login e de cadastro de fotos da cerimônia| Noivos |
 
 _Obs.: todas as informações para gerar os indicadores devem estar no DER._
