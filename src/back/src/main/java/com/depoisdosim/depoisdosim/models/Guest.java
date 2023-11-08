@@ -25,7 +25,8 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class Guest {
-    private static final String TABLE_NAME = "guest";
+
+    public static final String TABLE_NAME = "guest";
 
     @Id
     @Column(name = "id", unique = true)

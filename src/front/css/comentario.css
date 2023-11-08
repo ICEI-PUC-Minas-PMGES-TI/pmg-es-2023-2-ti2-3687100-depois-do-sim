@@ -59,12 +59,6 @@
     color: goldenrod;
 }
 
-.linha1 {
-    display: flex;
-    justify-content: flex-end;
-    align-items: end;
-}
-
 #tela {
     display: flex;
     flex-direction: row;

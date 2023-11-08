@@ -32,7 +32,8 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 public class Supplier {
-    private static final String TABLE_NAME = "supplier";
+
+    public static final String TABLE_NAME = "supplier";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

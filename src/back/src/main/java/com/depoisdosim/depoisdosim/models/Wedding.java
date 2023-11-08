@@ -28,7 +28,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Setter
 @EqualsAndHashCode
 public class Wedding {
-    private static final String TABLE_NAME = "wedding";
+
+    public static final String TABLE_NAME = "wedding";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

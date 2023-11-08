@@ -1,6 +1,7 @@
 package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -34,13 +35,20 @@ public class SupplierController {
 
     @GetMapping("/email/{email}")
     public ResponseEntity<Supplier> getSupplierByEmail(@PathVariable String email) {
-    Supplier supplier = supplierService.findByEmail(email);
-    if (supplier != null) {
-        return ResponseEntity.ok(supplier);
-    } else {
-        return ResponseEntity.notFound().build();
+        Supplier supplier = supplierService.findByEmail(email);
+        if (supplier != null) {
+            return ResponseEntity.ok(supplier);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
-}
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Supplier>> findAllSuppliers() {
+        List<Supplier> suppliers = supplierService.findAllFornecedores();
+        return ResponseEntity.ok(suppliers);
+    }
+
 
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody Supplier obj) {

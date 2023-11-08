@@ -5,53 +5,12 @@ window.onload = (e) => {
     for (let p = 0; p < stars.length; p++) {
         stars[p].addEventListener('click', function () {
             notaComentario = this.value;
+            console.log(notaComentario);    
         })
     }
 };
 
-function leDados() {
-    let strDados = localStorage.getItem('dbComentarios');
-    let objDados = {};
 
-    if (strDados) {
-        objDados = JSON.parse(strDados);
-    }
-    else {
-        objDados = {
-            comentario: [
-                { nome: "Júlia Moreira", avaliacao: 5, comentario: "Muito boa a ideia do site. Me ajudou muito a localizar restaurantes que atendem minhas necessidades." },
-                { nome: "Jõao Silva", avaliacao: 4.5, comentario: "Gostei muito do site. Facil entendimento. Acho que poderia incluir mais restrições. Gostei dos restaurantes indicados." },
-                { nome: "Amélia Nascimento", avaliacao: 4, comentario: "Site claro, descreve bem as restrições. Me sinto segura indo aos restaurentes indicados." }]
-        }
-    }
-
-    return objDados;
-}
-
-function salvaDados(dados) {
-    localStorage.setItem('dbComentarios', JSON.stringify(dados));
-}
-
-function incluirComentario() {
-    // Ler os dados do localStorage
-    let objDados = leDados();
-
-    // Incluir um novo contato
-    let strNome = document.getElementById('NomeComentario').value;
-    let strComentario = document.getElementById('Comentario').value;
-    let novoComentario = {
-        nome: strNome,
-        avaliacao: parseFloat(notaComentario),
-        comentario: strComentario
-    };
-    objDados.comentario.push(novoComentario);
-
-    // Salvar os dados no localStorage novamente
-    salvaDados(objDados);
-
-    // Atualiza os dados da tela
-    imprimeDados();
-}
 
 function imprimeDados() {
     let tela = document.getElementById('tela');
@@ -100,5 +59,5 @@ function imprimeDados() {
 }
 
 // Configura os botões
-document.getElementById('btnCarregaDados').addEventListener('click', imprimeDados);
-document.getElementById('EnviarComentario').addEventListener('click', incluirComentario);
+// document.getElementById('btnCarregaDados').addEventListener('click', imprimeDados);
+// document.getElementById('EnviarComentario').addEventListener('click', incluirComentario);

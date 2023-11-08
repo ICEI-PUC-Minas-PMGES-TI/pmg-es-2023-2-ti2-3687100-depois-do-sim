@@ -1,5 +1,6 @@
 package com.depoisdosim.depoisdosim.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class SupplierService {
     public Supplier findByEmail(String email) {
         Optional<Supplier> supplier = supplierRepository.findByEmail(email);
         return supplier.orElseThrow(() -> new RuntimeException("Fornecedor não encontrado! Email: " + email + ", Tipo: " + Supplier.class.getName()));
+    }
+
+    public List<Supplier> findAllFornecedores() {
+        return supplierRepository.findAll();
     }
 
     @Transactional
