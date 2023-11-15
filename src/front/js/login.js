@@ -15,15 +15,22 @@ async function login() {
     });
 
     if (response.ok) {
-        alert("Login sucssful");
+        alert("Login successful");
         const data = await response.json();
         const token = data.token;
+        const id = data.id;
+        const weddingId = data.weddingId;
 
         window.localStorage.setItem("Authorization", token);
         window.localStorage.setItem("username", username);
-
-        document.getElementById("username").textContent = username;
-        window.location = 'weddingRegistration.html';
+        window.localStorage.setItem("id", id);
+        window.localStorage.setItem("weddingId", weddingId);
+        
+        // document.getElementById("username").textContent = username;
+        if(weddingId == 0) 
+            window.location = 'weddingRegistration.html';
+        else 
+            window.location = 'main.html';
     } else 
         alert("Login failed");
 }
@@ -37,5 +44,7 @@ document.getElementById("loginButton").addEventListener("click", function (event
 document.getElementById("logoutButton").addEventListener("click", function() {
     localStorage.removeItem('Authorization');
     localStorage.removeItem('username');
+    localStorage.removeItem('id');
+    localStorage.removeItem('weddingId');
     window.location = 'login.html';
 });

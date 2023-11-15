@@ -1,12 +1,16 @@
 async function createWedding() {
 
     const token = localStorage.getItem('Authorization');
+    const userId = localStorage.getItem('id');
 
     const weddingData = {
         name: document.getElementById("name").value,
         date: document.getElementById("date").value,
         time: document.getElementById("time").value,
         local: document.getElementById("local").value,
+        user: {
+            id: userId
+        }
     };
 
     const headers = {
@@ -17,16 +21,11 @@ async function createWedding() {
     await fetch("http://localhost:8080/wedding", {
         method: "POST",
         headers: headers,
-        body: JSON.stringify({
-            name: weddingData.name,
-            date: weddingData.date,
-            time: weddingData.time,
-            local: weddingData.local,
-        }),
+        body: JSON.stringify(weddingData),
     }).then((response) => {
         if (response.ok) {
             alert("Wedding created");
-            window.location = 'wedding.html';
+            window.location = 'main.html';
         } else {
             alert("Wedding not created");
         }

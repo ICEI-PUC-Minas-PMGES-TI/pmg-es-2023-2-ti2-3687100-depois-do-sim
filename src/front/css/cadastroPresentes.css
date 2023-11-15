@@ -126,7 +126,7 @@ input#descPresente{
 	border-radius: 8px 8px 0 0 !important;
 }
 
-.btn-register {
+#btn-register {
 	border: none;
 	border-radius: 8px;
 	background-color: #D8AC40;

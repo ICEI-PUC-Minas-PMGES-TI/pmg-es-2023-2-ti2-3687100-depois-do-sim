@@ -38,8 +38,14 @@ public class AuthenticationController {
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
         var token = tokenService.generateToken((User) auth.getPrincipal());
+        Long id = ((User) auth.getPrincipal()).getId();
+        Long weddingId = 0L; // Definindo o valor padrão para o weddingId como 0
 
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        if (((User) auth.getPrincipal()).getWedding() != null) {
+            weddingId = ((User) auth.getPrincipal()).getWedding().getId();
+        }
+        
+        return ResponseEntity.ok(new LoginResponseDTO(token, id, weddingId));
     }
 
     @PostMapping("/register")

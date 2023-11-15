@@ -59,9 +59,12 @@ public class User implements UserDetails {
     @Column(name = "role", length = 20, nullable = false)
     private UserRole role = UserRole.USER;
 
-    @OneToOne
-    @JoinColumn(name = "wedding_id", nullable = true)
-    private Wedding wedding = null;
+    // @OneToOne
+    // @JoinColumn(name = "wedding_id", nullable = true)
+    // private Wedding wedding = null;
+
+    @OneToOne(mappedBy = "user")
+    private Wedding wedding;
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")

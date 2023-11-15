@@ -24,7 +24,7 @@ public class TokenService {
             String token =JWT.create()
                 .withIssuer("depois-do-sim")
                 .withSubject(user.getUsername())
-                .withExpiresAt(genExpirationDate())
+                // .withExpiresAt(genExpirationDate())
                 .sign(algorithm);
             return token;
         } catch(JWTCreationException exception) {
@@ -45,8 +45,8 @@ public class TokenService {
         }
     }
 
-    private Instant genExpirationDate() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
-    }
+    // private Instant genExpirationDate() {
+    //     return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+    // }
     
 }

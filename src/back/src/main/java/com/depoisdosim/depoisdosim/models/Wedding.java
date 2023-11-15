@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -50,8 +51,12 @@ public class Wedding {
     @Column(name = "location", length = 100, nullable = false)
     private String local;
 
-    @OneToOne(mappedBy = "wedding")
-    private User user;
+    // @OneToOne(mappedBy = "wedding")
+    // private User user;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user = null;
 
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
