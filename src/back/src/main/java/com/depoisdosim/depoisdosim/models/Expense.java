@@ -42,5 +42,5 @@ public class Expense {
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = false)
-    private Wedding weding;
+    private Wedding wedding;
 }
