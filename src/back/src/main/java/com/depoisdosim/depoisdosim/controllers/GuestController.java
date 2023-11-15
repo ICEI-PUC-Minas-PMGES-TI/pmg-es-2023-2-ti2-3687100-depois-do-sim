@@ -2,10 +2,6 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Properties;
-
-import javax.mail.*;
-import javax.mail.internet.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -61,36 +57,5 @@ public class GuestController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.guestService.delete(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @PostMapping("/wedding/{weddingId}/invite")
-    public ResponseEntity<Void> sendInvite(@PathVariable Long weddingId) {
-        List<Guest> guests = this.guestService.findAllByWeddingId(weddingId);
-        for (Guest guest : guests) {
-            String to = guest.getEmail();
-            String from = "convite@depoisdosim.com.br";
-            String host = "smtp-relay.brevo.com";
-
-            Properties properties = System.getProperties();
-            properties.setProperty("mail.smtp.host", host);
-            properties.setProperty("mail.smtp.port", "587");
-
-            Session session = Session.getDefaultInstance(properties);
-
-            try {
-                MimeMessage message = new MimeMessage(session);
-                message.setFrom(new InternetAddress(from));
-                message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-                message.setSubject("Você foi convidado para o casamento de <Nome>");
-                message.setText(String.format("Olá, %s!\nEstamos muito felizes em contar que você recebeu um convite para o casamento de <Nome>!", guest.getName()));
-
-                Transport.send(message, "lvcarolina42@gmail.com", "8KHgYBFI3sf2pzrL");
-                System.out.println("Sent message successfully....");
-            } catch (Exception mex) {
-                mex.printStackTrace();
-            }
-        }
-
-        return ResponseEntity.ok().build();
     }
 }
