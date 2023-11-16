@@ -8,7 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -41,9 +43,21 @@ public class Wedding {
     @Column(name = "name", length = 100, nullable = false)
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "wedding")
-    private List<User> users = new ArrayList<User>();
+    @Column(name = "date", length = 100, nullable = false)
+    private String date;
+
+    @Column(name = "time", length = 100, nullable = false)
+    private String time;
+
+    @Column(name = "location", length = 100, nullable = false)
+    private String local;
+
+    // @OneToOne(mappedBy = "wedding")
+    // private User user;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user = null;
 
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")

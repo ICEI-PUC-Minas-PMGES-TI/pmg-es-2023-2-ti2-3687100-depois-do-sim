@@ -1,13 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
-    const weddingId = 1;
+
+    const token = localStorage.getItem('Authorization');
+    const weddingId = localStorage.getItem('weddingId');
 
     const giftsContainer = document.getElementById("giftsContainer");
+
+    // Verificar se o usuário está logado
+    const isUser = localStorage.getItem('Authorization');
+
+    // Elementos da página
+    const btnRegisterGift = document.getElementById("btn-register");
+
+    if (isUser) {
+        // O usuário está logado
+    } else {
+        // O usuário não está logado
+        btnRegisterGift.style.display = "none";
+    }
 
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
-            const response = await fetch(url, { method: "GET" });
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+            });
 
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados da API.");
@@ -67,7 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(`${baseUrl}/gift`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(giftData)
             });
