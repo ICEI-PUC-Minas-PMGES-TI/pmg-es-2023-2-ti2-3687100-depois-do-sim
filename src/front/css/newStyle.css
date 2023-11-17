@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+h1{
+    font-family: Forum;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+p{
+    font-family: Forum;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#666666;
+}
+
+.banner-text{
+    padding: 90px 30px 40px 20px;
+}
+
+
+.banner{
+    background-image: url('../assets/img/beautiful-wedding-chairs-wedding-dinner-table-dec-4BU9HQX\ 1.png'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
+}
+
+.botoes{
+    display: inline-block;
+    padding: 10px 30px; 
+    margin: 5px; 
+    font-family: Forum;
+    text-align: center; 
+}
+
+.botao1{
+    border-color: #fbd24f;
+    background-color: #fbd24f;
+    padding: 10px 30px;
+    margin-right: 30px;
+}
+
+.botao2{
+    border-color: #DDDDDD;
+    background-color: transparent;
+    padding: 10px 50px;
+}
+
+.nossos-casamentos{
+    background-color:#F6F6F6;
+    padding: 40px 30px;
+
+}
+
