@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
 
+    // Extrair o wedding_id da URL
+    const params = new URLSearchParams(window.location.search);
+    const weddingIdFromURL = params.get('wedding_id');
+
     const token = localStorage.getItem('Authorization');
     const weddingId = localStorage.getItem('weddingId');
 
@@ -12,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elementos da página
     const btnRegisterGift = document.getElementById("btn-register");
 
-    // if (isUser) {
-    //     // O usuário está logado
-    // } else {
-    //     // O usuário não está logado
-    //     btnRegisterGift.style.display = "none";
-    // }
+    if (isUser) {
+        // O usuário está logado
+    } else {
+        // O usuário não está logado
+        btnRegisterGift.style.display = "none";
+    }
 
     // Função para buscar dados da API
     async function getAPI(url) {
@@ -26,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
+                    // "Authorization": `Bearer ${token}`
                 },
             });
 
@@ -89,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`
+                    // "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(giftData)
             });
@@ -105,7 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("image").value = "";
 
             // Atualizar a tabela após adicionar o presente
-            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/gift/wedding/${weddingIdFromURL}`);
+           
         } catch (error) {
             console.error("Erro ao adicionar presente:", error);
         }
@@ -135,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Atualizar a tabela após remover o presente
-            getAPI(`${baseUrl}/giftt/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/gift/wedding/${weddingIdFromURL}`);
         } catch (error) {
             console.error("Erro ao remover o presente:", error);
         }
@@ -173,13 +178,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
     
             // Atualize a tabela após presentear o presente
-            getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+            getAPI(`${baseUrl}/gift/wedding/${weddingIdFromURL}`);
         } catch (error) {
             console.error("Erro ao presentear o presente:", error);
         }
     }
 
-    getAPI(`${baseUrl}/gift/wedding/${weddingId}`);
+    getAPI(`${baseUrl}/gift/wedding/${weddingIdFromURL}`);
 
 
     document.getElementById("giftForm").addEventListener("submit", function (event) {
@@ -188,5 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Evento de clique no botão de adicionar presente
     document.getElementById("btn-create").addEventListener("click", addGift);
+
+    document.getElementById("btn-gifted").addEventListener("click", function (event) {
+        window.location.href = "giftMessages.html";
+    });
 
 });

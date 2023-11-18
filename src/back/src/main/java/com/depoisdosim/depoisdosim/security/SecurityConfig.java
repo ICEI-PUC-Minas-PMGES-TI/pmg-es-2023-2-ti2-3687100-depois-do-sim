@@ -35,7 +35,9 @@ public class SecurityConfig {
             .authorizeHttpRequests(authotize -> authotize
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                // .requestMatchers(HttpMethod.GET, "/**").hasRole("USER")
+                .requestMatchers(HttpMethod.GET, "/gift/**").permitAll()
+                .requestMatchers(HttpMethod.PATCH, "/gift/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/giftMessage/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
@@ -45,7 +47,7 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
             CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
-            configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE"));
+            configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "PATCH"));
             configuration.addAllowedOrigin("*");
             final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
             source.registerCorsConfiguration("/**", configuration);
