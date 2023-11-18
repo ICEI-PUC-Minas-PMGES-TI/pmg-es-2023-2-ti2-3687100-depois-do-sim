@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
-
 h1{
     font-family: Forum;
     font-size: 40px;
@@ -7,9 +6,7 @@ h1{
     line-height: 44px;
     letter-spacing: 0em;
     text-align: left;
-
 }
-
 h2{
     color: #494949;
     font-family: Inria Serif;
@@ -18,7 +15,6 @@ h2{
     font-weight: 700;
     line-height: normal;
 }
-
 p{
     font-family: Forum;
     font-size: 18px;
@@ -27,6 +23,19 @@ p{
     letter-spacing: 0em;
     text-align: left;
     color:#666666;
+}
+footer{
+    background-color: #EFEFEF;
+}
+footer h2{
+    color: #CD7B63;
+    font-family: Inria Serif;
+}
+a{
+    text-decoration: none;
+    color: rgba(73, 73, 73, 0.70);
+    font-family: Inria Serif;
+
 }
 
 header{
@@ -50,15 +59,16 @@ header button{
 .banner-text{
     padding: 90px 30px 40px 20px;
 }
-
-
+.footer-row{
+    padding-left: 8%;
+    padding-right: 8%;
+}
 .banner{
     background-image: url('../assets/img/beautiful-wedding-chairs-wedding-dinner-table-dec-4BU9HQX\ 1.png'); 
     background-size: cover; 
     background-position: center; 
     width: 100%;
 }
-
 .botoes{
     display: inline-block;
     padding: 10px 30px; 
@@ -66,33 +76,34 @@ header button{
     font-family: Forum;
     text-align: center; 
 }
-
 .botao1{
     border-color: #CD7B63;
     background-color: #CD7B63;
     padding: 10px 30px;
     margin-right: 30px;
 }
-
 .botao2{
     border-color: #DDDDDD;
     background-color: transparent;
     padding: 10px 50px;
 }
-
 .nossos-casamentos{
     background-color:#F6F6F6;
     padding: 40px 30px;
-
 }
-
 .feedback-casais{
     background-color: #FEFBF4;
     padding: 40px 30px;
 }
-
 .card{
     background-color: #FEFBF4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 0;
+}
+.direitos{
+    background-color: #FEFBF4;;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: #464646;
+    font-family: Inria Serif;
 }
