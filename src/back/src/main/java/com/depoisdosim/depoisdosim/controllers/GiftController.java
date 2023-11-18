@@ -2,6 +2,7 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.depoisdosim.depoisdosim.domain.user.GiftDTO;
 import com.depoisdosim.depoisdosim.models.Gift;
 import com.depoisdosim.depoisdosim.models.Gift.CreateGift;
 import com.depoisdosim.depoisdosim.services.GiftService;
@@ -38,9 +40,24 @@ public class GiftController {
     }
 
     @GetMapping("/wedding/{weddingId}")
-    public ResponseEntity<List<Gift>> findAllByWeddingId(@PathVariable Long weddingId) {
-        List<Gift> objs = this.giftService.findAllByWeddingId(weddingId);
-        return ResponseEntity.ok().body(objs);
+    public ResponseEntity<List<GiftDTO>> findAllByWeddingId(@PathVariable Long weddingId) {
+        List<Gift> gifts = this.giftService.findAllByWeddingId(weddingId);
+
+        List<GiftDTO> giftDTOs = gifts.stream()
+                .map(gift -> {
+                    GiftDTO dto = new GiftDTO();
+                    dto.setId(gift.getId());
+                    dto.setName(gift.getName());
+                    dto.setDescription(gift.getDescription());
+                    dto.setAvailable(gift.getAvailable());
+                    dto.setPrice(gift.getPrice());
+                    dto.setImage(gift.getImage());
+                    dto.setWeddingId(gift.getWedding().getId());
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(giftDTOs);
     }
 
     @PostMapping
