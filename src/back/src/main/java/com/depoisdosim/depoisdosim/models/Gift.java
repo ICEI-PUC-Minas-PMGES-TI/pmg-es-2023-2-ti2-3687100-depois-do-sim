@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
@@ -58,4 +59,7 @@ public class Gift {
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = false)
     private Wedding wedding;
+
+    @OneToOne(mappedBy = "gift")
+    private GiftMessage giftMessage;
 }

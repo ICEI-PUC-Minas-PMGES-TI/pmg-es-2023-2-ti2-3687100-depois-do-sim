@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.depoisdosim.depoisdosim.domain.user.GiftDTO;
+import com.depoisdosim.depoisdosim.domain.others.GiftDTO;
 import com.depoisdosim.depoisdosim.models.Gift;
 import com.depoisdosim.depoisdosim.models.Gift.CreateGift;
 import com.depoisdosim.depoisdosim.services.GiftService;

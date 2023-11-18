@@ -27,7 +27,7 @@ async function login() {
         window.localStorage.setItem("weddingId", weddingId);
         
         // document.getElementById("username").textContent = username;
-        if(weddingId == 0) 
+        if(weddingId == 0 || weddingId == null) 
             window.location = 'weddingRegistration.html';
         else 
             window.location = 'main.html';

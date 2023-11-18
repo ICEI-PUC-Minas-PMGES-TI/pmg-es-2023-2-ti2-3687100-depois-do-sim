@@ -33,11 +33,12 @@ public class WeddingController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> create(@Valid @RequestBody Wedding obj) {
+    public ResponseEntity<Wedding> create(@Valid @RequestBody Wedding obj) {
         this.weddingService.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.created(uri).body(obj); // Retorna o objeto criado no corpo da resposta
     }
+    
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@Valid @RequestBody Wedding obj, @PathVariable Long id) {

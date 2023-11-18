@@ -29,22 +29,6 @@ p{
     color:#666666;
 }
 
-footer{
-    background-color: #EFEFEF;
-}
-
-footer h2{
-    color: #CD7B63;
-    font-family: Inria Serif;
-}
-
-a{
-    text-decoration: none;
-    color: rgba(73, 73, 73, 0.70);
-    font-family: Inria Serif;
-    
-}
-
 header{
     background-color: #FEFBF4;
     padding-left: 60px;
@@ -67,10 +51,6 @@ header button{
     padding: 90px 30px 40px 20px;
 }
 
-.footer-row{
-    padding-left: 8%;
-    padding-right: 8%;
-}
 
 .banner{
     background-image: url('../assets/img/beautiful-wedding-chairs-wedding-dinner-table-dec-4BU9HQX\ 1.png'); 
@@ -115,12 +95,4 @@ header button{
     background-color: #FEFBF4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 0;
-}
-
-.direitos{
-    background-color: #FEFBF4;;
-    padding-left: 8%;
-    padding-right: 8%;
-    color: #464646;
-    font-family: Inria Serif;
 }

@@ -70,4 +70,8 @@ public class Wedding {
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
     private List<Supplier> suppliers = new ArrayList<Supplier>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "wedding")
+    private List<GiftMessage> giftMessages = new ArrayList<GiftMessage>();
 }
