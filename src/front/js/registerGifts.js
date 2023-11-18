@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elementos da página
     const btnRegisterGift = document.getElementById("btn-register");
 
-    if (isUser) {
-        // O usuário está logado
-    } else {
-        // O usuário não está logado
-        btnRegisterGift.style.display = "none";
-    }
+    // if (isUser) {
+    //     // O usuário está logado
+    // } else {
+    //     // O usuário não está logado
+    //     btnRegisterGift.style.display = "none";
+    // }
 
     // Função para buscar dados da API
     async function getAPI(url) {
