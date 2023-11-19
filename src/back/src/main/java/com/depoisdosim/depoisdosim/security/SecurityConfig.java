@@ -38,6 +38,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/gift/**").permitAll()
                 .requestMatchers(HttpMethod.PATCH, "/gift/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/giftMessage/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/photo/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

@@ -30,11 +30,11 @@ public class Photo {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "link", length = 400, nullable = false)
+    @Column(name = "link", nullable = false)
     private String link;
 
     @ManyToOne
-    @JoinColumn(name = "photo_album_id", nullable = true)
-    private PhotoAlbum photoAlbum;
+    @JoinColumn(name = "wedding_id", nullable = true)
+    private Wedding wedding;
   
 }

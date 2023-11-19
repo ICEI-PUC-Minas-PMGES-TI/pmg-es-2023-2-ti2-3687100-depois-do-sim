@@ -1,13 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
-    const photoAlbumId = 1;
 
-    const imagesContainer = document.getElementById("imagesContainer");
+    const token = localStorage.getItem("Authorization");
+    const weddingId = localStorage.getItem("weddingId");
+
+    // Extrair o wedding_id da URL
+    const params = new URLSearchParams(window.location.search);
+    const weddingIdFromURL = params.get('wedding_id');
+
+    // const imagesContainer = document.getElementById("imagesContainer");
+    const btnRegisterPhoto = document.getElementById("btn-register");
+
+    if (token) {
+        // O usuário está logado
+    } else {
+        // O usuário não está logado
+        btnRegisterPhoto.style.display = "none";
+    }
 
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
-            const response = await fetch(url, { method: "GET" });
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
 
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados da API.");
@@ -44,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const imageData = {
             "link": link,
-            "photoAlbum": {
-                "id": photoAlbumId
+            "wedding": {
+                "id": weddingId
             }
         };
 
@@ -53,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(`${baseUrl}/photo`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(imageData)
             });
@@ -66,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("image").value = "";
 
             // Atualizar a tabela após adicionar o presente
-            getAPI(`${baseUrl}/photo/photo_album/${photoAlbumId}`);
+            getAPI(`${baseUrl}/photo/wedding/${weddingId}`);
         } catch (error) {
             console.error("Erro ao adicionar a imagem:", error);
         }
@@ -103,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // }
 
 
-    getAPI(`${baseUrl}/photo/photo_album/${photoAlbumId}`);
+    getAPI(`${baseUrl}/photo/wedding/${weddingIdFromURL}`);
 
 
     document.getElementById("imageForm").addEventListener("submit", function (event) {

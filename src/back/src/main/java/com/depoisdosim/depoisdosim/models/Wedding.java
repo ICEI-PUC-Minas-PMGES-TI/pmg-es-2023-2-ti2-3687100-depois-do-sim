@@ -73,5 +73,9 @@ public class Wedding {
 
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
+    private List<Photo> photos = new ArrayList<Photo>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "wedding")
     private List<GiftMessage> giftMessages = new ArrayList<GiftMessage>();
 }

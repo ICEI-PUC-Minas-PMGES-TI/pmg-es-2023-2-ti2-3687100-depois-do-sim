@@ -12,7 +12,7 @@ import com.depoisdosim.depoisdosim.models.Photo;
 @Repository
 public interface PhotoRepository extends JpaRepository<Photo, Long> {
 
-    @Query(value = "SELECT * FROM photo g WHERE g.photo_album_id = :id", nativeQuery = true)
-    List<Photo> findAllByPhotoAlbumId(@Param("id") Long id);
+    @Query(value = "SELECT * FROM photo g WHERE g.wedding_id = :id", nativeQuery = true)
+    List<Photo> findAllByWeddingId(@Param("id") Long id);
     
 }
