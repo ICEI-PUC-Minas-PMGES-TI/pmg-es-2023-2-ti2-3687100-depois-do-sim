@@ -36,7 +36,7 @@ public class Gift {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "name", length = 100, nullable = false, unique = true)
+    @Column(name = "name", length = 100, nullable = false, unique = false)
     @NotBlank(groups = {CreateGift.class, UpdateGift.class})
     @Size(groups = {CreateGift.class, UpdateGift.class}, min = 2, max = 100)
     private String name;

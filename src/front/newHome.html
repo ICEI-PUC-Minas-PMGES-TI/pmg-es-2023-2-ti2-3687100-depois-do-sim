@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Depois do Sim</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/newStyle.css">
 </head>
 
@@ -26,10 +26,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Meu Casamento
-                            </a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Meu Casamento</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Lista de presentes</a></li>
                                 <li><a class="dropdown-item" href="#">Controle de convidados</a></li>
@@ -42,6 +39,8 @@
                             <a class="nav-link" href="#">Fornecedores</a>
                         </li>
                     </ul>
+
+
                     <button>ENTRAR</button>
                 </div>
             </div>
@@ -50,7 +49,7 @@
     <main>
         <div class="banner">
             <div class="container">
-                <div class="row">
+                <div class="row py-5">
                     <div class="col-lg-6 col-md-6 col-sm-12 banner-text">
                         <h1>GERENCIE SEU CASAMENTO EM UM SÓ LUGAR!</h1>
                         <p> Transforme seu grande dia em uma experiência perfeita: organize, planeje e relembre um único
@@ -119,7 +118,7 @@
         <div class="feedback-casais text-center">
             <img src="./assets/img/icon1.png" alt="" width="30px" class="mb-3">
             <h1 class="text-center">FEEDBACK DE CASAIS</h1>
-            <div class="row mt-5 ">
+            <div class="row mt-5">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-body">
@@ -178,24 +177,31 @@
         <div class="row pb-4 footer-row">
             <div class="col-lg-6 col-md-6 col-sm-12 ps-5">
                 <h2 class="text-start mt-5 mb-3">Vamos te ajudar!</h2>
-                <a href="">Quero criar minha lista de presentes!</a><br>
-                <a href="">Quero criar uma lista de convidados!</a><br>
-                <a href="">Quero registrar orçamentos!</a><br>
-                <a href="">Quero agendar visita ao fornecedor!</a><br>
-                <a href="">Quero compartilhar fotos do meu casamento!</a>
+                <a href="">Criar minha lista de presentes!</a><br>
+                <a href="">Criar uma lista de convidados!</a><br>
+                <a href="">Registrar orçamentos!</a><br>
+                <a href="">Agendar visita ao fornecedor!</a><br>
+                <a href="">Compartilhar fotos do meu casamento!</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 px-5">
                 <h2 class="text-start mt-5 mb-3">Contatos</h2>
-                <img src="./assets/img/email.png" alt="">
-                <a href="" class="mx-3">depoisdosim@gmail.com</a><br>
-                <img src="./assets/img/telefone.png" alt="">
-                <a href="" class="mx-3">(31) 999999-9999</a>
+                <p><i class="bi bi-envelope me-2"></i>depoisdosim@gmail.com</p>
+                <p><i class="bi bi-telephone me-2"></i></i>(31) 999999-9999</p>
             </div>
         </div>
         <div class="direitos">
             <p class="text-center pt-3">© 2023 - 2023 Depois do Sim. Desenvolvido com muito ❤️ na PUC Minas </p>
         </div>
     </footer>
+
+    <!-- Script Dropdown -->
+    <script>
+        const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+        const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl))
+    </script>
+
+    <!-- Script Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

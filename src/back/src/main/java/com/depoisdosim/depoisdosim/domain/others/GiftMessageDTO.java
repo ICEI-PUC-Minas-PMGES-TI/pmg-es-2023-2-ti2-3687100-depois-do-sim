@@ -14,6 +14,6 @@ public class GiftMessageDTO {
     private String name;
     private String email;
     private String description;
-    private Long giftId;
+    private String giftName;
     private Long weddingId;
 }

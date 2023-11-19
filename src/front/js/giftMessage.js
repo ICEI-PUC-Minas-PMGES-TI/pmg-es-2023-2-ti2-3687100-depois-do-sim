@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <th scope="col">Convidado</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Presente</th>
-                        <th scope="col">Casamento</th>
+                        <th scope="col">Mensagem ao casal</th>
                     </thead>
                     <tbody>`;
 
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${giftMessage.id}</td>
                     <td>${giftMessage.name}</td>
                     <td>${giftMessage.email}</td>
+                    <td>${giftMessage.giftName}</td>
                     <td>${giftMessage.description}</td>
                 </tr>`;
 
@@ -55,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         document.getElementById("giftMessagesList").innerHTML = tab;
-
     }
 
 

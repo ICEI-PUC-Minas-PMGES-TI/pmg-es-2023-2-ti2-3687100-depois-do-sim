@@ -45,7 +45,7 @@ public class GiftMessageController {
                     dto.setName(giftMessage.getName());
                     dto.setEmail(giftMessage.getEmail());
                     dto.setDescription(giftMessage.getDescription());
-                    dto.setGiftId(giftMessage.getGift().getId());
+                    dto.setGiftName(giftMessage.getGift().getName());
                     dto.setWeddingId(giftMessage.getWedding().getId());
                     return dto;
                 })

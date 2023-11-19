@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": `Bearer ${token}`
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(giftData)
             });
@@ -152,13 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const giftId = event.target.getAttribute("data-giftid");
             const testt = document.getElementById("btn-save-gift-message");
             testt.addEventListener("click", function (event) {
-                presentGift(giftId);
+                giftGiftedStatus(giftId);
+                presentedGift(giftId);
         });
         }
     });
 
     // Função para presentear
-    async function presentGift(giftId) {
+    async function giftGiftedStatus(giftId) {
         try {
             // Crie um objeto com os dados que você deseja atualizar
             const updateData = {
@@ -183,6 +184,47 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Erro ao presentear o presente:", error);
         }
     }
+
+
+    async function presentedGift(giftId) {
+        const guestName = document.getElementById("guestName").value;
+        const guestEmail = document.getElementById("guestEmail").value;
+        const guestMessage = document.getElementById("guestMessage").value;
+
+        console.log(guestName);
+        console.log(guestEmail);
+        console.log(guestMessage);
+
+        const giftMessageData = {
+            "name": guestName,
+            "email": guestEmail,
+            "description": guestMessage,
+            "gift": {
+                "id": giftId
+            },
+            "wedding": {
+                "id": weddingIdFromURL
+            }
+        };
+
+        const response = await fetch(`${baseUrl}/giftMessage`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(giftMessageData)
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao criar mensagem de presente.");
+        }
+
+        // Limpar campos após o sucesso
+        document.getElementById("guestName").value = "";
+        document.getElementById("guestEmail").value = "";
+        document.getElementById("guestMessage").value = "";
+    }
+    
 
     getAPI(`${baseUrl}/gift/wedding/${weddingIdFromURL}`);
 
