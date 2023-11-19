@@ -50,7 +50,6 @@ a{
     text-decoration: none;
     color: rgba(73, 73, 73, 0.70);
     font-family: Inria Serif;
-
 }
 
 header{
@@ -109,15 +108,18 @@ header button{
     background-color:#f0edea;
     padding: 40px 30px;
 }
+
 .feedback-casais{
     background-color: #FEFBF4;
     padding: 40px 30px;
 }
+
 .card{
     background-color: #FEFBF4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 0;
 }
+
 .direitos{
     background-color: #FEFBF4;;
     padding-left: 8%;
@@ -194,4 +196,21 @@ header button{
 
 .cadastro-de-casamento{
     background-color: #FEFBF4;
+}
+
+.home-meu-casamento{
+    background-color: #FEFBF4;
+    margin: 0px;
+}
+
+.card-custom {
+    height: 200px; /* Defina a altura desejada */
+}
+
+.icone{
+    color: #CD7B63;
+}
+
+.card-title{
+    color: #CD7B63;
 }

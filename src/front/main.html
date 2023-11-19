@@ -1,62 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Exemplo de Cards Bootstrap</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/newStyle.css">
+    <title>Depois do Sim - Casamento</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row m-4">
-            
-            <div class="col-md-3">
-                <h3>Lista de Presentes</h3>
-                <div class="card border" style="border-color: #dddddd;">
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit.</p>
-                        <a href="registerGifts.html" id="giftLink" class="btn btn-primary">Lorem, ipsum.</a>
-                    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/logo.png" alt="Logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobreNos.html">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nossosIndicadores.html">Nossos indicadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comentarioSite.html">Nos avalie</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Meu Casamento</a>
+                            <ul class="dropdown-menu dropdown-bg">
+                                <li><a class="dropdown-item dropdown-bg" href="#">Lista de presentes</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Controle de convidados</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Orçamentos e contratos</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Agenda</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Álbum de fotos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fornecedores</a>
+                        </li>
+                    </ul>
+                    <button>Entrar</button>
                 </div>
             </div>
+        </nav>
+    </header>
+    <main class="home-meu-casamento">
 
-            <div class="col-md-3">
-                <h3>Lista de Convidados</h3>
-                <div class="card border" style="border-color: #dddddd;">
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit.</p>
-                        <a href="#" class="btn btn-primary">Lorem, ipsum.</a>
-                    </div>
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <a href="registerGifts.html" id="giftLink" class="text-center">
+                        <div class="card card-custom" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="bi bi-gift icone" style="font-size: 4rem;"></i>
+                                <h2 class="card-title">Lista de presentes</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <a href="" class="text-center">
+                        <div class="card card-custom" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="bi bi-person icone" style="font-size: 4rem;"></i>
+                                <h2 class="card-title">Lista de Convidados</h2>
+                          </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <h3>Álbum de Fotos</h3>
-                <div class="card border" style="border-color: #dddddd;">
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit.</p>
-                        <a href="photoAlbum.html" id="photoAlbumLink" class="btn btn-primary">Lorem, ipsum.</a>
-                    </div>
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <a href="photoAlbum.html" id="photoAlbumLink" class="text-center">
+                        <div class="card card-custom" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="bi bi-camera icone" style="font-size: 4rem;"></i>
+                                <h2 class="card-title">Álbum de Fotos</h2>
+                          </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <a href="" class="text-center">
+                        <div class="card card-custom" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="bi bi-coin icone" style="font-size: 4rem;"></i>
+                                <h2 class="card-title">Meu orçamento</h2>
+                          </div>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <h3>Meu orçamento</h3>
-                <div class="card border" style="border-color: #dddddd;">
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit.</p>
-                        <a href="#" class="btn btn-primary">Lorem, ipsum.</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
+    </main>
+
+
+    <footer>
+        <div class="row pb-4 footer-row">
+            <div class="col-lg-6 col-md-6 col-sm-12 ps-5">
+                <h2 class="text-start mt-5 mb-3">Vamos te ajudar!</h2>
+                <a href="">Criar minha lista de presentes!</a><br>
+                <a href="">Criar uma lista de convidados!</a><br>
+                <a href="">Registrar orçamentos!</a><br>
+                <a href="">Agendar visita ao fornecedor!</a><br>
+                <a href="">Compartilhar fotos do meu casamento!</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 px-5">
+                <h2 class="text-start mt-5 mb-3">Contatos</h2>
+                <p><i class="bi bi-envelope me-2"></i>depoisdosim@gmail.com</p>
+                <p><i class="bi bi-telephone me-2"></i></i>(31) 999999-9999</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p class="text-center pt-3">© 2023 - 2023 Depois do Sim. Desenvolvido com muito <i class="bi bi-heart-fill icone"></i> na PUC Minas </p>
+        </div>
+    </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
