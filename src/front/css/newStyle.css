@@ -185,3 +185,13 @@ header button{
     padding-top: 32px;
     padding-bottom: 32px;
 }
+
+.a-none{
+    text-decoration: none;
+    color: rgba(73, 73, 73, 0.70);
+    font-family: Inria Serif;
+}
+
+.cadastro-de-casamento{
+    background-color: #FEFBF4;
+}
