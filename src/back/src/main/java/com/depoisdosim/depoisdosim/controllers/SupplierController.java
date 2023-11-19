@@ -33,16 +33,6 @@ public class SupplierController {
         return ResponseEntity.ok().body(obj);
     }
 
-    @GetMapping("/email/{email}")
-    public ResponseEntity<Supplier> getSupplierByEmail(@PathVariable String email) {
-        Supplier supplier = supplierService.findByEmail(email);
-        if (supplier != null) {
-            return ResponseEntity.ok(supplier);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     @GetMapping("/all")
     public ResponseEntity<List<Supplier>> findAllSuppliers() {
         List<Supplier> suppliers = supplierService.findAllFornecedores();

@@ -29,6 +29,12 @@ public class ExpenseController {
     @Autowired
     private ExpenseService expenseService;
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Expense> findById(@PathVariable Long id) {
+        Expense obj = this.expenseService.findById(id);
+        return ResponseEntity.ok().body(obj);
+    }
+
     @GetMapping("/wedding/{weddingId}")
     public ResponseEntity<List<ExpenseDTO>> findAllByWeddingId(@PathVariable Long weddingId) {
         List<Expense> expenses = this.expenseService.findAllByWeddingId(weddingId);

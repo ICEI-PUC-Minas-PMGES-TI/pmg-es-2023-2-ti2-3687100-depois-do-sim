@@ -16,5 +16,5 @@ public class GuestDTO {
     private String email;
     private int numPeople;
     private String namePeople;
-    private Long weddingId;
+    private Long wedding;
 }

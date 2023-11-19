@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.depoisdosim.depoisdosim.domain.others.GiftDTO;
 import com.depoisdosim.depoisdosim.domain.others.PhotoDTO;
-import com.depoisdosim.depoisdosim.models.Gift;
 import com.depoisdosim.depoisdosim.models.Photo;
 import com.depoisdosim.depoisdosim.services.PhotoService;
 
@@ -46,7 +44,7 @@ public class PhotoController {
                     PhotoDTO dto = new PhotoDTO();
                     dto.setId(photo.getId());
                     dto.setLink(photo.getLink());
-                    dto.setWeddingId(photo.getWedding().getId());
+                    dto.setWedding(photo.getWedding().getId());
                     return dto;
                 })
                 .collect(Collectors.toList());

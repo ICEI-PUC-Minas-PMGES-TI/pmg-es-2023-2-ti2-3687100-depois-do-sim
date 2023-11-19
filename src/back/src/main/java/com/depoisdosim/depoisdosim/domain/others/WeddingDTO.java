@@ -9,12 +9,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GiftDTO {
+
+public class WeddingDTO {
     private Long id;
     private String name;
-    private String description;
-    private Boolean available;
-    private Double price;
-    private String image;
-    private Long wedding;
+    private String date;
+    private String time;
+    private String location;
 }

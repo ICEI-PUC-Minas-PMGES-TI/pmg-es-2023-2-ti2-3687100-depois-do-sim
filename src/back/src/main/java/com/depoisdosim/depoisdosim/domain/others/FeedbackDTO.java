@@ -13,6 +13,6 @@ public class FeedbackDTO {
     private Long id;
     private String description;
     private Double rating;
-    private Long userId;
-    private Long supplierId;
+    private Long user;
+    private Long supplier;
 }

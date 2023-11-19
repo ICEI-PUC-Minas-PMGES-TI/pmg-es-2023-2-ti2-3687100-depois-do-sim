@@ -12,5 +12,5 @@ import lombok.Setter;
 public class PhotoDTO {
     private Long id;
     private String link;
-    private Long weddingId;
+    private Long wedding;
 }
