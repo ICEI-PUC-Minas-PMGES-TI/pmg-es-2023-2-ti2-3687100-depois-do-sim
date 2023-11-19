@@ -126,6 +126,14 @@ header button{
     font-family: Inria Serif;
 }
 
+.direitos-register{
+    background-color: #f0edea;;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: #464646;
+    font-family: Inria Serif;
+}
+
 .card-body {
     height: 384px;
 }
