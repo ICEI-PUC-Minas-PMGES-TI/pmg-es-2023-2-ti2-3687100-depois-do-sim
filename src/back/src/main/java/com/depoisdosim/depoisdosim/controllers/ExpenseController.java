@@ -2,6 +2,7 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.depoisdosim.depoisdosim.domain.others.ExpenseDTO;
 import com.depoisdosim.depoisdosim.models.Expense;
 import com.depoisdosim.depoisdosim.services.ExpenseService;
 
@@ -27,16 +29,23 @@ public class ExpenseController {
     @Autowired
     private ExpenseService expenseService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Expense> findById(@PathVariable Long id) {
-        Expense obj = this.expenseService.findById(id);
-        return ResponseEntity.ok().body(obj);
-    }
+    @GetMapping("/wedding/{weddingId}")
+    public ResponseEntity<List<ExpenseDTO>> findAllByWeddingId(@PathVariable Long weddingId) {
+        List<Expense> expenses = this.expenseService.findAllByWeddingId(weddingId);
 
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Expense>> findAllByWeddingId(@PathVariable Long weddingId) {
-        List<Expense> objs = this.expenseService.findAllByWeddingId(weddingId);
-        return ResponseEntity.ok().body(objs);
+        List<ExpenseDTO> expenseDTOs = expenses.stream()
+                .map(expense -> {
+                    ExpenseDTO dto = new ExpenseDTO();
+                    dto.setId(expense.getId());
+                    dto.setTitle(expense.getTitle());
+                    dto.setDescription(expense.getDescription());
+                    dto.setPrice(expense.getPrice());
+                    dto.setWedding(expense.getWedding().getId());
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(expenseDTOs);
     }
 
     @PostMapping

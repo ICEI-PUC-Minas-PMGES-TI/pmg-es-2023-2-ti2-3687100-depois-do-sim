@@ -2,6 +2,7 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.depoisdosim.depoisdosim.domain.others.GuestDTO;
 import com.depoisdosim.depoisdosim.models.Guest;
 import com.depoisdosim.depoisdosim.services.GuestService;
 
@@ -34,9 +36,23 @@ public class GuestController {
     }
 
     @GetMapping("/wedding/{weddingId}")
-    public ResponseEntity<List<Guest>> findAllByWeddingId(@PathVariable Long weddingId) {
-        List<Guest> objs = this.guestService.findAllByWeddingId(weddingId);
-        return ResponseEntity.ok().body(objs);
+    public ResponseEntity<List<GuestDTO>> findAllByWeddingId(@PathVariable Long weddingId) {
+        List<Guest> guests = this.guestService.findAllByWeddingId(weddingId);
+
+        List<GuestDTO> guestDTOs = guests.stream()
+                .map(guest -> {
+                    GuestDTO dto = new GuestDTO();
+                    dto.setId(guest.getId());
+                    dto.setName(guest.getName());
+                    dto.setEmail(guest.getEmail());
+                    dto.setNumPeople(guest.getNumPeople());
+                    dto.setNamePeople(guest.getNamePeople());
+                    dto.setWeddingId(guest.getWedding().getId());
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(guestDTOs);
     }
 
     @PostMapping

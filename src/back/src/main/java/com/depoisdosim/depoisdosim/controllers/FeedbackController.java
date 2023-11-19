@@ -2,6 +2,7 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.depoisdosim.depoisdosim.domain.others.FeedbackDTO;
 import com.depoisdosim.depoisdosim.models.Feedback;
 import com.depoisdosim.depoisdosim.services.FeedbackService;
 
@@ -35,16 +37,23 @@ public class FeedbackController {
         return ResponseEntity.ok().body(obj);
     }
 
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Feedback>> findAllByUserId(@PathVariable Long userId) {
-        List<Feedback> objs = this.feedbackService.findAllByUserId(userId);
-        return ResponseEntity.ok().body(objs);
-    }
-
     @GetMapping("/supplier/{supplierId}")
-    public ResponseEntity<List<Feedback>> findAllBySupplierId(@PathVariable Long supplierId) {
-        List<Feedback> objs = this.feedbackService.findAllBySupplierId(supplierId);
-        return ResponseEntity.ok().body(objs);
+    public ResponseEntity<List<FeedbackDTO>> findAllBySupplierId(@PathVariable Long supplierId) {
+        List<Feedback> feedbacks = this.feedbackService.findAllBySupplierId(supplierId);
+
+        List<FeedbackDTO> feedbackDTOs = feedbacks.stream()
+                .map(feedback -> {
+                    FeedbackDTO dto = new FeedbackDTO();
+                    dto.setId(feedback.getId());
+                    dto.setDescription(feedback.getDescription());
+                    dto.setRating(feedback.getRating());
+                    dto.setUserId(feedback.getUser().getId());
+                    dto.setSupplierId(feedback.getSupplier().getId());
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(feedbackDTOs);
     }
 
     @PostMapping
