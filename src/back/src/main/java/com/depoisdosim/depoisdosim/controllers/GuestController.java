@@ -47,7 +47,7 @@ public class GuestController {
                     dto.setEmail(guest.getEmail());
                     dto.setNumPeople(guest.getNumPeople());
                     dto.setNamePeople(guest.getNamePeople());
-                    dto.setWeddingId(guest.getWedding().getId());
+                    dto.setWedding(guest.getWedding().getId());
                     return dto;
                 })
                 .collect(Collectors.toList());

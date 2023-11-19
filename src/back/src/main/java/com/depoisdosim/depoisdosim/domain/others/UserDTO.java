@@ -1,5 +1,7 @@
 package com.depoisdosim.depoisdosim.domain.others;
 
+import com.depoisdosim.depoisdosim.domain.user.UserRole;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,12 +11,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GiftDTO {
+
+public class UserDTO {
     private Long id;
-    private String name;
-    private String description;
-    private Boolean available;
-    private Double price;
-    private String image;
+    private String username;
+    private String password;
+    private UserRole role = UserRole.USER;
+    private String email;
     private Long wedding;
 }
