@@ -7,6 +7,7 @@ h1{
     letter-spacing: 0em;
     text-align: left;
 }
+
 h2{
     color: #494949;
     font-family: Inria Serif;
@@ -15,6 +16,17 @@ h2{
     font-weight: 700;
     line-height: normal;
 }
+
+h3{
+    color: #494949;
+    font-family: Inria Serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
 p{
     font-family: Forum;
     font-size: 18px;
@@ -24,13 +36,16 @@ p{
     text-align: left;
     color:#666666;
 }
+
 footer{
-    background-color: #EFEFEF;
+    background-color: #f0edea;
 }
+
 footer h2{
     color: #CD7B63;
     font-family: Inria Serif;
 }
+
 a{
     text-decoration: none;
     color: rgba(73, 73, 73, 0.70);
@@ -39,7 +54,7 @@ a{
 }
 
 header{
-    background-color: #FEFBF4;
+    background-color: #f0edea;
     padding-left: 60px;
     padding-right: 60px;
     margin: 0;
@@ -55,7 +70,6 @@ header button{
     margin-left: 20px;
 }
 
-
 .banner-text {
     padding: 90px 128px 40px 20px;
 }
@@ -64,6 +78,7 @@ header button{
     padding-left: 8%;
     padding-right: 8%;
 }
+
 .banner{
     background-image: url('../assets/img/beautiful-wedding-chairs-wedding-dinner-table-dec-4BU9HQX\ 1.png'); 
     background-size: cover; 
@@ -91,7 +106,7 @@ header button{
 }
 
 .nossos-casamentos{
-    background-color:#F6F6F6;
+    background-color:#f0edea;
     padding: 40px 30px;
 }
 .feedback-casais{
@@ -113,4 +128,52 @@ header button{
 
 .card-body {
     height: 384px;
+}
+
+.dropdown-bg{
+    background-color:#f0edea ;
+}
+
+.logo-register{
+    background-color: #f0edea;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 0;
+}
+
+.img-register{
+    background-image: url('../assets/img/login_photo.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
+    padding: 80px;
+    opacity: 90%;
+}
+
+.register-img-text{
+    color: white;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 32px;
+}
+
+.register-div{
+    background-color: #FEFBF4;
+    font-family: Inria Serif;
+}
+
+.register-body{
+    background-color: #FEFBF4;
+    padding-left: 24%;
+    padding-right: 24%;
+    margin: 0;
+}
+
+.faca-login{
+    color: #CD7B63;
+}
+
+.info-register{
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
