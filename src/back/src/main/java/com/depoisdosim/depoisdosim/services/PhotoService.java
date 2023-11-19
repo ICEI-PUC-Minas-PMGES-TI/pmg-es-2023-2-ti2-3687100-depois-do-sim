@@ -21,8 +21,8 @@ public class PhotoService {
         return photo.orElseThrow(() -> new RuntimeException("Foto não encontrada! Id: " + id + ", Tipo: " + Photo.class.getName()));
     }
 
-    public List<Photo> findAllByPhotoAlbumId(Long weddingId) {
-        List<Photo> photos = this.photoRepository.findAllByPhotoAlbumId(weddingId);
+    public List<Photo> findAllByWeddingId(Long weddingId) {
+        List<Photo> photos = this.photoRepository.findAllByWeddingId(weddingId);
         return photos;
     }
 
