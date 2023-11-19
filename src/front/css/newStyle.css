@@ -126,6 +126,14 @@ header button{
     font-family: Inria Serif;
 }
 
+.direitos-register{
+    background-color: #f0edea;;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: #464646;
+    font-family: Inria Serif;
+}
+
 .card-body {
     height: 384px;
 }
@@ -176,4 +184,14 @@ header button{
 .info-register{
     padding-top: 32px;
     padding-bottom: 32px;
+}
+
+.a-none{
+    text-decoration: none;
+    color: rgba(73, 73, 73, 0.70);
+    font-family: Inria Serif;
+}
+
+.cadastro-de-casamento{
+    background-color: #FEFBF4;
 }

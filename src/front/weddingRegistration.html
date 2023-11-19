@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro de Casamento</title>
-    <!-- Inclua as bibliotecas CSS do Bootstrap -->
+    <title>Depois do Sim - Cadastro de Casamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/newStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Cadastro de Casamento</h1>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/logo.png" alt="Logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobreNos.html">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nossosIndicadores.html">Nossos indicadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comentarioSite.html">Nos avalie</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Meu Casamento</a>
+                            <ul class="dropdown-menu dropdown-bg">
+                                <li><a class="dropdown-item dropdown-bg" href="#">Lista de presentes</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Controle de convidados</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Orçamentos e contratos</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Agenda</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Álbum de fotos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fornecedores</a>
+                        </li>
+                    </ul>
+                    <button>Entrar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="cadastro-de-casamento">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="./assets/img/altar_cadastro.jpg" alt="" width="100%">
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h1 class="text-center mt-5">Cadastro do Casamento</h1>
         <form>
-            <div class="form-group">
-                <label for="casal">Nome do Casal:</label>
-                <input type="text" class="form-control" id="name" placeholder="Digite o nome do casal">
+            <div class="form-group mt-3">
+                <label for="casal">Nome do Casal</label>
+                <input type="text" class="form-control mt-2" id="name" >
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="data">Data do Casamento:</label>
-                <input type="date" class="form-control" id="date">
+                <input type="date" class="form-control mt-2" id="date">
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="hora">Hora do Casamento:</label>
-                <input type="time" class="form-control" id="time">
+                <input type="time" class="form-control mt-2" id="time">
             </div>            
 
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="local">Local do Casamento:</label>
-                <input type="text" class="form-control" id="local" placeholder="Digite o local do casamento">
+                <input type="text" class="form-control mt-2" id="local" >
             </div>
 
             <!--
@@ -52,9 +104,36 @@
                 <label for="mensagem">Mensagem:</label>
                 <textarea class="form-control" id="mensagem" rows="3" placeholder="Adicione uma mensagem ou descrição do casamento"></textarea>
             </div> -->
+            <button type="submit" class="botao1 mt-4 mb-4" id="createWeddingButton">Registrar Casamento</button>
             <button type="submit" class="btn btn-primary" id="createWeddingButton">Registrar Casamento</button>
         </form>
-    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <div class="row pb-4 footer-row">
+            <div class="col-lg-6 col-md-6 col-sm-12 ps-5">
+                <h2 class="text-start mt-5 mb-3">Vamos te ajudar!</h2>
+                <a href="" class="a-none">Criar minha lista de presentes!</a><br>
+                <a href="" class="a-none">Criar uma lista de convidados!</a><br>
+                <a href="" class="a-none">Registrar orçamentos!</a><br>
+                <a href="" class="a-none">Agendar visita ao fornecedor!</a><br>
+                <a href="" class="a-none">Compartilhar fotos do meu casamento!</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 px-5">
+                <h2 class="text-start mt-5 mb-3">Contatos</h2>
+                <p><i class="bi bi-envelope me-2"></i>depoisdosim@gmail.com</p>
+                <p><i class="bi bi-telephone me-2"></i></i>(31) 999999-9999</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p class="text-center pt-3">© 2023 - 2023 Depois do Sim. Desenvolvido com muito ❤️ na PUC Minas </p>
+        </div>
+    </footer>
 
     <!-- Inclua as bibliotecas JavaScript do Bootstrap (opcional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
