@@ -47,8 +47,8 @@ public class FeedbackController {
                     dto.setId(feedback.getId());
                     dto.setDescription(feedback.getDescription());
                     dto.setRating(feedback.getRating());
-                    dto.setUserId(feedback.getUser().getId());
-                    dto.setSupplierId(feedback.getSupplier().getId());
+                    dto.setUser(feedback.getUser().getId());
+                    dto.setSupplier(feedback.getSupplier().getId());
                     return dto;
                 })
                 .collect(Collectors.toList());

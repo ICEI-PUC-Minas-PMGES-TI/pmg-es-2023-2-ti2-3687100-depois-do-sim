@@ -15,12 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Elementos da página
     const btnRegisterGift = document.getElementById("btn-register");
+    const btnGifted = document.getElementById("btn-gifted");
 
     if (isUser) {
         // O usuário está logado
     } else {
         // O usuário não está logado
         btnRegisterGift.style.display = "none";
+        btnGifted.style.display = "none";
     }
 
     // Função para buscar dados da API

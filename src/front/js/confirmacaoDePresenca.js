@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
-    const weddingId = 1;
+
+    const token = localStorage.getItem("Authorization");
+    const weddingId = localStorage.getItem("weddingId");
 
     // const convidadosList = document.getElementById("table");
 
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "num_people": num_people,
             "name_people": name_people,
             "wedding": {
-                "id": 1,
+                "id": weddingId,
             }
         };
 
@@ -43,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(`${baseUrl}/guest`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(guestData)
             });

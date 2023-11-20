@@ -52,7 +52,7 @@ public class GiftController {
                     dto.setAvailable(gift.getAvailable());
                     dto.setPrice(gift.getPrice());
                     dto.setImage(gift.getImage());
-                    dto.setWeddingId(gift.getWedding().getId());
+                    dto.setWedding(gift.getWedding().getId());
                     return dto;
                 })
                 .collect(Collectors.toList());
