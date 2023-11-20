@@ -2,7 +2,8 @@ package com.depoisdosim.depoisdosim.domain.user;
 
 public enum UserRole {
     ADMIN("admin"),
-    USER("user");
+    USER("user"),
+    SUPPLIER("supplier");
 
     private String role;
 

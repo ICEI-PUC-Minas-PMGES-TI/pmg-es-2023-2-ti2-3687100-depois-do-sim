@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
-    const userId = 1;
+
+    const userId = localStorage.getItem("id");
+    const token = localStorage.getItem("Authorization");
 
     const tasksList = document.getElementById("task-list");
 
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
-            const response = await fetch(url, { method: "GET" });
+            const response = await fetch(url, {
+                method: "GET",
+                "Authorization": `Bearer ${token}`
+            });
 
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados da API.");
@@ -26,7 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para buscar dados da API por email do fornecedor
     async function getAPIByEmail(url) {
         try {
-            const response = await fetch(url, { method: "GET" });
+            const response = await fetch(url, {
+                method: "GET",
+                "Authorization": `Bearer ${token}`
+            });
     
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados da API.");
@@ -59,7 +67,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = new Date(task.date);
             const formattedDate = date.toLocaleDateString();
 
-            getAPIByEmail(`${baseUrl}/supplier/${task.supplier.id}`)
+            const supplierData = await getAPIByEmail(`${baseUrl}/supplier/email/${email_fornecedor}`);
+
+            if (supplierData) {
+                supplierId = supplierData.id;
+                supplierName = supplierData.username;
+        
+                console.log(supplierData);
+                console.log(supplierId);
+                console.log(supplierName);
+            } else {
+                console.log("Nenhum fornecedor encontrado com o e-mail fornecido.");
+            }
 
             tab += `<tr>
                     <td>${task.id}</td>
@@ -112,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(taskData)
             });
@@ -147,7 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
     async function removeTask(taskId) {
         try {
             const response = await fetch(`${baseUrl}/task/${taskId}`, {
-                method: "DELETE"
+                method: "DELETE",
+                "Authorization": `Bearer ${token}`
             });
     
             if (!response.ok) {

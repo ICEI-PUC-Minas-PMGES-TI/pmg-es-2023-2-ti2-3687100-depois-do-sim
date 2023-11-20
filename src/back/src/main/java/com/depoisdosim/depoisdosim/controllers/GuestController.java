@@ -74,4 +74,5 @@ public class GuestController {
         this.guestService.delete(id);
         return ResponseEntity.noContent().build();
     }
+        
 }

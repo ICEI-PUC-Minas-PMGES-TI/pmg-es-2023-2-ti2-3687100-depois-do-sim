@@ -49,7 +49,14 @@ public class TaskController {
                     dto.setTime(task.getTime());
                     dto.setStatus(task.getStatus());
                     dto.setUser(task.getUser().getId());
-                    dto.setSupplier(task.getSupplier().getId());
+
+                    // Verifica se supplier é nulo e atribui null ou o ID
+                    if (task.getSupplier() != null) {
+                        dto.setSupplier(task.getSupplier().getId());
+                    } else {
+                        dto.setSupplier(null);
+                    }
+
                     return dto;
                 })
                 .collect(Collectors.toList());

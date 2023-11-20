@@ -16,7 +16,7 @@ public class TaskDTO {
     private String description;
     private String date;
     private String time;
-    private String status = "Pendente";
+    private String status;
     private Long user;
     private Long supplier = null;
 }

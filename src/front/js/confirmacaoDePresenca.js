@@ -1,29 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
 
+    // Extrair o wedding_id da URL
+    const params = new URLSearchParams(window.location.search);
+    const weddingIdFromURL = params.get('wedding_id');
+
     const token = localStorage.getItem("Authorization");
     const weddingId = localStorage.getItem("weddingId");
-
-    // const convidadosList = document.getElementById("table");
-
-    // Função para buscar dados da API
-    // async function getAPI(url) {
-    //     try {
-    //         const response = await fetch(url, { method: "GET" });
-
-    //         if (!response.ok) {
-    //             throw new Error("Erro ao buscar dados da API.");
-    //         }
-
-    //         const data = await response.json();
-    //         // show(data);
-
-    //     } catch (error) {
-    //         console.error("Erro ao buscar dados da API:", error);
-    //     }
-    // }
-
-    // getAPI(`${baseUrl}/guest/wedding/${weddingId}`);
 
     async function addGuest() {
         const name = document.getElementById("nome").value;
@@ -34,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const guestData = {
             "name": name,
             "email": email,
-            "num_people": num_people,
-            "name_people": name_people,
+            "numPeople": num_people,
+            "namePeople": name_people,
             "wedding": {
                 "id": weddingId,
             }
