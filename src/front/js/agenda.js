@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(url, {
                 method: "GET",
-                "Authorization": `Bearer ${token}`
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
             });
 
             if (!response.ok) {
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const data = await response.json();
+            console.log(data);
             show(data);
             
         } catch (error) {
@@ -33,7 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(url, {
                 method: "GET",
-                "Authorization": `Bearer ${token}`
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
             });
     
             if (!response.ok) {
@@ -67,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = new Date(task.date);
             const formattedDate = date.toLocaleDateString();
 
-            const supplierData = await getAPIByEmail(`${baseUrl}/supplier/email/${email_fornecedor}`);
+            const supplierData = await getAPIByEmail(`${baseUrl}/user/supplier/email/${email_fornecedor}`);
 
             if (supplierData) {
                 supplierId = supplierData.id;
@@ -105,26 +111,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const time = document.getElementById("time").value;
         const email_fornecedor = document.getElementById("email_fornecedor").value;
 
-        const supplierData = await getAPIByEmail(`${baseUrl}/supplier/email/${email_fornecedor}`);
-        const supplierId = supplierData.id;
-        const supplierName = supplierData.username;
+        if(email_fornecedor !== "") {
+            alert("Fornecedor encontrado com o e-mail fornecido.");
 
-        console.log(supplierData)
-        console.log(supplierId)
-        console.log(supplierName)
+            const supplierData = await getAPIByEmail(`${baseUrl}/user/supplier/email/${email_fornecedor}`);
+            const supplierId = supplierData.id;
 
-        const taskData = {
-            "title": title,
-            "description": description,
-            "date": date,
-            "time": time,
-            "user": {
-                "id": userId
-            },
-            "supplier": {
-                "id": supplierId
-            }
-        };
+            console.log(supplierData)
+            console.log(supplierId)
+
+        } else {
+            alert("Nenhum fornecedor encontrado com o e-mail fornecido.");
+
+            const taskData = {
+                "title": title,
+                "description": description,
+                "date": date,
+                "time": time,
+                "user": {
+                    "id": userId
+                }
+        }
 
         try {
             const response = await fetch(`${baseUrl}/task`, {
@@ -154,37 +161,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Evento para remover convidado
-    tasksList.addEventListener("click", (event) => {
-        if (event.target.classList.contains("btn-remove")) {
-            const taskId = event.target.getAttribute("data-task-id");
-            if (confirm("Deseja realmente excluir esta task?"))
-                removeTask(taskId);
-        }
-    });
-
-    // Função para remover convidado
-    async function removeTask(taskId) {
-        try {
-            const response = await fetch(`${baseUrl}/task/${taskId}`, {
-                method: "DELETE",
-                "Authorization": `Bearer ${token}`
-            });
-    
-            if (!response.ok) {
-                throw new Error("Erro ao remover a task.");
-            }
-    
-            // Atualizar a tabela após remover o presente
-            getAPI(`${baseUrl}/task/user/${userId}`);
-        } catch (error) {
-            console.error("Erro ao remover a task:", error);
-        }
+        
     }
 
-    document.getElementById("task-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-    });
+    // Evento para remover convidado
+    // tasksList.addEventListener("click", (event) => {
+    //     if (event.target.classList.contains("btn-remove")) {
+    //         const taskId = event.target.getAttribute("data-task-id");
+    //         if (confirm("Deseja realmente excluir esta task?"))
+    //             removeTask(taskId);
+    //     }
+    // });
+
+    // Função para remover convidado
+    // async function removeTask(taskId) {
+    //     try {
+    //         const response = await fetch(`${baseUrl}/task/${taskId}`, {
+    //             method: "DELETE",
+    //             "Authorization": `Bearer ${token}`
+    //         });
+    
+    //         if (!response.ok) {
+    //             throw new Error("Erro ao remover a task.");
+    //         }
+    
+    //         // Atualizar a tabela após remover o presente
+    //         getAPI(`${baseUrl}/task/user/${userId}`);
+    //     } catch (error) {
+    //         console.error("Erro ao remover a task:", error);
+    //     }
+    // }
+
+    // document.getElementById("task-form").addEventListener("submit", function (event) {
+    //     event.preventDefault();
+    // });
 
     document.getElementById("btn-create-task").addEventListener("click", addTask);
 

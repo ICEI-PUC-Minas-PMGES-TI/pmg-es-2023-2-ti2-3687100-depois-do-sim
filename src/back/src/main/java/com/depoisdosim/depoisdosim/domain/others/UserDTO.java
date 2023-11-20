@@ -11,12 +11,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-
 public class UserDTO {
     private Long id;
     private String username;
     private String password;
-    private UserRole role = UserRole.USER;
+    private UserRole role;
     private String email;
     private Long wedding;
 }

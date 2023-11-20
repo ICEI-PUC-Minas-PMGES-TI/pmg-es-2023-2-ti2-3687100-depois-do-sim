@@ -1,11 +1,13 @@
 package com.depoisdosim.depoisdosim.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.depoisdosim.depoisdosim.domain.user.UserRole;
 import com.depoisdosim.depoisdosim.models.User;
 import com.depoisdosim.depoisdosim.repositories.UserRepository;
 
@@ -41,6 +43,11 @@ public class UserService {
         } catch(Exception e) {
             throw new RuntimeException("Não é possível excluir um usuário que possui registros de presentes, convidados ou casamentos!");
         }
+    }
+
+    // Role Supplier
+    public List<User> findUsersByRoleAndEmail(UserRole role, String email) {
+        return userRepository.findByRoleAndEmail(role, email);
     }
 
 }

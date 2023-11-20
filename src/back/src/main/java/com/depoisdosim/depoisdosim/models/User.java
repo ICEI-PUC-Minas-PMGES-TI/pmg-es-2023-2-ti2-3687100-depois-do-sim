@@ -20,6 +20,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -55,19 +56,29 @@ public class User implements UserDetails {
     @Size(min = 8, max = 60)
     private String password;
 
+    @Email
+    @Column(name = "email", length = 100, nullable = false, unique = true)
+    @NotBlank
+    @Size(min = 2, max = 100)
+    private String email;
+
     @Column(name = "role", length = 20, nullable = false)
-    private UserRole role = UserRole.USER;
+    private UserRole role;
 
     // @OneToOne
     // @JoinColumn(name = "wedding_id", nullable = true)
     // private Wedding wedding = null;
 
-    @OneToOne(mappedBy = "user")
-    private Wedding wedding;
-
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Task> tasks = new ArrayList<Task>();
+
+    @OneToOne(mappedBy = "user")
+    private Wedding wedding;
+
+
+
+
 
     public User(String username, String password, UserRole role) {
         this.username = username;

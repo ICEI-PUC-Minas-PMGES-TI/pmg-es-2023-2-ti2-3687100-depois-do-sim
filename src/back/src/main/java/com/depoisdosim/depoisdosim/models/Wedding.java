@@ -55,10 +55,6 @@ public class Wedding {
     // @OneToOne(mappedBy = "wedding")
     // private User user;
 
-    @OneToOne
-    @JoinColumn(name = "user_id", nullable = true)
-    private User user = null;
-
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
     private List<Guest> guests = new ArrayList<Guest>();
@@ -69,13 +65,20 @@ public class Wedding {
 
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
-    private List<Supplier> suppliers = new ArrayList<Supplier>();
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "wedding")
     private List<Photo> photos = new ArrayList<Photo>();
 
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
     private List<GiftMessage> giftMessages = new ArrayList<GiftMessage>();
+
+    @OneToOne
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user = null;
+
+
+    // @JsonIgnore
+    // @OneToMany(mappedBy = "wedding")
+    // private List<User> suppliers = new ArrayList<User>();
+
+
 }

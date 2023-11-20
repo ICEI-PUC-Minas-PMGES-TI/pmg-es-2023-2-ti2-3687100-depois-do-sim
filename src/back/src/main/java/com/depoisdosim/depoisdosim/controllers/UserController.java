@@ -1,6 +1,8 @@
 package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.depoisdosim.depoisdosim.domain.others.UserDTO;
+import com.depoisdosim.depoisdosim.domain.user.UserRole;
 import com.depoisdosim.depoisdosim.models.User;
 import com.depoisdosim.depoisdosim.services.UserService;
 
@@ -52,5 +56,26 @@ public class UserController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.userService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    // Role Supplier
+    @GetMapping("/supplier/email/{email}")
+    public ResponseEntity<List<UserDTO>> findSupplierByEmail(@PathVariable String email) {
+        List<User> supplierUsers = userService.findUsersByRoleAndEmail(UserRole.SUPPLIER, email);
+
+        List<UserDTO> supplierDTOs = supplierUsers.stream()
+                .map(user -> {
+                    UserDTO dto = new UserDTO();
+                    dto.setId(user.getId());
+                    dto.setUsername(user.getUsername());
+                    dto.setPassword(user.getPassword());
+                    dto.setRole(user.getRole());
+                    dto.setEmail(user.getEmail());
+                    dto.setWedding((user.getWedding() != null) ? user.getWedding().getId() : null);
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(supplierDTOs);
     }
 }

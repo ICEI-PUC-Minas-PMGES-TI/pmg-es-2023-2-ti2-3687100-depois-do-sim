@@ -45,10 +45,15 @@ public class Task {
     private String status = "Pendente";
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "wedding_id", nullable = true)
+    private Wedding wedding;
 
     @ManyToOne
     @JoinColumn(name = "supplier_id", nullable = true)
-    private Supplier supplier = null;
+    private User supplier;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user;
+    
 }

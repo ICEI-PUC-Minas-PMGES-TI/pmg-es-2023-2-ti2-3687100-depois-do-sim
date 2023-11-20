@@ -48,6 +48,6 @@ public class Feedback {
 
     @ManyToOne
     @JoinColumn(name = "supplier_id", nullable = false)
-    private Supplier supplier;
+    private User supplier;
 
 }

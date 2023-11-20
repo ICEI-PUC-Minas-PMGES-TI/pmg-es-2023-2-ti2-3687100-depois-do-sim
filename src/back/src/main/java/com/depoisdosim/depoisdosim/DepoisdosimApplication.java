@@ -1,3 +1,5 @@
+// Soli Deo Gloria
+
 package com.depoisdosim.depoisdosim;
 
 import org.springframework.boot.SpringApplication;

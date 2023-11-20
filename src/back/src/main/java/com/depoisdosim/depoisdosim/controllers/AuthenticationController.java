@@ -50,15 +50,18 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<Void> register(@RequestBody @Valid RegisterDTO data) {
-        if(this.userRepository.findByUsername(data.username()) != null) {
+        if (userRepository.findByUsername(data.username()) != null) {
             return ResponseEntity.badRequest().build();
         }
-
+    
+        // Criando um novo usuário com email
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
         User newUser = new User(data.username(), encryptedPassword, data.role());
-
-        this.userRepository.save(newUser);
-
+        newUser.setEmail(data.email());
+    
+        userRepository.save(newUser);
+    
         return ResponseEntity.ok().build();
     }
+    
 }
