@@ -63,7 +63,8 @@
             <div class="header-wrapper">
                 <h2>Lista de Presentes</h2>
                 <div class="btn-wrapper">
-                    <button type="button" id="btn-register" data-bs-toggle="modal" data-bs-target="#cadastroModal">Cadastrar</button>
+                    <button type="button" id="btn-register" data-bs-toggle="modal"
+                        data-bs-target="#cadastroModal">Cadastrar</button>
                     <button type="button" class="btn btn-primary" id="btn-gifted">Ver presentes</button>
                 </div>
 
@@ -78,81 +79,92 @@
     </main>
 
     <!-- Modal cadastrar Gift -->
-    <div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+    <div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="cadastroModalLabel">Cadastro de Presente</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <form id="giftForm">
-                    <!-- Campo Nome -->
-                    <div>
-                        <!-- <label for="nome" class="form-label h-color text-center"></label> -->
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Presente" required>
-                    </div>
-    
-                    <!-- Campo Descrição -->
-                    <div>
-                        <!-- <label for="descricao" class="form-label h-color text-center"></label> -->
-                        <textarea class="form-control mt-3" id="descricao" name="descricao" rows="3" placeholder="Descrição"></textarea>
-                    </div>
-    
-                    <!-- Campo Preço -->
-                    <div>
-                        <!-- <label for="preco" class="form-label h-color text-center"></label> -->
-                        <input type="number" class="form-control mt-3" id="preco" name="preco" step="0.01" placeholder="Preço" required>
-                    </div>    
-                    
-                    <!-- Campo Imagem -->
-                    <div>
-                        <!-- <label for="nome" class="form-label h-color text-center"></label> -->
-                        <input type="text" class="form-control mt-3 " id="image" name="image" placeholder="Link da imagem: " required>
-                    </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cadastroModalLabel">Cadastro de Presente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="giftForm">
+                        <!-- Campo Nome -->
+                        <div>
+                            <!-- <label for="nome" class="form-label h-color text-center"></label> -->
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Presente"
+                                required>
+                        </div>
 
-                </form>
+                        <!-- Campo Descrição -->
+                        <div>
+                            <!-- <label for="descricao" class="form-label h-color text-center"></label> -->
+                            <textarea class="form-control mt-3" id="descricao" name="descricao" rows="3"
+                                placeholder="Descrição"></textarea>
+                        </div>
+
+                        <!-- Campo Preço -->
+                        <div>
+                            <!-- <label for="preco" class="form-label h-color text-center"></label> -->
+                            <input type="number" class="form-control mt-3" id="preco" name="preco" step="0.01"
+                                placeholder="Preço" required>
+                        </div>
+
+                        <!-- Campo Imagem -->
+                        <div>
+                            <!-- <label for="nome" class="form-label h-color text-center"></label> -->
+                            <input type="text" class="form-control mt-3 " id="image" name="image"
+                                placeholder="Link da imagem: " required>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-create" data-bs-toggle="modal"
+                        data-bs-target="#cadastroModal">Salvar</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" id="btn-create" data-bs-toggle="modal" data-bs-target="#cadastroModal">Salvar</button>
-            </div>
-        </div>
         </div>
     </div>
 
     <!-- Modal presentear -->
-    <div class="modal fade" id="giftMessageModal" tabindex="-1" role="dialog" aria-labelledby="giftMessageModalLabel" aria-hidden="true">
+    <div class="modal fade" id="giftMessageModal" tabindex="-1" role="dialog" aria-labelledby="giftMessageModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="giftMessageModalLabel">Presentear</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <form id="giftForm">
-                    <!-- Campo Nome -->
-                    <div>
-                        <input type="text" class="form-control" id="guestName" name="guestName" placeholder="Seu nome completo: " required>
-                    </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="giftMessageModalLabel">Presentear</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="giftForm">
+                        <!-- Campo Nome -->
+                        <div>
+                            <input type="text" class="form-control" id="guestName" name="guestName"
+                                placeholder="Seu nome completo: " required>
+                        </div>
 
-                    <!-- Campo E-mail -->
-                    <div>
-                        <input type="email" class="form-control mt-3" id="guestEmail" name="guestEmail" placeholder="Seu e-mail: " required>
-                    </div>
-    
-                    <!-- Campo Descrição -->
-                    <div>
-                        <textarea class="form-control mt-3" id="guestMessage" name="guestMessage" rows="5" placeholder="Escreva uma mensagem: "></textarea>
-                    </div> 
+                        <!-- Campo E-mail -->
+                        <div>
+                            <input type="email" class="form-control mt-3" id="guestEmail" name="guestEmail"
+                                placeholder="Seu e-mail: " required>
+                        </div>
 
-                </form>
+                        <!-- Campo Descrição -->
+                        <div>
+                            <textarea class="form-control mt-3" id="guestMessage" name="guestMessage" rows="5"
+                                placeholder="Escreva uma mensagem: "></textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-save-gift-message"
+                        data-bs-dismiss="modal">Salvar</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" id="btn-save-gift-message" data-bs-dismiss="modal">Salvar</button>
-            </div>
-        </div>
         </div>
     </div>
     <footer>
@@ -177,7 +189,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <script src="./js/registerGifts.js"></script>
 </body>
 
