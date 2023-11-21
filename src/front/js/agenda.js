@@ -210,4 +210,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("btn-create-task").addEventListener("click", addTask);
 
+    // Obter o e-mail do fornecedor da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const supplierEmail = urlParams.get('supplierEmail');
+
+    if (supplierEmail) {
+        const emailField = document.getElementById("email_fornecedor");
+        emailField.value = supplierEmail;
+    }
 });
