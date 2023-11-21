@@ -85,16 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
             //     supplierUsername = supplierData.username;
             // }
 
-            // tab += `<tr>
-            //             <td>${task.id}</td>
-            //             <td>${task.title}</td>
-            //             <td>${task.description}</td>
-            //             <td>${formattedDate}</td>
-            //             <td>${task.time.slice(0, 5)}</td>
-            //             <td>${supplierUsername}</td>
-            //             <td>${task.status}</td>
-            //             <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
-            //         </tr>`;
+            tab += `<tr>
+                        <td>${task.id}</td>
+                        <td>${task.title}</td>
+                        <td>${task.description}</td>
+                        <td>${formattedDate}</td>
+                        <td>${task.time.slice(0, 5)}</td>
+                        <td>FAZER AQUI!!!</td>
+                        <td>${task.status}</td>
+                        <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
+                    </tr>`;
             
         }
 

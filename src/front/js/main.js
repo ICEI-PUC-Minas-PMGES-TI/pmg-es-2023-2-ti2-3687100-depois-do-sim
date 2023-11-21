@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const urlGiftWithWeddingId = `registerGifts.html?wedding_id=${weddingId}`;
         const urlPhotoAlbumWithWeddingId = `photoAlbum.html?wedding_id=${weddingId}`;
-        const urlGuestWithWeddingId = `confirmacaoDeConvidados.html?wedding_id=${weddingId}`;
+        const urlGuestWithWeddingId = `confirmacaoDePresenca.html?wedding_id=${weddingId}`;
 
         giftLink.href = urlGiftWithWeddingId;
         photoAlbumLink.href = urlPhotoAlbumWithWeddingId;
