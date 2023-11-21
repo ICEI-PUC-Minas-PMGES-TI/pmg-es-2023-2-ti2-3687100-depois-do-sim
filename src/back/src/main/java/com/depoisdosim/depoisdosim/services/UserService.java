@@ -22,6 +22,10 @@ public class UserService {
         return user.orElseThrow(() -> new RuntimeException("Usuário não encontrado! Id: " + id + ", Tipo: " + User.class.getName()));
     }
 
+    public List<User> findUsersByRole(UserRole role) {
+        return userRepository.findByRole(role);
+    }
+
     @Transactional
     public User create(User obj) {
         obj.setId(null);
