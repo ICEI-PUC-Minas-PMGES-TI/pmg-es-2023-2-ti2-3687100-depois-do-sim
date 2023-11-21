@@ -33,10 +33,19 @@ public class UserController {
     private UserService userService;
     
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
-        User obj = this.userService.findById(id);
-        return ResponseEntity.ok().body(obj);
-    }
+    public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
+        User user = this.userService.findById(id);
+    
+        UserDTO dto = new UserDTO();
+        dto.setId(user.getId());
+        dto.setUsername(user.getUsername());
+        dto.setPassword(user.getPassword());
+        dto.setRole(user.getRole());
+        dto.setEmail(user.getEmail());
+        dto.setWedding((user.getWedding() != null) ? user.getWedding().getId() : null);
+    
+        return ResponseEntity.ok().body(dto);
+    }    
 
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody User obj) {

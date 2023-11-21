@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const baseUrl = "http://localhost:8080";
 
+    const supplierName = localStorage.getItem("username");
+    // const supplierId = localStorage.getItem("userId");
+
     // Obter o ID do fornecedor da URL
     const urlParams = new URLSearchParams(window.location.search);
     const supplierId = urlParams.get("id");

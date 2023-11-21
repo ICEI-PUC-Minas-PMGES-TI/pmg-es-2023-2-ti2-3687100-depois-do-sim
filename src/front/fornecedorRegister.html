@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Fornecedor - Depois do Sim</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,17 +15,23 @@
                 <h1 class="text-center mb-4">Registro de Fornecedor</h1>
                 <form>
                     <div class="mb-4">
-                        <label for="fornecedorUsername" class="form-label">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="fornecedorUsername" name="fornecedorUsername"
+                        <label for="username" class="form-label">Nome de Usuário</label>
+                        <input type="text" class="form-control" id="username" name="username"
                             placeholder="Nome de usuário" required>
                     </div>
 
                     <div class="mb-4">
-                        <label for="fornecedorPassword" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="fornecedorPassword" name="fornecedorPassword"
-                            placeholder="Senha" required>
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="email" name="email"
+                            placeholder="E-mail" required>
                     </div>
 
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Senha" required>
+                    </div>
+                    
                     <div class="mb-4">
                         <label for="fornecedorConfirmPassword" class="form-label">Confirme a Senha</label>
                         <input type="password" class="form-control" id="fornecedorConfirmPassword"
@@ -35,13 +40,14 @@
 
                     <!-- Adicione outros campos necessários para o registro do fornecedor -->
 
-                    <button type="submit" class="btn btn-primary">Registrar como fornecedor</button>
+                    <button type="submit" class="btn btn-primary" id="registerButton">Registrar como fornecedor</button>
                 </form>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/fornecedorRegister.js"></script>
 </body>
 
 </html>
