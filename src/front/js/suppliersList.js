@@ -1,24 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = "http://localhost:8080";
-    const userId = 1;
+
+    const userId = localStorage.getItem("id");
+    const token = localStorage.getItem("Authorization");
 
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
-            const response = await fetch(url, { method: "GET" });
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+            });
 
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados da API.");
             }
 
             const data = await response.json();
+            console.log(data);
             show(data);
         } catch (error) {
             console.error("Erro ao buscar dados da API:", error);
         }
     }
 
-    getAPI(`${baseUrl}/supplier/all`);
+    getAPI(`${baseUrl}/user/supplier/all`);
 
     // Função para criar elementos HTML
     async function show(suppliers) {
@@ -71,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
     // Função para adicionar uma tarefa
     async function addFeedback(sup) {
         const description = document.getElementById("description").value;
@@ -96,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": token
                 },
                 body: JSON.stringify(feedbackData)
             });

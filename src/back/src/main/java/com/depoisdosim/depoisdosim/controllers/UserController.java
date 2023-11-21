@@ -47,6 +47,27 @@ public class UserController {
         return ResponseEntity.ok().body(dto);
     }    
 
+    // Encontrar todos User com role supplier
+    @GetMapping("/supplier/all")
+    public ResponseEntity<List<UserDTO>> findAllSupplierUsers() {
+        List<User> supplierUsers = userService.findUsersByRole(UserRole.SUPPLIER);
+    
+        List<UserDTO> supplierDTOs = supplierUsers.stream()
+                .map(user -> {
+                    UserDTO dto = new UserDTO();
+                    dto.setId(user.getId());
+                    dto.setUsername(user.getUsername());
+                    dto.setPassword(user.getPassword());
+                    dto.setRole(user.getRole());
+                    dto.setEmail(user.getEmail());
+                    dto.setWedding((user.getWedding() != null) ? user.getWedding().getId() : null);
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    
+        return ResponseEntity.ok().body(supplierDTOs);
+    }
+    
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody User obj) {
         this.userService.create(obj);

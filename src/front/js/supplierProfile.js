@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const baseUrl = "http://localhost:8080";
 
     const supplierName = localStorage.getItem("username");
-    // const supplierId = localStorage.getItem("userId");
+    const token = localStorage.getItem("Authorization");
 
     // Obter o ID do fornecedor da URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -11,8 +11,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Função para obter dados do fornecedor por ID
     async function getSupplierData(supplierId) {
         try {
-            const response = await fetch(`${baseUrl}/supplier/${supplierId}`, {
+            const response = await fetch(`${baseUrl}/user/${supplierId}`, {
                 method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+
             });
 
             if (!response.ok) {
@@ -47,6 +52,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             const response = await fetch(`${baseUrl}/feedback/supplier/${supplierId}`, {
                 method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },            
             });
 
             if (!response.ok) {
@@ -64,32 +73,63 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Função para renderizar os comentários na página
-    // Função para renderizar os comentários na página
-    function renderComments(comments) {
-        const commentsList = document.getElementById("comments-list");
-    
-        // Limpar a lista de comentários antes de adicionar novos
-        commentsList.innerHTML = '';
-    
-        comments.forEach(comment => {
-            const listItem = document.createElement("li");
-            listItem.className = "list-group-item";
-    
-            const userStrong = document.createElement("strong");
-            userStrong.textContent = `${comment.user.username}:`;
-    
-            const ratingSpan = document.createElement("span");
-            ratingSpan.textContent = ` (${comment.rating})`;
-    
-            const commentText = document.createTextNode(` - ${comment.description}`);
-    
-            listItem.appendChild(userStrong);
-            listItem.appendChild(ratingSpan);
-            listItem.appendChild(commentText);
-    
-            commentsList.appendChild(listItem);
-        });
+async function renderComments(comments) {
+    const commentsList = document.getElementById("comments-list");
+
+    // Limpar a lista de comentários antes de adicionar novos
+    commentsList.innerHTML = '';
+
+    for (const comment of comments) {
+        const listItem = document.createElement("li");
+        listItem.className = "list-group-item";
+
+        const userStrong = document.createElement("strong");
+
+        try {
+            const userData = await getUserData(comment.user);
+            if (userData && userData.username) {
+                userStrong.textContent = userData.username;
+            } else {
+                userStrong.textContent = 'Nome de usuário não encontrado';
+            }
+        } catch (error) {
+            console.error('Erro ao obter nome de usuário:', error);
+            userStrong.textContent = 'Erro ao obter nome de usuário';
+        }
+
+        const ratingSpan = document.createElement("span");
+        ratingSpan.textContent = ` (${comment.rating})`;
+
+        const commentText = document.createTextNode(` - ${comment.description}`);
+
+        listItem.appendChild(userStrong);
+        listItem.appendChild(ratingSpan);
+        listItem.appendChild(commentText);
+
+        commentsList.appendChild(listItem);
     }
+}
+
+// Função para obter dados do usuário por ID
+async function getUserData(userId) {
+    try {
+        const response = await fetch(`${baseUrl}/user/${userId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao obter dados do usuário.");
+        }
+
+        return await response.json();
+    } catch (error) {
+        throw new Error("Erro ao obter dados do usuário.");
+    }
+}
     
 
 });
