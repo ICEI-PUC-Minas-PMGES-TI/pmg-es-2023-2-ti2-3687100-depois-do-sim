@@ -1,6 +1,8 @@
 async function register() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
+    let email = document.getElementById("email").value;
+
     let confirmPassword = document.getElementById("confirmPassword").value;
 
     if (password !== confirmPassword) {
@@ -16,6 +18,7 @@ async function register() {
         body: JSON.stringify({
             username: username,
             password: password,
+            email: email,
             role: "USER",
         }),
     });
