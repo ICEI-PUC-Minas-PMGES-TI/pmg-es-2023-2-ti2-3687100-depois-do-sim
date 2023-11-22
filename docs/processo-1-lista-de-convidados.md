@@ -9,8 +9,6 @@ Este processo pode ser melhorado por meio de uma interface intuitiva, upoload de
 
 _Os tipos de dados a serem utilizados são:_
 
-_* **Fazer upload do convite** - subir a foto do convite no site._
-
 _* **Enviar o formulário de cadastro** - enviar o link do formulário para convidados._
 
 _* **Cadastrar quem comparecerá** - o convidado preenche o formulário_
@@ -18,19 +16,7 @@ _* **Cadastrar quem comparecerá** - o convidado preenche o formulário_
 _* **Analisar convidados e aceitar** - os noivos recebem a lista de cadastrados e podem excluir aqueles convidados não condizentes._
 
 _* **Registar convidados aceitos na lista** - os convidados aceitos ficam na lista._
-
-
-
-**Fazer upload do convite**
-
-| **Campo**           | **Tipo**         | **Restrições**                               | **Valor default** |
-| ---                 | ---              | ---                                          | ---               |
-| imagem do convite   | Campo de texto    | url  |      null         |                       	|      edit         |
-
-
-| **Comandos**                     |  **Destino**                           | **Tipo**       |                   
-| ---                              | ---                                    | ---            | 
-| Adicionar convite              | Fim da tarefa     |         |                   
+                  
 
 
 **Cadastrar quem comparecerá**
