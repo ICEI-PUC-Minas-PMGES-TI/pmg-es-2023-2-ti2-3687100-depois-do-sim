@@ -41,6 +41,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/photo/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/guest/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/user/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/task/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
@@ -52,6 +53,7 @@ public class SecurityConfig {
             CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
             configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "PATCH"));
             configuration.addAllowedOrigin("*");
+            configuration.addAllowedHeader("*");
             final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
             source.registerCorsConfiguration("/**", configuration);
             return source;

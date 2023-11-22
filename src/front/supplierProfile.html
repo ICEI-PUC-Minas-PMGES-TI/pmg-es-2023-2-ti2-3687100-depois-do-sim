@@ -12,7 +12,29 @@
 <body>
 
     <div class="container mt-5">
-        <h1>Perfil do Fornecedor</h1>
+        <div class="d-flex justify-content-between">
+            <h1>Perfil do Fornecedor</h1>
+            <button class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#tasksModal">Solicitações de tarefas</button>
+        </div>
+
+        <div class="modal" tabindex="-1" id="tasksModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Solicitações de tarefas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <table id="tasks-table"></table>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
 
         <!-- Informações do Fornecedor -->
         <div class="card mt-3">
@@ -29,18 +51,6 @@
             <!-- Lista de Comentários -->
             <ul class="list-group" id="comments-list">
                 <!-- Comentários serão adicionados dinamicamente aqui -->
-            </ul>
-        </div>
-
-        <hr>
-
-        <!-- Tarefas sobre o Fornecedor -->
-        <div class="mt-4">
-            <h2>Tarefas</h2>
-
-            <!-- Lista de Tarefas -->
-            <ul class="list-group" id="comments-list">
-                <!-- Tarefas serão adicionados dinamicamente aqui -->
             </ul>
         </div>
 

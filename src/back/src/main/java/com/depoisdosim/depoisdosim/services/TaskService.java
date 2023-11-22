@@ -26,6 +26,10 @@ public class TaskService {
         return tasks;
     }
 
+    public List<Task> findAllTasks() {
+        return taskRepository.findAll();
+    }
+
     @Transactional
     public Task create(Task obj) {
         obj.setId(null);
