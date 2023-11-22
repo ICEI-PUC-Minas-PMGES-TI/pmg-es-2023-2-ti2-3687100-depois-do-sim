@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const baseUrl = "http://localhost:8080";
 
-    const supplierName = localStorage.getItem("username");
+    const usernameLogin = localStorage.getItem("username");
     const token = localStorage.getItem("Authorization");
 
     // Obter o ID do fornecedor da URL
