@@ -7,6 +7,7 @@ async function createWedding() {
         date: document.getElementById("date").value,
         time: document.getElementById("time").value,
         local: document.getElementById("local").value,
+        budget: document.getElementById("orcamento").value,
         user: {
             id: userId
         }

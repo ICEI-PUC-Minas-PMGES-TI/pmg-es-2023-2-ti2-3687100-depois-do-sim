@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.depoisdosim.depoisdosim.domain.others.WeddingDTO;
 import com.depoisdosim.depoisdosim.models.Wedding;
 import com.depoisdosim.depoisdosim.services.WeddingService;
 
@@ -27,9 +28,18 @@ public class WeddingController {
     private WeddingService weddingService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Wedding> findById(@PathVariable Long id) {
-        Wedding obj = this.weddingService.findById(id);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<WeddingDTO> findWeddingById(@PathVariable Long id) {
+        Wedding wedding = this.weddingService.findById(id);
+
+        WeddingDTO weddingDTO = new WeddingDTO();
+        weddingDTO.setId(wedding.getId());
+        weddingDTO.setName(wedding.getName());
+        weddingDTO.setDate(wedding.getDate());
+        weddingDTO.setTime(wedding.getTime());
+        weddingDTO.setLocal(wedding.getLocal());
+        weddingDTO.setBudget(wedding.getBudget());
+
+        return ResponseEntity.ok().body(weddingDTO);
     }
 
     @PostMapping

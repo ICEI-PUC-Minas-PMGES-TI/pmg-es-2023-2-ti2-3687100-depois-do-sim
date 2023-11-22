@@ -1,11 +1,81 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const baseUrl = "http://localhost:8080";
 
-    const userId = localStorage.getItem("id");
     const token = localStorage.getItem("Authorization");
+    const weddingId = localStorage.getItem("weddingId");
 
     const suppliersList = document.getElementById("supplier-list"); // Referência à tabela de fornecedores
 
+
+    // Função para buscar o valor do orçamento da API
+    async function getBudget() {
+        try {
+        const response = await fetch(`${baseUrl}/wedding/${weddingId}`, {
+            method: "GET",
+            headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+            },
+        });
+    
+        if (!response.ok) {
+            throw new Error("Erro ao buscar o orçamento da API.");
+        }
+    
+        const data = await response.json();
+        const budgetValue = data.budget;
+    
+        return budgetValue;
+        } catch (error) {
+        console.error("Erro ao buscar o orçamento da API:", error);
+        }
+    }
+    
+    // Função para buscar dados da API
+    async function getApiExpense(url, budgetValue) {
+        try {
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+            },
+        });
+    
+        if (!response.ok) {
+            throw new Error("Erro ao buscar dados da API.");
+        }
+    
+        const data = await response.json();
+        let totalExpense = 0;
+        for (let expense of data) {
+            totalExpense += expense.price;
+        }
+    
+        const textTotalExpense = document.getElementById("total-price");
+        textTotalExpense.textContent = `Total de despesas: R$ ${totalExpense}`;
+
+        const textBudget = document.getElementById("budget-title");
+        textBudget.textContent = `Orçamento: R$ ${budgetValue}`;
+    
+        if (totalExpense > budgetValue) {
+            const textBudget = document.getElementById("budget-title");
+            textBudget.style.color = "red";
+        } else {
+            const textBudget = document.getElementById("budget-title");
+            textBudget.style.color = "green";
+        }
+    
+        showExpenses(data);
+        } catch (error) {
+        console.error("Erro ao buscar dados da API:", error);
+        }
+    }
+    
+    // Chamar a função para buscar e exibir o orçamento
+    const budgetValue = await getBudget();
+    getApiExpense(`${baseUrl}/expense/wedding/${weddingId}`, budgetValue);
+    
     // Função para buscar dados da API
     async function getAPI(url) {
         try {
@@ -22,14 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const data = await response.json();
-            console.log(data);
-            // show(data);
+            
+            show(data);
         } catch (error) {
             console.error("Erro ao buscar dados da API:", error);
         }
     }
 
     getAPI(`${baseUrl}/user/supplier/all`);
+
+    // getAPI(`${baseUrl}/user/supplier/all`);
 
     // Função para criar elementos HTML
     async function show(suppliers) {
@@ -56,32 +128,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("supplier-list").innerHTML = tab;
 
-    //      document.getElementsByClassName('btn-escolher').addEventListener('click', function() {
-    //         // Abre a nova página
-    //         window.open('agenda.html', '_blank');
-    //         // Preenche o campo específico no formulário
-    // setTimeout(function() {
-    //     // Supondo que o campo a ser preenchido tenha o ID 'campoExemplo'
-    //     var campoExemplo = window.open().document.getElementById('email_fornecedor');
-        
-    //     // Preencha o campo com o valor desejado
-    //     campoExemplo.value = 'supplierEmail';
-    // }, 1000);});
+        suppliersList.addEventListener("click", (event) => {
+            if (event.target.classList.contains("btn-escolher")) {
+                const supplierEmail = event.target.getAttribute("data-supplier-email");
+                console.log(supplierEmail);
+                
+                window.location = "agenda.html?supplierEmail=" + supplierEmail;
+                
+        }
 
-
-    suppliersList.addEventListener("click", (event) => {
-        if (event.target.classList.contains("btn-escolher")) {
-            const supplierEmail = event.target.getAttribute("data-supplier-email");
-            console.log(supplierEmail);
-            
-            window.location = "agenda.html?supplierEmail=" + supplierEmail;
-            
     }
 
-}
     )};
-});
 
+
+    // Função para criar elementos HTML
+    async function showExpenses(expenses) {
+        let tab = `<thead>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Preço</th>
+                    </thead>
+                    <tbody>`;
+
+        for (let expense of expenses) {
+            tab += `<tr>
+                        <td>${expense.id}</td>
+                        <td>${expense.title}</td>
+                        <td>${expense.description}</td>
+                        <td>${expense.price}</td>
+                    </tr>`;
+
+
+
+            tab += `</tbody>`;
+        }
+
+        document.getElementById("expense-list").innerHTML = tab;
+    }
 
     async function addExpense() {
         const title = document.getElementById("title").value;
@@ -92,13 +177,13 @@ document.addEventListener("DOMContentLoaded", () => {
             "title": title,
             "description": description,
             "price": price,
-            "user": {
-                "id": userId
+            "wedding": {
+                "id": weddingId
             }
         };
 
         try {
-            const response = await fetch(`${baseUrl}/task`, {
+            const response = await fetch(`${baseUrl}/expense`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -119,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("price").value = "";
  
                 // Atualizar a tabela após adicionar a tarefa
-                getAPI(`${baseUrl}/task/user/${userId}`);
+                getApiExpense(`${baseUrl}/expense/wedding/${weddingId}`);
             }
         } catch (error) {
             console.error("Erro ao adicionar tarefa:", error);
@@ -159,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //         event.preventDefault();
 //     });
 
-//     document.getElementById("btn-create-task").addEventListener("click", addTask);
+    document.getElementById("btn-create-expense").addEventListener("click", addExpense);
 
-// });
+
+});
