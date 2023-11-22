@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     supplierList.addEventListener("click", (event) => {
         if (event.target.classList.contains("btn-feedback")) {
             const supplierId = event.target.getAttribute("data-supplier-id");
-            console.log(supplierId);
             supChose = supplierId
         }
     });
@@ -81,18 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Função para adicionar uma tarefa
-    async function addFeedback(sup) {
+    async function addFeedback() {
         const description = document.getElementById("description").value;
-
-
-        console.log(supChose)
 
 
         const feedbackData = {
             "description": description,
             "rating": ratingSelected,
             "user": {
-                "id": 1
+                "id": userId
             },
             "supplier": {
                 "id": supChose

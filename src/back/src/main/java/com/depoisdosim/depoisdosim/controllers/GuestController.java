@@ -2,7 +2,12 @@ package com.depoisdosim.depoisdosim.controllers;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
+
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.depoisdosim.depoisdosim.domain.others.GuestDTO;
 import com.depoisdosim.depoisdosim.models.Guest;
 import com.depoisdosim.depoisdosim.services.GuestService;
+
 
 import jakarta.validation.Valid;
 
@@ -73,6 +79,38 @@ public class GuestController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.guestService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    // Enviar e-mail
+    @PostMapping("/wedding/{weddingId}/invite/{username}")
+    public ResponseEntity<Void> sendInvite(@PathVariable Long weddingId, @PathVariable String username) {
+        List<Guest> guests = this.guestService.findAllByWeddingId(weddingId);
+        for (Guest guest : guests) {
+            String to = guest.getEmail();
+            String from = "convite@depoisdosim.com.br";
+            String host = "smtp-relay.brevo.com";
+
+            Properties properties = System.getProperties();
+            properties.setProperty("mail.smtp.host", host);
+            properties.setProperty("mail.smtp.port", "587");
+
+            Session session = Session.getDefaultInstance(properties);
+
+            try {
+                MimeMessage message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(from));
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+                message.setSubject("Você foi convidado para o casamento de " + username);
+                message.setText(String.format("Olá, %s!\nEstamos muito felizes em contar que você recebeu um convite para o casamento de %s", guest.getName(), username));
+
+                Transport.send(message, "lvcarolina42@gmail.com", "8KHgYBFI3sf2pzrL");
+                System.out.println("Sent message successfully....");
+            } catch (Exception mex) {
+                mex.printStackTrace();
+            }
+        }
+
+        return ResponseEntity.ok().build();
     }
         
 }

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const token = localStorage.getItem("Authorization");
     const weddingId = localStorage.getItem("weddingId");
+    const username = localStorage.getItem("username");
 
     const sendInviteButton = document.getElementById("btn-send-invite");
     const convidadosList = document.getElementById("guest-table");
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     sendInviteButton.addEventListener("click", (event) => {
-        postAPI(`${baseUrl}/guest/wedding/${weddingId}/invite`);
+        postAPI(`${baseUrl}/guest/wedding/${weddingId}/invite/${username}`);
     })
 
     // Evento para remover convidado

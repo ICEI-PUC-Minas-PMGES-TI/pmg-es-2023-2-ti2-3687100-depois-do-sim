@@ -9,11 +9,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-
 public class WeddingDTO {
     private Long id;
     private String name;
     private String date;
     private String time;
-    private String location;
+    private String local;
+    private Long budget;
 }

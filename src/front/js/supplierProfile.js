@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const baseUrl = "http://localhost:8080";
 
-    const supplierName = localStorage.getItem("username");
+    const usernameLogin = localStorage.getItem("username");
     const token = localStorage.getItem("Authorization");
 
     // Obter o ID do fornecedor da URL
@@ -73,63 +73,90 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Função para renderizar os comentários na página
-async function renderComments(comments) {
-    const commentsList = document.getElementById("comments-list");
+    async function renderComments(comments) {
+        const commentsList = document.getElementById("comments-list");
 
-    // Limpar a lista de comentários antes de adicionar novos
-    commentsList.innerHTML = '';
+        // Limpar a lista de comentários antes de adicionar novos
+        commentsList.innerHTML = '';
 
-    for (const comment of comments) {
-        const listItem = document.createElement("li");
-        listItem.className = "list-group-item";
+        for (const comment of comments) {
+            const listItem = document.createElement("li");
+            listItem.className = "list-group-item";
 
-        const userStrong = document.createElement("strong");
+            const userStrong = document.createElement("strong");
 
-        try {
-            const userData = await getUserData(comment.user);
-            if (userData && userData.username) {
-                userStrong.textContent = userData.username;
-            } else {
-                userStrong.textContent = 'Nome de usuário não encontrado';
+            try {
+                const userData = await getUserData(comment.user);
+                if (userData && userData.username) {
+                    userStrong.textContent = userData.username;
+                } else {
+                    userStrong.textContent = 'Nome de usuário não encontrado';
+                }
+            } catch (error) {
+                console.error('Erro ao obter nome de usuário:', error);
+                userStrong.textContent = 'Erro ao obter nome de usuário';
             }
-        } catch (error) {
-            console.error('Erro ao obter nome de usuário:', error);
-            userStrong.textContent = 'Erro ao obter nome de usuário';
+
+            const ratingSpan = document.createElement("span");
+            ratingSpan.textContent = ` (${comment.rating})`;
+
+            const commentText = document.createTextNode(` - ${comment.description}`);
+
+            listItem.appendChild(userStrong);
+            listItem.appendChild(ratingSpan);
+            listItem.appendChild(commentText);
+
+            commentsList.appendChild(listItem);
         }
-
-        const ratingSpan = document.createElement("span");
-        ratingSpan.textContent = ` (${comment.rating})`;
-
-        const commentText = document.createTextNode(` - ${comment.description}`);
-
-        listItem.appendChild(userStrong);
-        listItem.appendChild(ratingSpan);
-        listItem.appendChild(commentText);
-
-        commentsList.appendChild(listItem);
     }
-}
 
-// Função para obter dados do usuário por ID
-async function getUserData(userId) {
-    try {
-        const response = await fetch(`${baseUrl}/user/${userId}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": token
-            },
-        });
+    // Função para obter dados do usuário por ID
+    async function getUserData(userId) {
+        try {
+            const response = await fetch(`${baseUrl}/user/${userId}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+            });
 
-        if (!response.ok) {
+            if (!response.ok) {
+                throw new Error("Erro ao obter dados do usuário.");
+            }
+
+            return await response.json();
+        } catch (error) {
             throw new Error("Erro ao obter dados do usuário.");
         }
-
-        return await response.json();
-    } catch (error) {
-        throw new Error("Erro ao obter dados do usuário.");
     }
-}
-    
+
+
+    // Função para buscar dados da API
+    async function getApiTasks(url) {
+        try {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao buscar dados da API.");
+            }
+
+            const data = await response.json();
+            console.log(data);
+            // show(data);
+            
+        } catch (error) {
+            console.error("Erro ao buscar dados da API:", error);
+        }
+    }
+
+    getApiTasks(`${baseUrl}/task?supplierId=1`);
+
 
 });

@@ -1,5 +1,6 @@
 async function register() {
     let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let email = document.getElementById("email").value;
 
@@ -17,6 +18,7 @@ async function register() {
         }),
         body: JSON.stringify({
             username: username,
+            email: email,
             password: password,
             email: email,
             role: "USER",

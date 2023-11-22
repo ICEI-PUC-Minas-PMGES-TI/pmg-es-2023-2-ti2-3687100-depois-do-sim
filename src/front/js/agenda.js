@@ -3,8 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const userId = localStorage.getItem("id");
     const token = localStorage.getItem("Authorization");
+    const username = localStorage.getItem("username");
+    const weddingId = localStorage.getItem("weddingId");
 
     const tasksList = document.getElementById("task-list");
+    const btnCreateTask = document.getElementById("btn-create-task");
 
     // Função para buscar dados da API
     async function getAPI(url) {
@@ -54,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return null;
         }
     }
-
     
     // Função para criar elementos HTML
     async function show(tasks) {
@@ -85,16 +87,16 @@ document.addEventListener("DOMContentLoaded", () => {
             //     supplierUsername = supplierData.username;
             // }
 
-            // tab += `<tr>
-            //             <td>${task.id}</td>
-            //             <td>${task.title}</td>
-            //             <td>${task.description}</td>
-            //             <td>${formattedDate}</td>
-            //             <td>${task.time.slice(0, 5)}</td>
-            //             <td>${supplierUsername}</td>
-            //             <td>${task.status}</td>
-            //             <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
-            //         </tr>`;
+            tab += `<tr>
+                        <td>${task.id}</td>
+                        <td>${task.title}</td>
+                        <td>${task.description}</td>
+                        <td>${formattedDate}</td>
+                        <td>${task.time.slice(0, 5)}</td>
+                        <td>FAZER AQUI!!!</td>
+                        <td>${task.status}</td>
+                        <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
+                    </tr>`;
             
         }
 
@@ -102,16 +104,17 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("task-list").innerHTML = tab;
     }
 
-
     async function addTask() {
         const title = document.getElementById("title").value;
         const description = document.getElementById("description").value;
         const date = document.getElementById("date").value;
         const time = document.getElementById("time").value;
         const email_fornecedor = document.getElementById("email_fornecedor").value;
-    
-        let taskData = {}; // Inicializar taskData aqui
-    
+
+        postAPI(`${baseUrl}/task/invite/${username}/${email_fornecedor}/${date}/${time}/${title}/${description}`);
+
+        let taskData = {};
+
         if (email_fornecedor !== "") {
             alert("Fornecedor encontrado com o e-mail fornecido.");
     
@@ -210,4 +213,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("btn-create-task").addEventListener("click", addTask);
 
+    // Obter o e-mail do fornecedor da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const supplierEmail = urlParams.get('supplierEmail');
+
+    if (supplierEmail) {
+        const emailField = document.getElementById("email_fornecedor");
+        emailField.value = supplierEmail;
+    }
+
+    async function postAPI(url) {
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                header: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao enviar e-mail para fornecedor.");
+            } else {
+                alert("E-mail de compromisso enviado com sucesso!");
+            }
+        } catch (error) {
+            alert(error);
+        }
+    }
 });

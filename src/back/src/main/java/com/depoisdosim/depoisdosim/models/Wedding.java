@@ -52,6 +52,9 @@ public class Wedding {
     @Column(name = "location", length = 100, nullable = false)
     private String local;
 
+    @Column(name = "budget", nullable = false)
+    private Long budget;
+
     // @OneToOne(mappedBy = "wedding")
     // private User user;
 
