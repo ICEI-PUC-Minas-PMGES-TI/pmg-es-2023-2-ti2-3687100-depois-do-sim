@@ -1,7 +1,10 @@
 package com.depoisdosim.depoisdosim.models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,7 +47,7 @@ public class Wedding {
     private String name;
 
     @Column(name = "date", length = 100, nullable = false)
-    private String date;
+    private LocalDate date;
 
     @Column(name = "time", length = 100, nullable = false)
     private String time;
@@ -55,8 +58,15 @@ public class Wedding {
     @Column(name = "budget", nullable = false)
     private Long budget;
 
-    // @OneToOne(mappedBy = "wedding")
-    // private User user;
+    @Column(name = "budget_exceeded")
+    private Boolean budgetExceeded = false;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDate createdAt;
+
+    @Column(name = "finished")
+    private Boolean finished = false;
 
     @JsonIgnore
     @OneToMany(mappedBy = "wedding")
@@ -74,14 +84,11 @@ public class Wedding {
     @OneToMany(mappedBy = "wedding")
     private List<GiftMessage> giftMessages = new ArrayList<GiftMessage>();
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "wedding")
+    private List<Expense> expenses = new ArrayList<Expense>();
+
     @OneToOne
     @JoinColumn(name = "user_id", nullable = true)
     private User user = null;
-
-
-    // @JsonIgnore
-    // @OneToMany(mappedBy = "wedding")
-    // private List<User> suppliers = new ArrayList<User>();
-
-
 }

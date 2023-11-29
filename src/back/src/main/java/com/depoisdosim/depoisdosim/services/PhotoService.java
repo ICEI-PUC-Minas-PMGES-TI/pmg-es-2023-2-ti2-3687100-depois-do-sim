@@ -1,5 +1,6 @@
 package com.depoisdosim.depoisdosim.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.depoisdosim.depoisdosim.models.Photo;
 import com.depoisdosim.depoisdosim.repositories.PhotoRepository;
+
+import jakarta.validation.Valid;
 
 @Service
 public class PhotoService {
@@ -47,5 +50,12 @@ public class PhotoService {
         } catch(Exception e) {
             throw new RuntimeException("Não é possível excluir a foto!");
         }
+    }
+
+    public @Valid Photo insert(@Valid Photo obj) {
+        return null;
+    }
+
+    public void updateWeddingFirstPhotoPostDate(Long id, LocalDateTime createdAt) {
     }
 }

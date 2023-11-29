@@ -1,5 +1,9 @@
 package com.depoisdosim.depoisdosim.models;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,6 +36,10 @@ public class Photo {
 
     @Column(name = "link", nullable = false)
     private String link;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)

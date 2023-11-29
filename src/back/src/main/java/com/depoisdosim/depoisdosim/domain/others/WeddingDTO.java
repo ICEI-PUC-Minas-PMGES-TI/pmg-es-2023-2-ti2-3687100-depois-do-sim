@@ -1,5 +1,7 @@
 package com.depoisdosim.depoisdosim.domain.others;
 
+import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,8 +14,11 @@ import lombok.Setter;
 public class WeddingDTO {
     private Long id;
     private String name;
-    private String date;
+    private LocalDate date;
     private String time;
     private String local;
     private Long budget;
+    private LocalDate createdAt;
+    private Boolean budgetExceeded;
+    private Boolean finished = false;
 }

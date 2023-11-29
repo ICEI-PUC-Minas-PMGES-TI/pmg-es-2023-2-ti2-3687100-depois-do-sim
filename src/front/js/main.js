@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
+    const baseUrl = "http://localhost:8080";
+
     const weddingId = localStorage.getItem('weddingId');
+    const token = localStorage.getItem("Authorization");
 
     if (weddingId) {
         const giftLink = document.getElementById('giftLink');

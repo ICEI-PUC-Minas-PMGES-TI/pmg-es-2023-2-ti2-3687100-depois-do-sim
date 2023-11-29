@@ -57,14 +57,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const textBudget = document.getElementById("budget-title");
         textBudget.textContent = `Orçamento: R$ ${budgetValue}`;
-    
+        
+        // Verificar se o total de despesas ultrapassa o orçamento
         if (totalExpense > budgetValue) {
             const textBudget = document.getElementById("budget-title");
             textBudget.style.color = "red";
+            
+            // Atualiza o campo budgetExceeded para true via requisição para a API
+            await updateBudgetExceeded(true);
         } else {
             const textBudget = document.getElementById("budget-title");
             textBudget.style.color = "green";
-        }
+        }      
     
         showExpenses(data);
         } catch (error) {
@@ -204,7 +208,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 document.getElementById("price").value = "";
  
                 // Atualizar a tabela após adicionar a tarefa
-                getApiExpense(`${baseUrl}/expense/wedding/${weddingId}`);
+                getApiExpense(`${baseUrl}/expense/wedding/${weddingId}`, budgetValue);
             }
         } catch (error) {
             console.error("Erro ao adicionar tarefa:", error);
@@ -240,11 +244,35 @@ document.addEventListener("DOMContentLoaded", async () => {
 //     //     }
 //     // }
 
-//     document.getElementById("task-form").addEventListener("submit", function (event) {
-//         event.preventDefault();
-//     });
+    async function updateBudgetExceeded(budgetExceededValue) {
+        try {
+            const response = await fetch(`${baseUrl}/wedding/${weddingId}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                body: JSON.stringify({
+                    budgetExceeded: budgetExceededValue
+                })
+            });
 
-    document.getElementById("btn-create-expense").addEventListener("click", addExpense);
+            if (!response.ok) {
+                throw new Error("Erro ao atualizar o campo budgetExceeded.");
+            }
 
+            console.log("Campo budgetExceeded atualizado com sucesso.");
+        } catch (error) {
+            console.error("Erro ao atualizar o campo budgetExceeded:", error);
+        }
+    }
+
+    document.getElementById("expense-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+    });
+
+    document.getElementById("btn-create-expense").addEventListener("click", () => {
+        addExpense();
+    });
 
 });
