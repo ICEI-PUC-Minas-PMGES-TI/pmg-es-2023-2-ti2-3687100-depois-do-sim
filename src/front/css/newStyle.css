@@ -69,6 +69,13 @@ header button{
     margin-left: 20px;
 }
 
+button{
+    border-color: #CD7B63;
+    background-color: #CD7B63;
+    padding: 5px 12px;
+    margin-left: 20px;
+}
+
 .banner-text {
     padding: 90px 128px 40px 20px;
 }
