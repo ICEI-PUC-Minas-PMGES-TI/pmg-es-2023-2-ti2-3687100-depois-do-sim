@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(task.supplier);
             }
             //     const supplierData = await getAPI(`${baseUrl}/user/${task.supplier}`);
-            //     const supplierUsername = supplierData ? supplierData.username : "Não informado";
+                const supplierUsername = supplierData ? supplierData.username : "Não informado";
             //     supplierUsername = supplierData.username;
             // }
 

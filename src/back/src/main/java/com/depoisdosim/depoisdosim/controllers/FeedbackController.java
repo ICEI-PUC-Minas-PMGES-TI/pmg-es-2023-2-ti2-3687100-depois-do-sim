@@ -56,6 +56,25 @@ public class FeedbackController {
         return ResponseEntity.ok().body(feedbackDTOs);
     }
 
+    @GetMapping("/nullSupplier")
+    public ResponseEntity<List<FeedbackDTO>> getFeedbacksWithNullSupplier() {
+        List<Feedback> feedbacks = this.feedbackService.findAllByNullSupplier();
+
+        List<FeedbackDTO> feedbackDTOs = feedbacks.stream()
+                .map(feedback -> {
+                    FeedbackDTO dto = new FeedbackDTO();
+                    dto.setId(feedback.getId());
+                    dto.setDescription(feedback.getDescription());
+                    dto.setRating(feedback.getRating());
+                    dto.setUser(feedback.getUser().getId());
+                    dto.setSupplier(feedback.getSupplier() != null ? feedback.getSupplier().getId() : null);
+                    return dto;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(feedbackDTOs);
+    }
+
     @PostMapping
     public ResponseEntity<Void> create(@Valid @RequestBody Feedback obj) {
         this.feedbackService.create(obj);

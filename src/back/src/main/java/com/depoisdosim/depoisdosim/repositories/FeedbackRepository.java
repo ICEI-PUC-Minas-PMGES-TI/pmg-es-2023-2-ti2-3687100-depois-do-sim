@@ -18,4 +18,6 @@ public interface FeedbackRepository extends JpaRepository<Feedback, Long> {
     @Query(value = "SELECT * FROM feedback f WHERE f.supplier_id = :id", nativeQuery = true)
     List<Feedback> findAllBySupplierId(@Param("id") Long id);
 
+    List<Feedback> findAllBySupplierIsNull();
+
 }

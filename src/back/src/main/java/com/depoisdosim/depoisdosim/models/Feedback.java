@@ -47,7 +47,7 @@ public class Feedback {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "supplier_id", nullable = false)
-    private User supplier;
+    @JoinColumn(name = "supplier_id", nullable = true)
+    private User supplier = null;
 
 }

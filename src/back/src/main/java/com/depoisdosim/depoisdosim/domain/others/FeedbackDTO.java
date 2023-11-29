@@ -14,5 +14,5 @@ public class FeedbackDTO {
     private String description;
     private Double rating;
     private Long user;
-    private Long supplier;
+    private Long supplier = null;
 }

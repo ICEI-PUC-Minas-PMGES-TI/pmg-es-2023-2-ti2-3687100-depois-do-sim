@@ -31,6 +31,10 @@ public class FeedbackService {
         return feedbacks;
     }
 
+    public List<Feedback> findAllByNullSupplier() {
+        return feedbackRepository.findAllBySupplierIsNull();
+    }
+
     @Transactional
     public Feedback create(Feedback obj) {
         obj.setId(null);
