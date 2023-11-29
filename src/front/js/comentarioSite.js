@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para criar elementos HTML
     async function show(comments) {
         let tab = `<thead>
-                        <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Rating</th>
                         <th scope="col">Avaliação</th>
@@ -64,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const username = userData && userData.username ? userData.username : "Nome não encontrado";
 
             tab += `<tr>
-                        <td>${comment.id}</td>
                         <td>${username}</td>
                         <td>${comment.rating}</td>
                         <td>${comment.description}</td>
