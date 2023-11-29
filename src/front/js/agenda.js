@@ -79,13 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
             // let supplierUsername = "Não informado";
 
             // // Obter os dados do fornecedor usando o id do fornecedor da tarefa
-            if(task.supplier !== null) {
+            if (task.supplier !== null) {
                 console.log(task.supplier);
+                const supplierData = await getAPIByEmail(`${baseUrl}/user/${task.supplier}`);
+                console.log(supplierData);
+                var supplierUsername = supplierData ? supplierData.username : "Não informado";
+                console.log(supplierUsername);
             }
-            //     const supplierData = await getAPI(`${baseUrl}/user/${task.supplier}`);
-                const supplierUsername = supplierData ? supplierData.username : "Não informado";
-            //     supplierUsername = supplierData.username;
-            // }
+            else{
+                var supplierUsername = "Não informado";
+            }
 
             tab += `<tr>
                         <td>${task.id}</td>
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <td>${task.description}</td>
                         <td>${formattedDate}</td>
                         <td>${task.time.slice(0, 5)}</td>
-                        <td>FAZER AQUI!!!</td>
+                        <td>${supplierUsername}</td>
                         <td>${task.status}</td>
                         <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
                     </tr>`;
