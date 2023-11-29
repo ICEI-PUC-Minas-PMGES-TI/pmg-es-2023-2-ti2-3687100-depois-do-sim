@@ -54,61 +54,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
-    // var ratingSelected = 0
-    // const rating = document.querySelectorAll(".rating");
-    // rating.forEach((star) => {
-    //     star.addEventListener("click", (event) => {
-    //         ratingSelected = event.target.getAttribute("value");
-    //         console.log(ratingSelected);
-    //     });
-    // });
-
+    var ratingSelected = 0
+    const rating = document.querySelectorAll(".rating");
+    rating.forEach((star) => {
+        star.addEventListener("click", (event) => {
+            ratingSelected = event.target.getAttribute("value");
+            console.log(ratingSelected);
+        });
+    });
 
     // // Função para adicionar um feedback
-    // async function addFeedback() {
-    //     const description = document.getElementById("description").value;
+    async function addFeedback() {
+        const description = document.getElementById("description").value;
 
+        const commentData = {
+            "description": description,
+            "rating": ratingSelected,
+            "user": {
+                "id": userId
+            }
+        }
 
-    //     const commentData = {
-    //         "description": description,
-    //         "rating": ratingSelected,
-    //         "user": {
-    //             "id": userId
-    //         },
-    //     }
+        try {
+            const response = await fetch(`${baseUrl}/feedback`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                body: JSON.stringify(commentData)
+            });
 
-    //     try {
-    //         const response = await fetch(`${baseUrl}/comment`, {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //                 "Authorization": token
-    //             },
-    //             body: JSON.stringify(commentData)
-    //         });
+            if (!response.ok) {
+                throw new Error("Erro ao adicionar comentario.");
+            }
 
-    //         if (!response.ok) {
-    //             throw new Error("Erro ao adicionar comentario.");
-    //         }
+            // Limpar campos do formulário após o sucesso
+            // document.getElementById("rating").value = "";
+            // document.getElementById("description").value = "";
 
-    //         // Limpar campos do formulário após o sucesso
-    //         // document.getElementById("rating").value = "";
-    //         // document.getElementById("description").value = "";
+            // Atualizar a tabela após adicionar o feedback
+            getAPI(`${baseUrl}/feedback/nullSupplier`);
 
-    //     } catch (error) {
-    //         console.error("Erro ao adicionar feedback:", error);
-    //     }
-    // }
+        } catch (error) {
+            console.error("Erro ao adicionar feedback:", error);
+        }
+    }
 
     document.getElementById("formComentario").addEventListener("submit", function (event) {
         event.preventDefault();
     });
 
-    // document.getElementById("btn-send-feedback").addEventListener("click", function () {
-    //     addFeedback()
-    //     alert("Feedback enviado com sucesso!");
-    // });
+    document.getElementById("btn-send-feedback").addEventListener("click", function () {
+        addFeedback()
+        alert("Feedback enviado com sucesso!");
+    });
 
 });
 
