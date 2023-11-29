@@ -81,12 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // // Obter os dados do fornecedor usando o id do fornecedor da tarefa
             if (task.supplier !== null) {
                 console.log(task.supplier);
+
                 const supplierData = await getAPIByEmail(`${baseUrl}/user/${task.supplier}`);
                 console.log(supplierData);
+
                 var supplierUsername = supplierData ? supplierData.username : "Não informado";
                 console.log(supplierUsername);
-            }
-            else{
+            } else {
                 var supplierUsername = "Não informado";
             }
 
