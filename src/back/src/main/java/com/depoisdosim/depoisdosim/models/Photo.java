@@ -1,6 +1,6 @@
 package com.depoisdosim.depoisdosim.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -39,7 +39,7 @@ public class Photo {
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
     @ManyToOne
     @JoinColumn(name = "wedding_id", nullable = true)

@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const data = await response.json();
-            // console.log(data);
             show(data);
             
         } catch (error) {
@@ -80,27 +79,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // // Obter os dados do fornecedor usando o id do fornecedor da tarefa
             if (task.supplier !== null) {
-                console.log(task.supplier);
-
                 const supplierData = await getAPIByEmail(`${baseUrl}/user/${task.supplier}`);
-                console.log(supplierData);
 
                 var supplierUsername = supplierData ? supplierData.username : "Não informado";
-                console.log(supplierUsername);
             } else {
                 var supplierUsername = "Não informado";
             }
 
             tab += `<tr>
-                        <td>${task.id}</td>
-                        <td>${task.title}</td>
-                        <td>${task.description}</td>
-                        <td>${formattedDate}</td>
-                        <td>${task.time.slice(0, 5)}</td>
-                        <td>${supplierUsername}</td>
-                        <td>${task.status}</td>
-                        <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
-                    </tr>`;
+            <td>${task.id}</td>
+            <td>${task.title}</td>
+            <td>${task.description}</td>
+            <td>${formattedDate}</td>
+            <td>${task.time.slice(0, 5)}</td>
+            <td>${supplierUsername}</td>
+            <td>
+                <select class="form-select status-select" data-task-id="${task.id}" style="width: 128px;">
+                    <option value="Pendente" ${task.status === 'Pendente' ? 'selected' : ''}>Pendente</option>
+                    <option value="Feito" ${task.status === 'Feito' ? 'selected' : ''}>Feito</option>
+                    <option value="Cancelado" ${task.status === 'Cancelado' ? 'selected' : ''}>Cancelado</option>
+                </select>
+            </td>
+            <td><button type="button" class="btn btn-danger btn-remove" data-task-id="${task.id}">Excluir</button></td>
+        </tr>`;
+
             
         }
 
@@ -115,11 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const time = document.getElementById("time").value;
         const email_fornecedor = document.getElementById("email_fornecedor").value;
 
-        postAPI(`${baseUrl}/task/invite/${username}/${email_fornecedor}/${date}/${time}/${title}/${description}`);
+        // postAPI(`${baseUrl}/task/invite/${username}/${email_fornecedor}/${date}/${time}/${title}/${description}`);
 
         let taskData = {};
 
         if (email_fornecedor !== "") {
+            postAPI(`${baseUrl}/task/invite/${username}/${email_fornecedor}/${date}/${time}/${title}/${description}`);
+
             alert("Fornecedor encontrado com o e-mail fornecido.");
     
             let supplierData = await getAPIByEmail(`${baseUrl}/user/supplier/email/${email_fornecedor}`);
@@ -184,32 +188,35 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     // Evento para remover convidado
-    // tasksList.addEventListener("click", (event) => {
-    //     if (event.target.classList.contains("btn-remove")) {
-    //         const taskId = event.target.getAttribute("data-task-id");
-    //         if (confirm("Deseja realmente excluir esta task?"))
-    //             removeTask(taskId);
-    //     }
-    // });
+    tasksList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("btn-remove")) {
+            const taskId = event.target.getAttribute("data-task-id");
+            if (confirm("Deseja realmente excluir esta task?"))
+                removeTask(taskId);
+        }
+    });
 
     // Função para remover convidado
-    // async function removeTask(taskId) {
-    //     try {
-    //         const response = await fetch(`${baseUrl}/task/${taskId}`, {
-    //             method: "DELETE",
-    //             "Authorization": `Bearer ${token}`
-    //         });
+    async function removeTask(taskId) {
+        try {
+            const response = await fetch(`${baseUrl}/task/${taskId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+                    
+            });
     
-    //         if (!response.ok) {
-    //             throw new Error("Erro ao remover a task.");
-    //         }
+            if (!response.ok) {
+                throw new Error("Erro ao remover a task.");
+            }
     
-    //         // Atualizar a tabela após remover o presente
-    //         getAPI(`${baseUrl}/task/user/${userId}`);
-    //     } catch (error) {
-    //         console.error("Erro ao remover a task:", error);
-    //     }
-    // }
+            getAPI(`${baseUrl}/task/user/${userId}`);
+        } catch (error) {
+            console.error("Erro ao remover a task:", error);
+        }
+    }
 
     document.getElementById("task-form").addEventListener("submit", function (event) {
         event.preventDefault();

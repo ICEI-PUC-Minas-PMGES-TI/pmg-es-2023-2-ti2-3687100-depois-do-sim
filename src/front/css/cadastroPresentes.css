@@ -216,3 +216,7 @@ input#descPresente{
 	color: #fff; /* Cor do texto */
 	padding: 5px; /* Espaçamento interno */
 }
+
+.disabled {
+	display: none;
+}

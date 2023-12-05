@@ -31,6 +31,10 @@ public class FeedbackService {
         return feedbacks;
     }
 
+    public List<Feedback> getAllSupplierFeedbacks() {
+        return feedbackRepository.findAllBySupplierNotNull();
+    }    
+
     public List<Feedback> findAllByNullSupplier() {
         return feedbackRepository.findAllBySupplierIsNull();
     }

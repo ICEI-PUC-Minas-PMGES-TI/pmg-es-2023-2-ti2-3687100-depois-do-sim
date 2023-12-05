@@ -16,13 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elementos da página
     const btnRegisterGift = document.getElementById("btn-register");
     const btnGifted = document.getElementById("btn-gifted");
+    const btnDeleteGift = document.querySelectorAll(".btn-deletar");
 
     if (isUser) {
         // O usuário está logado
+        for (let btn of btnDeleteGift) {
+            console.log("hahaha");
+        }
     } else {
         // O usuário não está logado
         btnRegisterGift.style.display = "none";
         btnGifted.style.display = "none";
+
     }
 
     // Função para buscar dados da API
@@ -132,9 +137,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para remover um presente
     async function removeGift(giftId) {
-        try {//conferir o caminho do fetch
+        try {
             const response = await fetch(`${baseUrl}/gift/${giftId}`, {
-                method: "DELETE"
+                method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
             });
 
             if (!response.ok) {
@@ -186,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Erro ao presentear o presente:", error);
         }
     }
-
 
     async function presentedGift(giftId) {
         const guestName = document.getElementById("guestName").value;

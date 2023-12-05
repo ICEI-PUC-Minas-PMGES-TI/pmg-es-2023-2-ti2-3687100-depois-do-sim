@@ -20,5 +20,5 @@ public class WeddingDTO {
     private Long budget;
     private LocalDate createdAt;
     private Boolean budgetExceeded;
-    private Boolean finished = false;
+    private Boolean finished;
 }

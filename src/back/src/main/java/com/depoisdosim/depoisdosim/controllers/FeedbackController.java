@@ -56,6 +56,28 @@ public class FeedbackController {
         return ResponseEntity.ok().body(feedbackDTOs);
     }
 
+    // Avaliações suppliers
+    @GetMapping("/all-suppliers")
+    public ResponseEntity<List<FeedbackDTO>> getAllSupplierFeedbacks() {
+        List<Feedback> supplierFeedbacks = this.feedbackService.getAllSupplierFeedbacks();
+    
+        List<FeedbackDTO> feedbackDTOs = supplierFeedbacks.stream()
+                .map(feedback -> {
+                    FeedbackDTO dto = new FeedbackDTO();
+                    dto.setId(feedback.getId());
+                    dto.setDescription(feedback.getDescription());
+                    dto.setRating(feedback.getRating());
+                    dto.setUser(feedback.getUser().getId());
+                    dto.setSupplier(feedback.getSupplier() != null ? feedback.getSupplier().getId() : null);
+                    return dto;
+                })
+                .collect(Collectors.toList());
+    
+        return ResponseEntity.ok().body(feedbackDTOs);
+    }
+    
+
+    // Avaliações site
     @GetMapping("/nullSupplier")
     public ResponseEntity<List<FeedbackDTO>> getFeedbacksWithNullSupplier() {
         List<Feedback> feedbacks = this.feedbackService.findAllByNullSupplier();

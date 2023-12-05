@@ -117,6 +117,24 @@
         </div>
     </main>
 
+     <!-- Modal para exibir mensagem quando a data do casamento for igual ou maior que a data atual -->
+     <div class="modal fade" id="weddingModal" tabindex="-1" aria-labelledby="weddingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="weddingModalLabel">Informação sobre o casamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    O casamento está próximo ou já passou. Por favor, confirme se o evento foi finalizado.
+                </div>
+                <div class="modal-footer">
+                    <button id="okButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="row pb-4 footer-row">
             <div class="col-lg-6 col-md-6 col-sm-12 ps-5">

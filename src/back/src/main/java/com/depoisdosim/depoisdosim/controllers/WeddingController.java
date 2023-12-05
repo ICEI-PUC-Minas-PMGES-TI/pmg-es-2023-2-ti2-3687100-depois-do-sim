@@ -63,6 +63,7 @@ public class WeddingController {
                     weddingDTO.setLocal(wedding.getLocal());
                     weddingDTO.setBudget(wedding.getBudget());
                     weddingDTO.setBudgetExceeded(wedding.getBudgetExceeded());
+                    weddingDTO.setFinished(wedding.getFinished());
                     weddingDTO.setCreatedAt(wedding.getCreatedAt());
                     return weddingDTO;
                 })

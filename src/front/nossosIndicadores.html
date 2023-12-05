@@ -57,31 +57,73 @@
     <div class="container mt-5">
         <h1>Dados dos Casamentos</h1>
         <div class="row mt-4">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        Estatísticas de Orçamento
+                        Estatísticas dos Casamentos
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Casamentos que estouraram o orçamento:
-                                <span id="exceededCount" class="badge bg-danger"></span>
+                                Estouraram o orçamento:
+                                <span id="exceededCount" class="badge bg-danger">XX</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Casamentos que não estouraram o orçamento:
-                                <span id="notExceededCount" class="badge bg-success"></span>
+                                Não estouraram o orçamento:
+                                <span id="notExceededCount" class="badge bg-success">XX</span>
                             </li>
                         </ul>
+
+                        <ul class="list-group mt-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Finalizados:
+                                <span id="finishedCount" class="badge bg-danger">XX</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Não finalizados
+                                <span id="notFinishedCount" class="badge bg-success">XX</span>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="container mt-5">
-        <h2>Tempo médio de espera até o casamento:</h2>
-        <p id="averageWaitingTime"></p>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Estatísticas de Tempo
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <h3>Tempo médio de espera até o casamento:</h3>
+                            <p id="averageWaitingTime">Calculando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Avaliações
+                    </div>
+                    <div class="card-body">
+                        <div class="container">
+                            <h3>Média das Avaliações do Site:</h3>
+                            <p id="averageRating">Calculando...</p>
+                        </div>
+
+                        <div class="container mt-5">
+                            <h3>Média de Avaliações dos Fornecedores</h3>
+                            <p id="averageSupplierRating">Calculando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
     <footer>
