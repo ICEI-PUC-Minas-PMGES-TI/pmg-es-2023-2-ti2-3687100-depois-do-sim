@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${guest.name}</td>
                     <td>${guest.email}</td>
                     <td>${guest.numPeople}</td>
-                    <td>${guest.name_people}</td>
+                    <td>${guest.namePeople}</td>
                     <td><button type="button" class="btn btn-danger btn-remove" data-guestid="${guest.id}">Excluir</button></td>
                 </tr>`;
 
