@@ -2,7 +2,7 @@
 h1{
     font-family: Forum;
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 44px;
     letter-spacing: 0em;
     text-align: left;
@@ -103,12 +103,23 @@ button{
     background-color: #CD7B63;
     padding: 10px 30px;
     margin-right: 30px;
+    color: black;
+    font-family: Inria Serif;
 }
 
 .botao2{
     border-color: #DDDDDD;
     background-color: transparent;
     padding: 10px 50px;
+}
+
+.botao3{
+    border-color: #CD7B63;
+    background-color: #CD7B63;
+    padding: 10px 30px;
+    margin: 0px;
+    color: black;
+    font-family: Inria Serif;
 }
 
 .nossos-casamentos{
@@ -220,4 +231,14 @@ button{
 
 .card-title{
     color: #CD7B63;
+}
+
+.dados-dos-casamentos{
+    margin: 0px;
+    padding: 0px;
+    background-color: #FEFBF4;
+}
+
+.tarefa-info{
+    margin-right: 16px;
 }

@@ -4,32 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Depois do Sim</title>
+    <title>Depois do Sim - Comentário</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/comentario.css">
+    <link rel="stylesheet" href="./css/newStyle.css">
 </head>
 
 <body>
-    <div class="container mt-4">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="newHome.html">
+                    <img src="./assets/img/logo.png" alt="Logo">
+                </a>
 
-        <h1>Avaliações</h1>
-        <div id="tela_estrela" class="estrelas_media fs-4"></div>
-        <div id="tela"></div>
-
-        <div class="row">
-            <div>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" id="AdicionarComentario" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
-                    <b>Adicionar Comentário</b>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobreNos.html">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nossosIndicadores.html">Nossos indicadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comentarioSite.html">Nos avalie</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Meu Casamento</a>
+                            <ul class="dropdown-menu dropdown-bg">
+                                <li><a class="dropdown-item dropdown-bg" href="#">Lista de presentes</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Controle de convidados</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Orçamentos e contratos</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Agenda</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="#">Álbum de fotos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="suppliersList.html">Fornecedores</a>
+                        </li>
+                    </ul>
+                    <a href="register.html">
+                        <button>Entrar</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-4">
+
+            <h1>Avaliações</h1>
+            <div id="tela_estrela" class="estrelas_media fs-4"></div>
+            <div id="tela"></div>
+    
+            <div class="row">
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="botao3" id="AdicionarComentario" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Adicionar Comentário
+                    </button>
+    
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
+    <footer>
+        <div class="row pb-4 footer-row">
+            <div class="col-lg-6 col-md-6 col-sm-12 ps-5">
+                <h2 class="text-start mt-5 mb-3">Vamos te ajudar!</h2>
+                <a href="register.html">Criar minha lista de presentes!</a><br>
+                <a href="register.html">Criar uma lista de convidados!</a><br>
+                <a href="register.html">Registrar orçamentos!</a><br>
+                <a href="register.html">Agendar visita ao fornecedor!</a><br>
+                <a href="register.html">Compartilhar fotos do meu casamento!</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 px-5">
+                <h2 class="text-start mt-5 mb-3">Contatos</h2>
+                <p><i class="bi bi-envelope me-2"></i>depoisdosim@gmail.com</p>
+                <p><i class="bi bi-telephone me-2"></i></i>(31) 999999-9999</p>
+            </div>
+        </div>
+        <div class="direitos">
+            <p class="text-center pt-3">© 2023 - 2023 Depois do Sim. Desenvolvido com muito <i
+                    class="bi bi-heart-fill icone"></i> na PUC Minas </p>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

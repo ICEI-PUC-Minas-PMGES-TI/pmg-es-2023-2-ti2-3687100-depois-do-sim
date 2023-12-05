@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/newStyle.css">
 </head>
-<body>
+<body class="dados-dos-casamentos">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="main.html">
+                <a class="navbar-brand" href="newHome.html">
                     <img src="./assets/img/logo.png" alt="Logo">
                 </a>
 
@@ -48,93 +48,98 @@
                             <a class="nav-link" href="#">Fornecedores</a>
                         </li>
                     </ul>
-                    <button>Entrar</button>
+                    <a href="register.html">
+                        <button>Entrar</button>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container mt-5">
-        <h1>Dados dos Casamentos</h1>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Estatísticas dos Casamentos
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Estouraram o orçamento:
-                                <span id="exceededCount" class="badge bg-danger">XX</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Não estouraram o orçamento:
-                                <span id="notExceededCount" class="badge bg-success">XX</span>
-                            </li>
-                        </ul>
-
-                        <ul class="list-group mt-3">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Finalizados:
-                                <span id="finishedCount" class="badge bg-danger">XX</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Não finalizados
-                                <span id="notFinishedCount" class="badge bg-success">XX</span>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Estatísticas de Tempo
-                    </div>
-                    <div class="card-body">
-                        <div class="container">
-                            <h3>Tempo médio de espera até o casamento:</h3>
-                            <p id="averageWaitingTime">Calculando...</p>
+    <main class="dados-dos-casamentos">
+        <div class="container mt-5">
+            <h1 class="text-center">Dados dos Casamentos</h1>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">Estatísticas dos Casamentos</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Passaram do orçamento estimado do casamento:
+                                    <span id="exceededCount" class="badge bg-danger">XX</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Não passaram do orçamento estimado do casamento:
+                                    <span id="notExceededCount" class="badge bg-success">XX</span>
+                                </li>
+                            </ul>
+    
+                            <ul class="list-group mt-3">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Casamentos finalizados:
+                                    <span id="finishedCount" class="badge bg-danger">XX</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Casamentos não finalizados:
+                                    <span id="notFinishedCount" class="badge bg-success">XX</span>
+                                </li>
+                            </ul>
+    
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Avaliações
-                    </div>
-                    <div class="card-body">
-                        <div class="container">
-                            <h3>Média das Avaliações do Site:</h3>
-                            <p id="averageRating">Calculando...</p>
+    
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">Estatísticas de Tempo</h2>
                         </div>
-
-                        <div class="container mt-5">
-                            <h3>Média de Avaliações dos Fornecedores</h3>
-                            <p id="averageSupplierRating">Calculando...</p>
+                        <div class="card-body">
+                            <div class="container">
+                                <h3>Tempo médio de espera até o casamento:</h3>
+                                <p id="averageWaitingTime">Calculando...</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+    
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-center">Avaliações</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="container">
+                                <h3>Média das Avaliações do Site:</h3>
+                                <p id="averageRating">Calculando...</p>
+                            </div>
+    
+                            <div class="container mt-5">
+                                <h3>Média de Avaliações dos Fornecedores</h3>
+                                <p id="averageSupplierRating">Calculando...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
             </div>
-
-
         </div>
-    </div>
+    </main>
+    
 
     <footer>
-        <div class="row pb-4 footer-row mt-5">
+        <div class="row pb-4 footer-row">
             <div class="col-lg-6 col-md-6 col-sm-12 ps-5">
                 <h2 class="text-start mt-5 mb-3">Vamos te ajudar!</h2>
-                <a href="">Criar minha lista de presentes!</a><br>
-                <a href="">Criar uma lista de convidados!</a><br>
-                <a href="">Registrar orçamentos!</a><br>
-                <a href="">Agendar visita ao fornecedor!</a><br>
-                <a href="">Compartilhar fotos do meu casamento!</a>
+                <a href="register.html">Criar minha lista de presentes!</a><br>
+                <a href="register.html">Criar uma lista de convidados!</a><br>
+                <a href="register.html">Registrar orçamentos!</a><br>
+                <a href="register.html">Agendar visita ao fornecedor!</a><br>
+                <a href="register.html">Compartilhar fotos do meu casamento!</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 px-5">
                 <h2 class="text-start mt-5 mb-3">Contatos</h2>
