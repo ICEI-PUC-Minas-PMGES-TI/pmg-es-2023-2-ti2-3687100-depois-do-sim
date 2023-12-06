@@ -6,15 +6,25 @@ _Visão geral da interação do usuário por meio das telas do sistema. Apresent
 ## 6.1. Telas principais do sistema
 
 [`Telas principais do sistema`](images/principal1.jpg)
+
 [`Telas principais do sistema`](images/principal2.jpg)
+
 [`Telas principais do sistema`](images/principal3.jpg)
+
 [`Telas principais do sistema`](images/principal4.jpg)
+
 [`Telas principais do sistema`](images/principal5.jpg)
+
 [`Telas principais do sistema`](images/principal6.jpg)
+
 [`Telas principais do sistema`](images/principal7.jpg)
+
 [`Telas principais do sistema`](images/principal8.jpg)
+
 [`Telas principais do sistema`](images/principal9.jpg)
+
 [`Telas principais do sistema`](images/principal10.jpg)
+
 [`Telas principais do sistema`](images/principal111jpg)
 
 
