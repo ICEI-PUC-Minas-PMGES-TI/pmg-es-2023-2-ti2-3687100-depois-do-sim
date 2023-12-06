@@ -153,6 +153,26 @@ A sessão a seguir apresenta a descrição dos testes realizados.
 
 _Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos no trabalho, onde se verifica as observações pessoais de cada aluno. Poderá também apresentar sugestões de novas linhas de estudo._
 
+Conclusão:
+
+Ao concluir este projeto de desenvolvimento de um software abrangente de planejamento de casamentos, é evidente que alcançamos uma solução robusta e eficaz para atender às diversas necessidades dos casais que buscam uma ferramenta organizacional para o grande dia de suas vidas. A implementação bem-sucedida das funcionalidades, como a gestão de lista de convidados, presentes, agenda, postagem de fotos do casamento, cadastro das despesas e área de comentários, oferece aos usuários uma experiência completa e centralizada.
+
+Resultados:
+
+Observamos que a interface amigável do software facilita a navegação e utilização, proporcionando aos usuários uma visão holística do processo de planejamento do casamento. As funcionalidades integradas contribuem para uma gestão eficiente, permitindo que os usuários organizem todos os detalhes de seu casamento em um só lugar. A integração de recursos como postagem de fotos e área de comentários adiciona um toque pessoal, conectando os noivos e seus convidados de maneira única.
+
+Além disso, a capacidade de gerenciar despesas de maneira eficaz oferece uma visão transparente dos custos associados ao evento, auxiliando os usuários na tomada de decisões financeiras informadas.
+
+Observações:
+
+Durante o desenvolvimento do software, cada membro da equipe teve a oportunidade de aplicar e aprimorar suas habilidades técnicas, de design e de comunicação. As observações pessoais revelaram desafios superados, aprendizados adquiridos e uma colaboração eficaz que resultou na entrega bem-sucedida deste projeto.
+
+Sugestões:
+
+Como sugestões para futuras melhorias e expansões do software, consideramos a possibilidade de incorporar inteligência artificial para sugestões personalizadas de fornecedores, tendências de casamento e orçamentos com base nas preferências do casal. Além disso, a integração com redes sociais pode ser estendida para proporcionar uma experiência mais interativa, incentivando a participação dos convidados antes, durante e após o casamento.
+
+Em suma, este projeto não apenas atendeu às expectativas, mas também abre portas para futuras inovações no campo de planejamento de casamentos, incorporando tecnologias emergentes para melhorar ainda mais a experiência dos usuários.
+
 # REFERÊNCIAS
 
 **[1.1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
