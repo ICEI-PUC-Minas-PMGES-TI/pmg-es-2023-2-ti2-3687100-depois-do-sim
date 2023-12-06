@@ -20,7 +20,7 @@ Este processo pode ser melhorado com a implementação de tags coloridas diferen
 | ---             | ---              | ---            | ---               |
 | Data           | Data e Hora   | Apenas datas futuras | Data atual      |
 | Fornecedores           | Seleção única |               |                   |
-| Email |               |        Area de texto           |
+| Email |     Area de texto          |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
