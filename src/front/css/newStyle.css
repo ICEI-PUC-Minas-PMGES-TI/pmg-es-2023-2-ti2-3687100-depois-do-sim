@@ -122,6 +122,16 @@ button{
     font-family: Inria Serif;
 }
 
+.botao4{
+    border-color: #CD7B63;
+    background-color: #CD7B63;
+    padding: 10px 30px;
+    margin-right: 30px;
+    color: black;
+    font-family: Inria Serif;
+    font-size: 24px;
+}
+
 .nossos-casamentos{
     background-color:#f0edea;
     padding: 40px 30px;

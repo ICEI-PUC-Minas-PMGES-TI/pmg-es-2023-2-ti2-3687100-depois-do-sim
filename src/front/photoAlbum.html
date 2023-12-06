@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/newStyle.css">
 </head>
 
-<body>
+<body class="cadastro-de-casamento">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid">
@@ -40,15 +40,15 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">Meu Casamento</a>
                             <ul class="dropdown-menu dropdown-bg">
-                                <li><a class="dropdown-item dropdown-bg" href="#">Lista de presentes</a></li>
-                                <li><a class="dropdown-item dropdown-bg" href="#">Controle de convidados</a></li>
-                                <li><a class="dropdown-item dropdown-bg" href="#">Orçamentos e contratos</a></li>
-                                <li><a class="dropdown-item dropdown-bg" href="#">Agenda</a></li>
-                                <li><a class="dropdown-item dropdown-bg" href="#">Álbum de fotos</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="registerGifts.html">Lista de presentes</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="confirmacaoDePresenca.html">Controle de convidados</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="orcamento.html">Orçamentos e contratos</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="agenda.html">Agenda</a></li>
+                                <li><a class="dropdown-item dropdown-bg" href="photoAlbum.html">Álbum de fotos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Fornecedores</a>
+                            <a class="nav-link" href="suppliersList.html">Fornecedores</a>
                         </li>
                     </ul>
                     <button>Entrar</button>
@@ -58,9 +58,9 @@
     </header>
 
     <main class="container">
-        <div class="row">
+        <div class="row mb-4">
             <div class="header-wrapper">
-                <h2>Fotos</h2>
+                <h1 class="text-center">Fotos</h1>
                 <div class="btn-wrapper">
                     <button class="botao3" type="button" id="btn-register" data-bs-toggle="modal"
                     data-bs-target="#cadastroModal">Cadastrar</button>
@@ -82,7 +82,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cadastroModalLabel">Cadastro de Imagens</h5>
+                    <h3 class="modal-title" id="cadastroModalLabel">Cadastro de Imagens</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
@@ -92,14 +92,14 @@
                         <div>
                             <!-- <label for="nome" class="form-label h-color text-center"></label> -->
                             <input type="text" class="form-control mt-3 " id="image" name="image"
-                                placeholder="Link da imagem: " required>
+                                placeholder="Link da imagem" required>
                         </div>
 
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="btn-create" data-bs-toggle="modal"
+                    <button type="button" class="botao1" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="botao1" id="btn-create" data-bs-toggle="modal"
                         data-bs-target="#cadastroModal">Salvar</button>
                 </div>
             </div>
@@ -110,11 +110,11 @@
         <div class="row pb-4 footer-row">
             <div class="col-lg-6 col-md-6 col-sm-12 ps-5">
                 <h2 class="text-start mt-5 mb-3">Vamos te ajudar!</h2>
-                <a href="">Criar minha lista de presentes!</a><br>
-                <a href="">Criar uma lista de convidados!</a><br>
-                <a href="">Registrar orçamentos!</a><br>
-                <a href="">Agendar visita ao fornecedor!</a><br>
-                <a href="">Compartilhar fotos do meu casamento!</a>
+                <a href="registerGifts.html">Criar minha lista de presentes!</a><br>
+                <a href="confirmacaoDePresenca.html">Criar uma lista de convidados!</a><br>
+                <a href="orcamento.html">Registrar orçamentos!</a><br>
+                <a href="agenda.html">Gerencie seus compromissos!</a><br>
+                <a href="photoAlbum.html">Compartilhar fotos do meu casamento!</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 px-5">
                 <h2 class="text-start mt-5 mb-3">Contatos</h2>
