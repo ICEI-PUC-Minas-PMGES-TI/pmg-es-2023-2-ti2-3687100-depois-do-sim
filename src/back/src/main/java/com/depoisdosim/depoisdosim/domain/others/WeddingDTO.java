@@ -18,7 +18,6 @@ public class WeddingDTO {
     private String time;
     private String local;
     private Long budget;
-    private LocalDate createdAt;
     private Boolean budgetExceeded;
     private Boolean finished;
 }

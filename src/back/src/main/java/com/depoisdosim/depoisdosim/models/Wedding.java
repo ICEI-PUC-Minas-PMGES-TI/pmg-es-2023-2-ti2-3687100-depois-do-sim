@@ -52,7 +52,7 @@ public class Wedding {
     @Column(name = "time", length = 100, nullable = false)
     private String time;
 
-    @Column(name = "location", length = 100, nullable = false)
+    @Column(name = "local", length = 100, nullable = false)
     private String local;
 
     @Column(name = "budget", nullable = false)
@@ -60,10 +60,6 @@ public class Wedding {
 
     @Column(name = "budget_exceeded")
     private Boolean budgetExceeded = false;
-
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDate createdAt;
 
     @Column(name = "finished")
     private Boolean finished = false;
