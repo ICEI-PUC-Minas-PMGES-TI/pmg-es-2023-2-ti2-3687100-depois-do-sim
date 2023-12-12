@@ -9,12 +9,6 @@
 	transition: .3s;
 }
 
-h1 {
-	font-size: 24px;
-	font-weight: 600;
-	color: #333333;
-}
-
 h2 {
 	font-size: 18px;
 	font-weight: 600;
@@ -92,6 +86,7 @@ input#descPresente{
 	padding: 8px 16px;
 	border-radius: 8px;
 	width: 100%;
+	margin: 0;
 }
 
 .btn-presentear:hover {
@@ -133,7 +128,9 @@ input#descPresente{
     background-color: transparent;
     color: red;
 	font-size: 32px;
-	margin-bottom: -4px;
+	margin-bottom: -3px;
+	padding: 0;
+	margin-left: 1px;
 }
 
 .btn-delete-wrapper {
@@ -149,7 +146,6 @@ input#descPresente{
 	height: 24px;
 	border-radius: 100%;
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-
 }
 
 .btn-delete-wrapper:hover {
@@ -211,3 +207,4 @@ input#descPresente{
 .disabled {
 	display: none;
 }
+

@@ -17,7 +17,7 @@ h2{
     line-height: normal;
 }
 
-h3{
+h3 {
     color: #494949;
     font-family: Inria Serif;
     font-size: 18px;
@@ -27,7 +27,7 @@ h3{
 
 }
 
-p{
+p {
     font-family: Forum;
     font-size: 18px;
     font-weight: 400;
@@ -37,11 +37,12 @@ p{
     color:#666666;
 }
 
-footer{
+footer {
     background-color: #f0edea;
+    width: 100%;
 }
 
-footer h2{
+footer h2 {
     color: #CD7B63;
     font-family: Inria Serif;
 }
@@ -52,7 +53,7 @@ a{
     font-family: Inria Serif;
 }
 
-header{
+header {
     background-color: #f0edea;
     padding-left: 60px;
     padding-right: 60px;
@@ -62,18 +63,17 @@ header{
     font-weight: 500;
 }
 
-header button{
+/* header button{
     border-color: #CD7B63;
     background-color: #CD7B63;
     padding: 5px 12px;
     margin-left: 20px;
-}
+} */
 
-button{
-    border-color: #CD7B63;
+button {
+    border: none;
     background-color: #CD7B63;
-    padding: 5px 12px;
-    margin-left: 20px;
+    padding: 10px 24px;
 }
 
 .banner-text {
@@ -85,7 +85,11 @@ button{
     padding-right: 8%;
 }
 
-.banner{
+footer .row {
+    margin: 0 !important;
+}
+
+.banner {
     background-image: url('../assets/img/beautiful-wedding-chairs-wedding-dinner-table-dec-4BU9HQX\ 1.png'); 
     background-size: cover; 
     background-position: center; 
@@ -98,14 +102,14 @@ button{
     text-align: center; 
 }
 
-.botao1{
+/* .botao1{
     border-color: #CD7B63;
     background-color: #CD7B63;
     padding: 10px 30px;
     margin-right: 30px;
     color: black;
     font-family: Inria Serif;
-}
+} */
 
 .botao2{
     border-color: #DDDDDD;
@@ -142,30 +146,33 @@ button{
     padding: 40px 30px;
 }
 
-.card{
-    background-color: #FEFBF4;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 0;
-}
-
-.direitos{
+.direitos {
     background-color: #FEFBF4;;
     padding-left: 8%;
     padding-right: 8%;
     color: #464646;
     font-family: Inria Serif;
+    height: 56px;
 }
 
-.direitos-register{
+/* .bi {
+    font-size: 32px;
+} */
+
+.direitos-register {
     background-color: #f0edea;;
     padding-left: 8%;
     padding-right: 8%;
     color: #464646;
     font-family: Inria Serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .card-body {
-    height: 384px;
+    /* height: 384px; */
+    border-radius: 8px;
 }
 
 .dropdown-bg{
@@ -179,13 +186,12 @@ button{
     margin: 0;
 }
 
-.img-register{
+.img-register {
     background-image: url('../assets/img/login_photo.webp'); 
     background-size: cover; 
     background-position: center; 
-    width: 100%;
     padding: 80px;
-    opacity: 90%;
+    height: 88vh;
 }
 
 .register-img-text{
@@ -195,16 +201,26 @@ button{
     padding: 32px;
 }
 
-.register-div{
-    background-color: #FEFBF4;
-    font-family: Inria Serif;
-}
-
 .register-body{
-    background-color: #FEFBF4;
+    background-color: #fff;
     padding-left: 24%;
     padding-right: 24%;
     margin: 0;
+    height: 80%;
+}
+
+.card-header {
+    background-color: transparent;
+}
+
+.card {
+    height: 12rem;
+    padding: 32px;
+    background-color: #FEFBF4;
+}
+
+body {
+    background-color: #fff !important;
 }
 
 .faca-login{
@@ -212,6 +228,8 @@ button{
 }
 
 .info-register{
+
+    background-color: #fff;
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -231,15 +249,12 @@ button{
     margin: 0px;
 }
 
-.card-custom {
-    height: 200px; /* Defina a altura desejada */
-}
-
-.icone{
+.icone {
+    font-size: 32px;
     color: #CD7B63;
 }
 
-.card-title{
+.card-title {
     color: #CD7B63;
 }
 
@@ -251,4 +266,40 @@ button{
 
 .tarefa-info{
     margin-right: 16px;
+}
+
+/* footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+} */
+
+html {
+    overflow-x: none;
+}
+
+main {
+    flex: 1;
+    background-color: #fff !important;
+}
+
+.bi-heart-fill {
+    color: #CD7B63;
+}
+
+body {
+    background-color: #fff !important;
+}
+
+html, body {
+    height: 100%; /* Garante que o HTML e o BODY ocupem toda a altura da tela */
+    margin: 0;    /* Remove as margens padrão */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+}
+
+.card-indicador {
+    height: 24rem;
+    padding: 32px;
+    background-color: #FEFBF4;
 }

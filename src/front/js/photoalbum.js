@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add("card-wrapper", "col-3");
 
             card.innerHTML = `
-                <div class="image-card pt-4">
+                <div class="image-card">
                     <img src="${image.link}" class="card-img-top">
                 </div>
             `;
