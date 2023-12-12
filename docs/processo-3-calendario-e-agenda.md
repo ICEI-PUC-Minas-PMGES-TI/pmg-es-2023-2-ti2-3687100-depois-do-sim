@@ -2,7 +2,8 @@
 
 Este processo pode ser melhorado com a implementação de tags coloridas diferentes para distinguir eventos e uma view do calendário diferente para cada fornecedor mostrando seus eventos.
 
-![Calendário e Agenda Diagram](images/agenda.png)
+![Diagrama BPMN da Agenda](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim/assets/130570629/db27fbfe-d3ee-453a-ae84-f9d091d0c51a)
+
 
 #### Detalhamento das atividades
 
