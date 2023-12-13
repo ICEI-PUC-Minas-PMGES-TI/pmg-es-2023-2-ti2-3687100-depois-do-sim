@@ -303,3 +303,7 @@ html, body {
     padding: 32px;
     background-color: #FEFBF4;
 }
+
+.card-feedback {
+    height: 480px;
+}

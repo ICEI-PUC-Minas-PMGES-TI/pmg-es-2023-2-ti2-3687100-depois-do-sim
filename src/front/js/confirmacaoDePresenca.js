@@ -5,6 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const weddingIdFromURL = params.get('wedding_id');
 
+    // Verificar se o usuário está logado
+    const isUser = localStorage.getItem('Authorization');
+
+    // Elementos da página
+    const btnGuestList = document.getElementById("btn-guests-list");
+
+    if (isUser) {
+        // O usuário está logado
+        btnGuestList.style.display = "inline";
+    } else {
+        // O usuário não está logado
+        btnGuestList.style.display = "none";
+    }
+
     const token = localStorage.getItem("Authorization");
     const weddingId = localStorage.getItem("weddingId");
 

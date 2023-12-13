@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // O usuário não está logado
         btnRegisterGift.style.display = "none";
         btnGifted.style.display = "none";
-
     }
 
     // Função para buscar dados da API
