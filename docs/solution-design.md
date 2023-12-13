@@ -22,13 +22,13 @@ _Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou s
 
 ### 4.3. Guias de estilo
 
-_Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia._
-
-_Explique as guias de estilo utilizadas no seu projeto._
+Nessa seção apresentaremos o design escolhido para nossa aplicação.
 
 ## Design
 
-_Detalhe os layouts que serão utilizados. Apresente onde será colocado o logo do sistema. Defina os menus padrões, entre outras coisas._
+O design do site será baseado em cores claras e tons pastéis, que remetem à própria suavidade de uma cerimÔnia de casamento tradicional. A logo representa duas alianças entrelaçadas, demonstrando a própria união do casal. 
+
+![depois-do-sim-logo](images/logo.jpg)
 
 
 ## Cores
