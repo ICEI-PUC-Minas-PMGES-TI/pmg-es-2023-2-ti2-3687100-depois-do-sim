@@ -23,14 +23,5 @@ cff-version: 1.1.0
 keywords:
   - Processos de Negócio 
   - Casamento
-message: |
-  "If you use this software, please cite it using these metadata.
-  Se você utilizar este software, por favor cite-o utilizando estes metadados."
-repository-code: 
-https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim
-abstract: >
-  "
-
-  
-  "
+repository-code: https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2023-2-ti2-3687100-depois-do-sim
 date-released: 2023-12-21
